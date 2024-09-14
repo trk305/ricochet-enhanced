@@ -1,0 +1,51 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\localization-halflife\\projects\\vs2019\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\localization-halflife\\ricochet\\dlls\\client.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\localization-halflife\\ricochet\\dlls\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "player.cpp",
+              "DocumentMoniker": "E:\\localization-halflife\\ricochet\\dlls\\player.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\player.cpp",
+              "ToolTip": "E:\\localization-halflife\\ricochet\\dlls\\player.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\dlls\\player.cpp",
+              "ViewState": "AgIAAEMLAAAAAAAAAAAAAB8LAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-14T13:53:12.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "client.cpp",
+              "DocumentMoniker": "E:\\localization-halflife\\ricochet\\dlls\\client.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\client.cpp",
+              "ToolTip": "E:\\localization-halflife\\ricochet\\dlls\\client.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\dlls\\client.cpp",
+              "ViewState": "AgIAAKgEAAAAAAAAAAAcwC4DAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-09-14T11:07:44.942Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

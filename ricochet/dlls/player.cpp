@@ -255,19 +255,19 @@ LINK_ENTITY_TO_CLASS( player, CBasePlayer );
 
 
 
-void CBasePlayer :: Pain( void )
-{
-	float	flRndSound;//sound randomizer
+//void CBasePlayer :: Pain( void )
+//{
+	//float	flRndSound;//sound randomizer
 
-	flRndSound = RANDOM_FLOAT ( 0 , 1 ); 
+	//flRndSound = RANDOM_FLOAT ( 0 , 1 ); 
 	
-	if ( flRndSound <= 0.33 )
-		EMIT_SOUND(ENT(pev), CHAN_VOICE, "player/pl_pain5.wav", 1, ATTN_NORM);
-	else if ( flRndSound <= 0.66 )	
-		EMIT_SOUND(ENT(pev), CHAN_VOICE, "player/pl_pain6.wav", 1, ATTN_NORM);
-	else
-		EMIT_SOUND(ENT(pev), CHAN_VOICE, "player/pl_pain7.wav", 1, ATTN_NORM);
-}
+	//if ( flRndSound <= 0.33 )
+		//EMIT_SOUND(ENT(pev), CHAN_VOICE, "player/pl_pain5.wav", 1, ATTN_NORM);
+	//else if ( flRndSound <= 0.66 )	
+		//EMIT_SOUND(ENT(pev), CHAN_VOICE, "player/pl_pain6.wav", 1, ATTN_NORM);
+	//else
+		//EMIT_SOUND(ENT(pev), CHAN_VOICE, "player/pl_pain7.wav", 1, ATTN_NORM);
+//}
 
 /* 
  *
@@ -565,8 +565,8 @@ void CBasePlayer::Killed( entvars_t *pevAttacker, int iGib )
 		WRITE_BYTE(0xFF);
 	MESSAGE_END();
 
-	// reset FOV
-	m_iFOV = m_iClientFOV = 0;
+	// Don't reset FOV so players can enjoy
+	//m_iFOV = m_iClientFOV = 0;
 
 	MESSAGE_BEGIN( MSG_ONE, gmsgSetFOV, NULL, pev );
 		WRITE_BYTE(0);

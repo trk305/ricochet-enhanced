@@ -104,17 +104,20 @@ void LinkUserMessages( void );
  * ROBIN: Moved here from player.cpp, to allow multiple player models
  */
 void set_suicide_frame(entvars_t* pev)
-{       
-	if ( !FStrEq(STRING(pev->model), "models/player/female/female.mdl") && !FStrEq(STRING(pev->model), "models/player/male/male.mdl") )
-		return; // allready gibbed
+{
+    // Check if the player's model is not "female.mdl" or "male.mdl", exit if not
+    if (!(FStrEq(STRING(pev->model), "models/player/female/female.mdl") || 
+          FStrEq(STRING(pev->model), "models/player/male/male.mdl")))
+    {
+        return; // Not one of the specific models, no gibbing will happen
+    }
 
-//	pev->frame		= $deatha11;
-	pev->solid		= SOLID_NOT;
-	pev->movetype	= MOVETYPE_TOSS;
-	pev->deadflag	= DEAD_DEAD;
-	pev->nextthink	= -1;
+    // If the player is using one of the specified models, set the death properties
+   // pev->solid = SOLID_NOT;         // No longer solid (disables collisions)
+    //pev->movetype = MOVETYPE_TOSS;  // Allow the body to move as a ragdoll-like entity
+    pev->deadflag = DEAD_DEAD;      // Mark player as officially dead
+    pev->nextthink = -1;            // Disable future "thinking" (no updates for this entity)
 }
-
 
 /*
 ===========
@@ -369,10 +372,7 @@ void Host_Say( edict_t *pEntity, int teamonly )
 		return;  // no character found, so say nothing
 
 // turn on color set 2  (color on,  no sound)
-	if ( teamonly )
-		sprintf( text, "%c(TEAM) %s: ", 2, STRING( pEntity->v.netname ) );
-	else
-		sprintf( text, "%c%s: ", 2, STRING( pEntity->v.netname ) );
+    sprintf( text, "%c%s: ", 2, STRING( pEntity->v.netname ) );
 
 	j = sizeof(text) - 2 - strlen(text);  // -2 for /n and null terminator
 	if ( (int)strlen(p) > j )
@@ -452,10 +452,6 @@ void ClientCommand( edict_t *pEntity )
 	if ( FStrEq(pcmd, "say" ) )
 	{
 		Host_Say( pEntity, 0 );
-	}
-	else if ( FStrEq(pcmd, "say_team" ) )
-	{
-		Host_Say( pEntity, 1 );
 	}
 	else if ( FStrEq(pcmd, "spectate" ) )
 	{
@@ -728,80 +724,80 @@ void StartFrame( void )
 void ClientPrecache( void )
 {
 	// setup precaches always needed
-	PRECACHE_SOUND("player/sprayer.wav");			// spray paint sound for PreAlpha
+	//PRECACHE_SOUND("player/sprayer.wav");			// This is Ricochet, you can't spray.
 	
 	// PRECACHE_SOUND("player/pl_jumpland2.wav");		// UNDONE: play 2x step sound
 	
-	PRECACHE_SOUND("player/pl_fallpain2.wav");		
-	PRECACHE_SOUND("player/pl_fallpain3.wav");		
+	//PRECACHE_SOUND("player/pl_fallpain2.wav");		
+	//PRECACHE_SOUND("player/pl_fallpain3.wav");		
 	
-	PRECACHE_SOUND("player/pl_step1.wav");		// walk on concrete
-	PRECACHE_SOUND("player/pl_step2.wav");
-	PRECACHE_SOUND("player/pl_step3.wav");
-	PRECACHE_SOUND("player/pl_step4.wav");
+	//PRECACHE_SOUND("player/pl_step1.wav");		// walk on concrete
+	//PRECACHE_SOUND("player/pl_step2.wav");
+	//PRECACHE_SOUND("player/pl_step3.wav");
+	//PRECACHE_SOUND("player/pl_step4.wav");
 
-	PRECACHE_SOUND("common/npc_step1.wav");		// NPC walk on concrete
-	PRECACHE_SOUND("common/npc_step2.wav");
-	PRECACHE_SOUND("common/npc_step3.wav");
-	PRECACHE_SOUND("common/npc_step4.wav");
+	//PRECACHE_SOUND("common/npc_step1.wav");		// NPC walk on concrete
+	//PRECACHE_SOUND("common/npc_step2.wav");
+	//PRECACHE_SOUND("common/npc_step3.wav");
+	//PRECACHE_SOUND("common/npc_step4.wav");
 
-	PRECACHE_SOUND("player/pl_metal1.wav");		// walk on metal
-	PRECACHE_SOUND("player/pl_metal2.wav");
-	PRECACHE_SOUND("player/pl_metal3.wav");
-	PRECACHE_SOUND("player/pl_metal4.wav");
+	//PRECACHE_SOUND("player/pl_metal1.wav");		// walk on metal
+	//PRECACHE_SOUND("player/pl_metal2.wav");
+	//PRECACHE_SOUND("player/pl_metal3.wav");
+	//PRECACHE_SOUND("player/pl_metal4.wav");
 
-	PRECACHE_SOUND("player/pl_dirt1.wav");		// walk on dirt
-	PRECACHE_SOUND("player/pl_dirt2.wav");
-	PRECACHE_SOUND("player/pl_dirt3.wav");
-	PRECACHE_SOUND("player/pl_dirt4.wav");
+	//PRECACHE_SOUND("player/pl_dirt1.wav");		// walk on dirt
+	//PRECACHE_SOUND("player/pl_dirt2.wav");
+	//PRECACHE_SOUND("player/pl_dirt3.wav");
+	//PRECACHE_SOUND("player/pl_dirt4.wav");
 
-	PRECACHE_SOUND("player/pl_duct1.wav");		// walk in duct
-	PRECACHE_SOUND("player/pl_duct2.wav");
-	PRECACHE_SOUND("player/pl_duct3.wav");
-	PRECACHE_SOUND("player/pl_duct4.wav");
+	//PRECACHE_SOUND("player/pl_duct1.wav");		// walk in duct
+	//PRECACHE_SOUND("player/pl_duct2.wav");
+	//PRECACHE_SOUND("player/pl_duct3.wav");
+	//PRECACHE_SOUND("player/pl_duct4.wav");
 
-	PRECACHE_SOUND("player/pl_grate1.wav");		// walk on grate
-	PRECACHE_SOUND("player/pl_grate2.wav");
-	PRECACHE_SOUND("player/pl_grate3.wav");
-	PRECACHE_SOUND("player/pl_grate4.wav");
+	//PRECACHE_SOUND("player/pl_grate1.wav");		// walk on grate
+	//PRECACHE_SOUND("player/pl_grate2.wav");
+	//PRECACHE_SOUND("player/pl_grate3.wav");
+	//PRECACHE_SOUND("player/pl_grate4.wav");
 
-	PRECACHE_SOUND("player/pl_slosh1.wav");		// walk in shallow water
-	PRECACHE_SOUND("player/pl_slosh2.wav");
-	PRECACHE_SOUND("player/pl_slosh3.wav");
-	PRECACHE_SOUND("player/pl_slosh4.wav");
+	//PRECACHE_SOUND("player/pl_slosh1.wav");		// walk in shallow water
+	//PRECACHE_SOUND("player/pl_slosh2.wav");
+	//PRECACHE_SOUND("player/pl_slosh3.wav");
+	//PRECACHE_SOUND("player/pl_slosh4.wav");
 
-	PRECACHE_SOUND("player/pl_tile1.wav");		// walk on tile
-	PRECACHE_SOUND("player/pl_tile2.wav");
-	PRECACHE_SOUND("player/pl_tile3.wav");
-	PRECACHE_SOUND("player/pl_tile4.wav");
-	PRECACHE_SOUND("player/pl_tile5.wav");
+	//PRECACHE_SOUND("player/pl_tile1.wav");		// walk on tile
+	//PRECACHE_SOUND("player/pl_tile2.wav");
+	//PRECACHE_SOUND("player/pl_tile3.wav");
+	//PRECACHE_SOUND("player/pl_tile4.wav");
+	//PRECACHE_SOUND("player/pl_tile5.wav");
 
-	PRECACHE_SOUND("player/pl_swim1.wav");		// breathe bubbles
-	PRECACHE_SOUND("player/pl_swim2.wav");
-	PRECACHE_SOUND("player/pl_swim3.wav");
-	PRECACHE_SOUND("player/pl_swim4.wav");
+	//PRECACHE_SOUND("player/pl_swim1.wav");		// breathe bubbles
+	//PRECACHE_SOUND("player/pl_swim2.wav");
+	//PRECACHE_SOUND("player/pl_swim3.wav");
+	//PRECACHE_SOUND("player/pl_swim4.wav");
 
-	PRECACHE_SOUND("player/pl_ladder1.wav");	// climb ladder rung
-	PRECACHE_SOUND("player/pl_ladder2.wav");
-	PRECACHE_SOUND("player/pl_ladder3.wav");
-	PRECACHE_SOUND("player/pl_ladder4.wav");
+	//PRECACHE_SOUND("player/pl_ladder1.wav");	// climb ladder rung
+	//PRECACHE_SOUND("player/pl_ladder2.wav");
+	//PRECACHE_SOUND("player/pl_ladder3.wav");
+	//PRECACHE_SOUND("player/pl_ladder4.wav");
 
-	PRECACHE_SOUND("player/pl_wade1.wav");		// wade in water
-	PRECACHE_SOUND("player/pl_wade2.wav");
-	PRECACHE_SOUND("player/pl_wade3.wav");
-	PRECACHE_SOUND("player/pl_wade4.wav");
+	//PRECACHE_SOUND("player/pl_wade1.wav");		// wade in water
+	//PRECACHE_SOUND("player/pl_wade2.wav");
+	//PRECACHE_SOUND("player/pl_wade3.wav");
+	//PRECACHE_SOUND("player/pl_wade4.wav");
 
-	PRECACHE_SOUND("debris/wood1.wav");			// hit wood texture
-	PRECACHE_SOUND("debris/wood2.wav");
-	PRECACHE_SOUND("debris/wood3.wav");
+	//PRECACHE_SOUND("debris/wood1.wav");			// hit wood texture
+	//PRECACHE_SOUND("debris/wood2.wav");
+	//PRECACHE_SOUND("debris/wood3.wav");
 
-	PRECACHE_SOUND("plats/train_use1.wav");		// use a train
+	//PRECACHE_SOUND("plats/train_use1.wav");		// use a train
 
-	PRECACHE_SOUND("buttons/spark5.wav");		// hit computer texture
-	PRECACHE_SOUND("buttons/spark6.wav");
-	PRECACHE_SOUND("debris/glass1.wav");
-	PRECACHE_SOUND("debris/glass2.wav");
-	PRECACHE_SOUND("debris/glass3.wav");
+	//PRECACHE_SOUND("buttons/spark5.wav");		// hit computer texture
+	//PRECACHE_SOUND("buttons/spark6.wav");
+	//PRECACHE_SOUND("debris/glass1.wav");
+	//PRECACHE_SOUND("debris/glass2.wav");
+	//PRECACHE_SOUND("debris/glass3.wav");
 
 	PRECACHE_SOUND( SOUND_FLASHLIGHT_ON );
 	PRECACHE_SOUND( SOUND_FLASHLIGHT_OFF );
@@ -816,7 +812,7 @@ void ClientPrecache( void )
 	PRECACHE_SOUND("player/pl_pain6.wav");
 	PRECACHE_SOUND("player/pl_pain7.wav");
 
-	//PRECACHE_MODEL("models/player/female/female.mdl");
+	//PRECACHE_MODEL("models/player/female/female.mdl"); // Cut-Content
 	PRECACHE_MODEL("models/player/male/male.mdl");
 
 	// hud sounds
