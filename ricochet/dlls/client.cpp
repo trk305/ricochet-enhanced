@@ -315,7 +315,7 @@ void Host_Say( edict_t *pEntity, int teamonly )
 	char	text[128];
 	char    szTemp[256];
 	const char *cpSay = "say";
-	const char *cpSayTeam = "say_team";
+	//const char *cpSayTeam = "say_team"; // Ricochet is an FFA game
 	const char *pcmd = CMD_ARGV(0);
 
 	entvars_t *pev = &pEntity->v;
@@ -325,7 +325,7 @@ void Host_Say( edict_t *pEntity, int teamonly )
 	if ( CMD_ARGC() == 0 )
 		return;
 
-	if ( !stricmp( pcmd, cpSay) || !stricmp( pcmd, cpSayTeam ) )
+	if ( !stricmp( pcmd, cpSay) )
 	{
 		if ( CMD_ARGC() >= 2 )
 		{
@@ -426,7 +426,7 @@ void Host_Say( edict_t *pEntity, int teamonly )
 		GETPLAYERUSERID( pEntity ),
 		GETPLAYERAUTHID( pEntity ),
 		GETPLAYERUSERID( pEntity ),
-		teamonly ? cpSayTeam : cpSay,
+		//teamonly ? cpSayTeam : cpSay,
 		p );
 }
 

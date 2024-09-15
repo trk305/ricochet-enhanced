@@ -2938,7 +2938,7 @@ void CBasePlayer::Spawn( void )
 	m_flTouchedByJumpPad = 0;
 	m_flNextAttack		= gpGlobals->time + 0.5;	// Prevent fire
 
-	g_engfuncs.pfnSetPhysicsKeyValue( edict(), "slj", "0" );
+	g_engfuncs.pfnSetPhysicsKeyValue( edict(), "slj", "1" );
 	g_engfuncs.pfnSetPhysicsKeyValue( edict(), "hl", "1" );
 
 	m_iFOV				= 0;// init field of view.
@@ -4434,7 +4434,7 @@ Vector CBasePlayer :: AutoaimDeflection( Vector &vecSrc, float flDist, float flD
 		Vector dir;
 		float dot;
 
-		if ( pEdict->free )	// Not in use
+		//if ( pEdict->free )	// Not in use
 			continue;
 		
 		if (pEdict->v.takedamage != DAMAGE_AIM)

@@ -40,9 +40,6 @@
     <Filter Include="Source Files\public">
       <UniqueIdentifier>{a62dbc7a-0e7a-4926-9415-c81e6b3e2820}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\common">
-      <UniqueIdentifier>{2263acfb-32b9-437e-b357-289dc027689c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\ricochet\pm_shared">
       <UniqueIdentifier>{739d96f5-318f-4326-ac16-acad51f23a39}</UniqueIdentifier>
     </Filter>
@@ -60,6 +57,9 @@
     </Filter>
     <Filter Include="Header Files\ricochet\pm_shared">
       <UniqueIdentifier>{2c1b936b-1f82-449f-be5a-1254ef73c3d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\_hl\common">
+      <UniqueIdentifier>{2263acfb-32b9-437e-b357-289dc027689c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -157,7 +157,7 @@
       <Filter>Source Files\public</Filter>
     </ClCompile>
     <ClCompile Include="..\..\common\parsemsg.cpp">
-      <Filter>Source Files\common</Filter>
+      <Filter>Source Files\_hl\common</Filter>
     </ClCompile>
     <ClCompile Include="..\..\ricochet\pm_shared\pm_shared.c">
       <Filter>Source Files\ricochet\pm_shared</Filter>
