@@ -2485,7 +2485,7 @@ void PM_Jump (void)
 	qboolean cansuperjump = false;
 
 	// Discwar: Prevent jumping
-	return;
+	//return;
 
 	if (pmove->dead)
 	{

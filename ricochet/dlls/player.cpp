@@ -565,8 +565,7 @@ void CBasePlayer::Killed( entvars_t *pevAttacker, int iGib )
 		WRITE_BYTE(0xFF);
 	MESSAGE_END();
 
-	// Don't reset FOV so players can enjoy
-	//m_iFOV = m_iClientFOV = 0;
+	m_iFOV = m_iClientFOV = 0;
 
 	MESSAGE_BEGIN( MSG_ONE, gmsgSetFOV, NULL, pev );
 		WRITE_BYTE(0);
@@ -2941,8 +2940,8 @@ void CBasePlayer::Spawn( void )
 	g_engfuncs.pfnSetPhysicsKeyValue( edict(), "slj", "1" );
 	g_engfuncs.pfnSetPhysicsKeyValue( edict(), "hl", "1" );
 
-	m_iFOV				= 0;// init field of view.
-	m_iClientFOV		= -1; // make sure fov reset is sent
+	m_iFOV				= 0; // init field of view.
+	m_iClientFOV		= 0; // make sure fov reset is sent
 
 	m_flNextDecalTime	= 0;// let this player decal as soon as he spawns.
 
