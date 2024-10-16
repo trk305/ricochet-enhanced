@@ -171,7 +171,7 @@ void CDisc::Precache( void )
 	PRECACHE_SOUND("weapons/electro5.wav");
 	PRECACHE_SOUND("weapons/xbow_hit1.wav");
 	PRECACHE_SOUND("weapons/xbow_hit2.wav");
-	//PRECACHE_SOUND("weapons/rocket1.wav"); // Unused
+	PRECACHE_SOUND("weapons/rocket1.wav"); // Unused
 	PRECACHE_SOUND("dischit.wav");
 	m_iTrail = PRECACHE_MODEL("sprites/smoke.spr");
 	m_iSpriteTexture = PRECACHE_MODEL( "sprites/lgtning.spr" );
