@@ -171,7 +171,7 @@ void CDisc::Precache( void )
 	PRECACHE_SOUND("weapons/electro5.wav");
 	PRECACHE_SOUND("weapons/xbow_hit1.wav");
 	PRECACHE_SOUND("weapons/xbow_hit2.wav");
-	PRECACHE_SOUND("weapons/rocket1.wav");
+	//PRECACHE_SOUND("weapons/rocket1.wav"); // Unused
 	PRECACHE_SOUND("dischit.wav");
 	m_iTrail = PRECACHE_MODEL("sprites/smoke.spr");
 	m_iSpriteTexture = PRECACHE_MODEL( "sprites/lgtning.spr" );
@@ -190,7 +190,7 @@ void CDisc::ReturnToThrower( void )
 {
 	if (m_bDecapitate)
 	{
-		STOP_SOUND( edict(), CHAN_VOICE, "weapons/rocket1.wav" );
+		STOP_SOUND( edict(), CHAN_VOICE, "weapons/rocket1.wav" ); // rocket1.wav is unused
 		if ( !m_bRemoveSelf )
 			((CBasePlayer*)(CBaseEntity*)m_hOwner)->GiveAmmo( MAX_DISCS, "disc", MAX_DISCS );
 	}
@@ -386,7 +386,7 @@ void CDisc::DiscThink()
 		// Remove myself if my owner's died
 		if (m_bRemoveSelf)
 		{
-			STOP_SOUND( edict(), CHAN_VOICE, "weapons/rocket1.wav" );
+			STOP_SOUND( edict(), CHAN_VOICE, "weapons/rocket1.wav" ); // unused sound
 			UTIL_Remove( this );
 			return;
 		}
@@ -519,7 +519,7 @@ void CDiscWeapon::Holster( int skiplocal /* = 0 */ )
 		// no more grenades!
 		m_pPlayer->pev->weapons &= ~(1<<WEAPON_DISC);
 		SetThink( &CDiscWeapon::DestroyItem );
-		pev->nextthink = gpGlobals->time + 0.1;
+		pev->nextthink = gpGlobals->time + 0.01;
 	}
 
 	EMIT_SOUND(ENT(m_pPlayer->pev), CHAN_WEAPON, "common/null.wav", 1.0, ATTN_NORM);
