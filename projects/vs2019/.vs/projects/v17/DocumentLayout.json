@@ -3,19 +3,16 @@
   "WorkspaceRootPath": "E:\\localization-halflife\\projects\\vs2019\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EA7DE935-F997-4EA8-9135-E2FE5E5D2C1B}|ricochet_cdll.vcxproj|E:\\localization-halflife\\ricochet\\cl_dll\\ammo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\localization-halflife\\ricochet\\dlls\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\localization-halflife\\ricochet\\dlls\\sound.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\localization-halflife\\ricochet\\pm_shared\\pm_shared.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\localization-halflife\\ricochet\\dlls\\disc_powerups.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EA7DE935-F997-4EA8-9135-E2FE5E5D2C1B}|ricochet_cdll.vcxproj|E:\\localization-halflife\\ricochet\\dlls\\wpn_shared\\disc_weapon_disc.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\localization-halflife\\ricochet\\dlls\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\localization-halflife\\ricochet\\pm_shared\\pm_shared.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\localization-halflife\\ricochet\\dlls\\client.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
@@ -28,48 +25,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ammo.cpp",
-              "DocumentMoniker": "E:\\localization-halflife\\ricochet\\cl_dll\\ammo.cpp",
-              "RelativeDocumentMoniker": "..\\..\\ricochet\\cl_dll\\ammo.cpp",
-              "ToolTip": "E:\\localization-halflife\\ricochet\\cl_dll\\ammo.cpp",
-              "RelativeToolTip": "..\\..\\ricochet\\cl_dll\\ammo.cpp",
-              "ViewState": "AgIAAGUCAAAAAAAAAAAAAIkAAAAhAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "disc_powerups.cpp",
+              "DocumentMoniker": "E:\\localization-halflife\\ricochet\\dlls\\disc_powerups.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\disc_powerups.cpp",
+              "ToolTip": "E:\\localization-halflife\\ricochet\\dlls\\disc_powerups.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\dlls\\disc_powerups.cpp",
+              "ViewState": "AgIAAJYAAAAAAAAAAAAMwJ8AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-16T09:15:16.924Z",
+              "WhenOpened": "2024-10-17T07:17:26.663Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "sound.cpp",
-              "DocumentMoniker": "E:\\localization-halflife\\ricochet\\dlls\\sound.cpp",
-              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\sound.cpp",
-              "ToolTip": "E:\\localization-halflife\\ricochet\\dlls\\sound.cpp",
-              "RelativeToolTip": "..\\..\\ricochet\\dlls\\sound.cpp",
-              "ViewState": "AgIAAD4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-16T09:11:22.975Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "disc_weapon_disc.cpp",
               "DocumentMoniker": "E:\\localization-halflife\\ricochet\\dlls\\wpn_shared\\disc_weapon_disc.cpp",
               "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\wpn_shared\\disc_weapon_disc.cpp",
               "ToolTip": "E:\\localization-halflife\\ricochet\\dlls\\wpn_shared\\disc_weapon_disc.cpp",
               "RelativeToolTip": "..\\..\\ricochet\\dlls\\wpn_shared\\disc_weapon_disc.cpp",
-              "ViewState": "AgIAANwCAAAAAAAAAAAAAAkCAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAA0CAAAAAAAAAAAAAAkCAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-16T07:59:37.128Z"
+              "WhenOpened": "2024-10-16T07:59:37.128Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "pm_shared.c",
               "DocumentMoniker": "E:\\localization-halflife\\ricochet\\pm_shared\\pm_shared.c",
               "RelativeDocumentMoniker": "..\\..\\ricochet\\pm_shared\\pm_shared.c",
@@ -77,23 +63,25 @@
               "RelativeToolTip": "..\\..\\ricochet\\pm_shared\\pm_shared.c",
               "ViewState": "AgIAAOwJAAAAAAAAAAAAALUJAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-10-15T17:12:28.287Z"
+              "WhenOpened": "2024-10-15T17:12:28.287Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "player.cpp",
               "DocumentMoniker": "E:\\localization-halflife\\ricochet\\dlls\\player.cpp",
               "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\player.cpp",
               "ToolTip": "E:\\localization-halflife\\ricochet\\dlls\\player.cpp",
               "RelativeToolTip": "..\\..\\ricochet\\dlls\\player.cpp",
-              "ViewState": "AgIAALsFAAAAAAAAAAAowLsFAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAFMHAAAAAAAAAAAMwFsHAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-14T13:53:12.996Z"
+              "WhenOpened": "2024-09-14T13:53:12.996Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "client.cpp",
               "DocumentMoniker": "E:\\localization-halflife\\ricochet\\dlls\\client.cpp",
               "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\client.cpp",
@@ -101,7 +89,8 @@
               "RelativeToolTip": "..\\..\\ricochet\\dlls\\client.cpp",
               "ViewState": "AgIAALYBAAAAAAAAAAAowL8BAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-14T11:07:44.942Z"
+              "WhenOpened": "2024-09-14T11:07:44.942Z",
+              "EditorCaption": ""
             }
           ]
         }
