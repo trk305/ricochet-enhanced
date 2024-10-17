@@ -519,7 +519,7 @@ void CDiscWeapon::Holster( int skiplocal /* = 0 */ )
 		// no more grenades!
 		m_pPlayer->pev->weapons &= ~(1<<WEAPON_DISC);
 		SetThink( &CDiscWeapon::DestroyItem );
-		pev->nextthink = gpGlobals->time + 0.01;
+		pev->nextthink = gpGlobals->time + 0.1;
 	}
 
 	EMIT_SOUND(ENT(m_pPlayer->pev), CHAN_WEAPON, "common/null.wav", 1.0, ATTN_NORM);

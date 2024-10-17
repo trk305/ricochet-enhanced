@@ -38,7 +38,7 @@
               "RelativeDocumentMoniker": "..\\..\\ricochet\\cl_dll\\ammo.cpp",
               "ToolTip": "E:\\localization-halflife\\ricochet\\cl_dll\\ammo.cpp",
               "RelativeToolTip": "..\\..\\ricochet\\cl_dll\\ammo.cpp",
-              "ViewState": "AgIAAKMAAAAAAAAAAAAAAKkAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAGUCAAAAAAAAAAAAAIkAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-16T09:15:16.924Z",
               "EditorCaption": ""
@@ -53,8 +53,7 @@
               "RelativeToolTip": "..\\..\\ricochet\\dlls\\sound.cpp",
               "ViewState": "AgIAAD4BAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-16T09:11:22.975Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-16T09:11:22.975Z"
             },
             {
               "$type": "Document",
@@ -66,8 +65,7 @@
               "RelativeToolTip": "..\\..\\ricochet\\dlls\\wpn_shared\\disc_weapon_disc.cpp",
               "ViewState": "AgIAANwCAAAAAAAAAAAAAAkCAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-16T07:59:37.128Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-16T07:59:37.128Z"
             },
             {
               "$type": "Document",
@@ -79,8 +77,7 @@
               "RelativeToolTip": "..\\..\\ricochet\\pm_shared\\pm_shared.c",
               "ViewState": "AgIAAOwJAAAAAAAAAAAAALUJAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-10-15T17:12:28.287Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-15T17:12:28.287Z"
             },
             {
               "$type": "Document",
@@ -92,8 +89,7 @@
               "RelativeToolTip": "..\\..\\ricochet\\dlls\\player.cpp",
               "ViewState": "AgIAALsFAAAAAAAAAAAowLsFAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-14T13:53:12.996Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-14T13:53:12.996Z"
             },
             {
               "$type": "Document",
