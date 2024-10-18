@@ -122,6 +122,7 @@
     <ClInclude Include="..\..\ricochet\pm_shared\pm_materials.h" />
     <ClInclude Include="..\..\ricochet\pm_shared\pm_movevars.h" />
     <ClInclude Include="..\..\ricochet\pm_shared\pm_shared.h" />
+    <ClInclude Include="util.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{EA7DE935-F997-4EA8-9135-E2FE5E5D2C1B}</ProjectGuid>
