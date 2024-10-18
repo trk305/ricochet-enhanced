@@ -23,6 +23,8 @@
 #include <string.h>
 #include "netadr.h"
 #include "vgui_SchemeManager.h"
+// jay - discord rpc
+#include "discord_manager.h"
 
 #include "interface.h"
 
@@ -260,7 +262,7 @@ Called by engine every frame that client .dll is loaded
 void EXPORT HUD_Frame( double time )
 {
 	ServersThink( time );
-
+	DiscordMan_Update();
 	GetClientVoiceMgr()->Frame(time);
 }
 

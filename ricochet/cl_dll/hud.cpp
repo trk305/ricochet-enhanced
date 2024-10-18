@@ -312,6 +312,9 @@ int CHud :: GetSpriteIndex( const char *SpriteName )
 
 void CHud :: VidInit( void )
 {
+	gEngfuncs.Con_Printf("Unloading the grenade viewmodel...\n");
+	gEngfuncs.Cvar_SetValue("r_drawviewmodel", 1.0f);
+	gEngfuncs.Cvar_SetValue("r_drawviewmodel", 0.0f);
 	m_scrinfo.iSize = sizeof(m_scrinfo);
 	GetScreenInfo(&m_scrinfo);
 

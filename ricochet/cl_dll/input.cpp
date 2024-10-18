@@ -28,6 +28,11 @@ extern "C"
 #include "view.h"
 #include <string.h>
 #include <ctype.h>
+// jay - discord rpc
+#include "discord_manager.h"
+cvar_t* rpc_chapter;
+cvar_t* rpc_area;
+cvar_t* rpc_image;
 
 #include "vgui_TeamFortressViewport.h"
 #include "vgui_discobjects.h"
@@ -952,6 +957,11 @@ void InitInput (void)
 	m_yaw				= gEngfuncs.pfnRegisterVariable ( "m_yaw","0.022", FCVAR_ARCHIVE );
 	m_forward			= gEngfuncs.pfnRegisterVariable ( "m_forward","1", FCVAR_ARCHIVE );
 	m_side				= gEngfuncs.pfnRegisterVariable ( "m_side","0.8", FCVAR_ARCHIVE );
+	// jay - discord rpc
+	gEngfuncs.Con_Printf("Initializing Discord RPC CVars\n");
+	rpc_chapter = gEngfuncs.pfnRegisterVariable("rpc_chapter", "", FCVAR_CLIENTDLL);
+	rpc_area = gEngfuncs.pfnRegisterVariable("rpc_area", "", FCVAR_CLIENTDLL);
+	rpc_image = gEngfuncs.pfnRegisterVariable("rpc_image", "", FCVAR_CLIENTDLL);
 
 	// Initialize third person camera controls.
 	CAM_Init();
@@ -961,6 +971,9 @@ void InitInput (void)
 	KB_Init();
 	// Initialize view system
 	V_Init();
+	// jay - discord rpc
+	gEngfuncs.Con_Printf("Starting up Discord RPC\n");
+	DiscordMan_Startup();
 }
 
 /*
@@ -978,6 +991,9 @@ void ShutdownInput (void)
 
 void EXPORT HUD_Shutdown( void )
 {
+	// jay - discord rpc
+	gEngfuncs.Con_Printf("Shutting down Discord RPC");
+	DiscordMan_Kill();
 	ShutdownInput();
 
 	extern CSysModule *g_hTrackerModule;

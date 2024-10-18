@@ -802,6 +802,13 @@ public:
 	void Spawn( void );
 	void Precache( void );
 	void KeyValue( KeyValueData *pkvd );
+	// jay - discord rpc
+	virtual int        Save(CSave& save);
+	virtual int        Restore(CRestore& restore);
+	static    TYPEDESCRIPTION m_SaveData[];
 
+	string_t m_iszChapter;
+	string_t m_iszArea;
+	string_t m_iszImage;
 	int	 m_iArenaOff;
 };

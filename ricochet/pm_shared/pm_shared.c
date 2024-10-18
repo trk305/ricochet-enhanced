@@ -2000,7 +2000,7 @@ void PM_Duck( void )
 	}
 
 	// Discwar: Prevent ducking
-	return;
+	//return;
 
 	if ( pmove->dead )
 		return;
@@ -2485,7 +2485,7 @@ void PM_Jump (void)
 	qboolean cansuperjump = false;
 
 	// Discwar: Prevent jumping
-	return;
+	//return;
 
 	if (pmove->dead)
 	{

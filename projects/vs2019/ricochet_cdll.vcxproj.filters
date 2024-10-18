@@ -61,6 +61,9 @@
     <Filter Include="Source Files\_hl\common">
       <UniqueIdentifier>{2263acfb-32b9-437e-b357-289dc027689c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ricochet\cl_dll\discord">
+      <UniqueIdentifier>{dba17b0a-4c45-42ef-9373-0a226ead2a92}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\ricochet\dlls\wpn_shared\disc_weapon_disc.cpp">
@@ -261,6 +264,9 @@
     <ClCompile Include="..\..\ricochet\cl_dll\view.cpp">
       <Filter>Source Files\ricochet\cl_dll</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\ricochet\cl_dll\discord\discord_manager.cpp">
+      <Filter>Source Files\ricochet\cl_dll\discord</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\ricochet\cl_dll\kbutton.h">
@@ -379,6 +385,15 @@
     </ClInclude>
     <ClInclude Include="..\..\ricochet\cl_dll\view.h">
       <Filter>Header Files\ricochet\cl_dll</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ricochet\cl_dll\discord\discord_manager.h">
+      <Filter>Source Files\ricochet\cl_dll\discord</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ricochet\cl_dll\discord\discord_register.h">
+      <Filter>Source Files\ricochet\cl_dll\discord</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\ricochet\cl_dll\discord\discord_rpc.h">
+      <Filter>Source Files\ricochet\cl_dll\discord</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
