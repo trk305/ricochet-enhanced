@@ -2000,7 +2000,7 @@ void PM_Duck( void )
 	}
 
 	// Discwar: Prevent ducking
-	//return;
+	return;
 
 	if ( pmove->dead )
 		return;

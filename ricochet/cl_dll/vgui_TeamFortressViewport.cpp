@@ -231,7 +231,7 @@ bool CCommandMenu::KeyInput(int keyNum)
 				{
 					// run the bound command
 					m_aButtons[i]->fireActionSignal();
-					return true;
+					return false;
 				}
 			}
 		}
@@ -456,7 +456,7 @@ public:
 		{
 			// send a message to close the command menu
 			// this needs to be a message, since a direct call screws the timing
-			gEngfuncs.pfnClientCmd("ForceCloseCommandMenu\n");
+			//gEngfuncs.pfnClientCmd("ForceCloseCommandMenu\n");
 		}
 	}
 	virtual void mouseReleased(MouseCode code, Panel* panel)
@@ -1122,19 +1122,19 @@ void TeamFortressViewport::ToggleServerBrowser()
 //=======================================================================
 void TeamFortressViewport::ShowCommandMenu()
 {
-	if (!m_iInitialized)
-		return;
+	/*if (!m_iInitialized)
+		return;*/
 
 	// Not visible while undefined
 	if (g_iPlayerClass == 0)
 		return;
 
-	// is the command menu open?
+	/* is the command menu open ?
 	if (m_pCurrentCommandMenu)
 	{
 		HideCommandMenu();
 		return;
-	}
+	}*/
 
 	// Not visible while in intermission
 	if (gHUD.m_iIntermission)
@@ -1143,7 +1143,6 @@ void TeamFortressViewport::ShowCommandMenu()
 	// Recalculate visible menus
 	UpdateCommandMenu();
 	HideVGUIMenu();
-
 	SetCurrentCommandMenu(m_pCommandMenus[0]);
 	m_flMenuOpenTime = gHUD.m_flTime;
 	UpdateCursorState();
@@ -1157,7 +1156,7 @@ void TeamFortressViewport::ShowCommandMenu()
 			if (m_pCurrentCommandMenu->KeyInput(param[0]))
 			{
 				// kill the menu open time, since the key input is final
-				HideCommandMenu();
+				//HideCommandMenu();
 			}
 		}
 	}
@@ -1176,7 +1175,7 @@ void TeamFortressViewport::InputSignalHideCommandMenu()
 	if ((m_flMenuOpenTime + 0.3) > gHUD.m_flTime)
 		return;
 
-	HideCommandMenu();
+	//HideCommandMenu();
 }
 
 //-----------------------------------------------------------------------------
@@ -1544,7 +1543,7 @@ void TeamFortressViewport::ShowVGUIMenu(int iMenu)
 		return;
 
 	// Close the Command Menu if it's open
-	HideCommandMenu();
+	//HideCommandMenu();
 
 	pNewMenu->SetMenuID(iMenu);
 	pNewMenu->SetActive(true);

@@ -220,7 +220,7 @@ void CHud :: Init( void )
 	HOOK_MESSAGE( Frozen );
 
 	HOOK_COMMAND( "+commandmenu", OpenCommandMenu );
-	HOOK_COMMAND( "-commandmenu", CloseCommandMenu );
+	HOOK_COMMAND("-commandmenu", CloseCommandMenu);
 
 	m_iLogo = 0;
 	m_iFOV = 0;

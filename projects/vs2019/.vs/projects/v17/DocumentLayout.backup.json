@@ -3,19 +3,25 @@
   "WorkspaceRootPath": "E:\\localization-halflife\\projects\\vs2019\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\localization-halflife\\ricochet\\dlls\\client.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EA7DE935-F997-4EA8-9135-E2FE5E5D2C1B}|ricochet_cdll.vcxproj|E:\\localization-halflife\\ricochet\\cl_dll\\vgui_TeamFortressViewport.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA7DE935-F997-4EA8-9135-E2FE5E5D2C1B}|ricochet_cdll.vcxproj|E:\\localization-halflife\\ricochet\\cl_dll\\hud.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EA7DE935-F997-4EA8-9135-E2FE5E5D2C1B}|ricochet_cdll.vcxproj|E:\\localization-halflife\\ricochet\\cl_dll\\discord\\discord_manager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA7DE935-F997-4EA8-9135-E2FE5E5D2C1B}|ricochet_cdll.vcxproj|E:\\localization-halflife\\ricochet\\pm_shared\\pm_shared.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EA7DE935-F997-4EA8-9135-E2FE5E5D2C1B}|ricochet_cdll.vcxproj|E:\\localization-halflife\\ricochet\\cl_dll\\cdll_int.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EA7DE935-F997-4EA8-9135-E2FE5E5D2C1B}|ricochet_cdll.vcxproj|E:\\localization-halflife\\ricochet\\cl_dll\\input.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\localization-halflife\\ricochet\\dlls\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA7DE935-F997-4EA8-9135-E2FE5E5D2C1B}|ricochet_cdll.vcxproj|E:\\localization-halflife\\ricochet\\cl_dll\\hud.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\localization-halflife\\ricochet\\dlls\\client.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -25,8 +31,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "vgui_TeamFortressViewport.cpp",
+              "DocumentMoniker": "E:\\localization-halflife\\ricochet\\cl_dll\\vgui_TeamFortressViewport.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\cl_dll\\vgui_TeamFortressViewport.cpp",
+              "ToolTip": "E:\\localization-halflife\\ricochet\\cl_dll\\vgui_TeamFortressViewport.cpp*",
+              "RelativeToolTip": "..\\..\\ricochet\\cl_dll\\vgui_TeamFortressViewport.cpp*",
+              "ViewState": "AgIAAHkEAAAAAAAAAAArwIcEAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-19T07:36:25.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "discord_manager.cpp",
+              "DocumentMoniker": "E:\\localization-halflife\\ricochet\\cl_dll\\discord\\discord_manager.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\cl_dll\\discord\\discord_manager.cpp",
+              "ToolTip": "E:\\localization-halflife\\ricochet\\cl_dll\\discord\\discord_manager.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\cl_dll\\discord\\discord_manager.cpp",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAACkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-18T10:35:47.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "cdll_int.cpp",
+              "DocumentMoniker": "E:\\localization-halflife\\ricochet\\cl_dll\\cdll_int.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\cl_dll\\cdll_int.cpp",
+              "ToolTip": "E:\\localization-halflife\\ricochet\\cl_dll\\cdll_int.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\cl_dll\\cdll_int.cpp",
+              "ViewState": "AgIAAPwAAAAAAAAAAAAswAYBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-18T09:01:17.723Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 3,
@@ -35,33 +79,19 @@
               "RelativeDocumentMoniker": "..\\..\\ricochet\\cl_dll\\input.cpp",
               "ToolTip": "E:\\localization-halflife\\ricochet\\cl_dll\\input.cpp",
               "RelativeToolTip": "..\\..\\ricochet\\cl_dll\\input.cpp",
-              "ViewState": "AgIAACgAAAAAAAAAAAAswDEAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAACgAAAAAAAAAAAAswDEAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-18T08:48:53.561Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-18T08:48:53.561Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "pm_shared.c",
-              "DocumentMoniker": "E:\\localization-halflife\\ricochet\\pm_shared\\pm_shared.c",
-              "RelativeDocumentMoniker": "..\\..\\ricochet\\pm_shared\\pm_shared.c",
-              "ToolTip": "E:\\localization-halflife\\ricochet\\pm_shared\\pm_shared.c",
-              "RelativeToolTip": "..\\..\\ricochet\\pm_shared\\pm_shared.c",
-              "ViewState": "AgIAAAIKAAAAAAAAAAAowLcJAAADAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2024-10-18T07:40:22.101Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "hud.cpp",
               "DocumentMoniker": "E:\\localization-halflife\\ricochet\\cl_dll\\hud.cpp",
               "RelativeDocumentMoniker": "..\\..\\ricochet\\cl_dll\\hud.cpp",
               "ToolTip": "E:\\localization-halflife\\ricochet\\cl_dll\\hud.cpp",
               "RelativeToolTip": "..\\..\\ricochet\\cl_dll\\hud.cpp",
-              "ViewState": "AgIAADsBAAAAAAAAAAAAADwBAAAyAAAAAAAAAA==",
+              "ViewState": "AgIAACMBAAAAAAAAAAAnwDwBAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-18T06:59:29.345Z",
               "EditorCaption": ""
@@ -80,13 +110,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 6,
               "Title": "client.cpp",
               "DocumentMoniker": "E:\\localization-halflife\\ricochet\\dlls\\client.cpp",
               "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\client.cpp",
               "ToolTip": "E:\\localization-halflife\\ricochet\\dlls\\client.cpp",
               "RelativeToolTip": "..\\..\\ricochet\\dlls\\client.cpp",
-              "ViewState": "AgIAAPUDAAAAAAAAAAAkwP4DAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAPUDAAAAAAAAAAAIwP4DAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-14T11:07:44.942Z",
               "EditorCaption": ""
