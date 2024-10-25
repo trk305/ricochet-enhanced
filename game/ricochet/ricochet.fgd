@@ -39,7 +39,6 @@
 		0 : "Arena"
 		1 : "Deathmatch"
 	]
-	
 	rpc_chapter(string) : "RPC Chapter" : : "Chapter name to display in Discord."
     rpc_area(string) : "RPC Area" : : "Area name to display in Discord. Shows map file name if empty."
     rpc_image(string) : "RPC Image" : : "Image to display in Discord."

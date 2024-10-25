@@ -1,4 +1,4 @@
-//=========== (C) Copyright 1999 Valve, L.L.C. All rights reserved. ===========
+//=========== (©) Copyright 1999 Valve, L.L.C. All rights reserved. ===========
 //
 // The copyright to the contents herein is the property of Valve, L.L.C.
 // The contents may be used and/or copied only with the written permission of
@@ -231,7 +231,7 @@ bool CCommandMenu::KeyInput(int keyNum)
 				{
 					// run the bound command
 					m_aButtons[i]->fireActionSignal();
-					return false;
+					return true;
 				}
 			}
 		}
@@ -286,10 +286,11 @@ bool CCommandMenu::RecalculateVisibles(int iNewYPos, bool bHideAll)
 	// Cycle through all the buttons in this menu, and see which will be visible
 	for (int i = 0; i < m_iButtons; i++)
 	{
-		int iClass = m_aButtons[i]->GetPlayerClass();
-		if ((iClass && iClass != g_iPlayerClass) || (m_aButtons[i]->IsNotValid()) || bHideAll)
+		//int iClass = m_aButtons[i]->GetPlayerClass();
+		//if ((iClass && iClass != g_iPlayerClass) || 
+		if (m_aButtons[i]->IsNotValid() || bHideAll)
 		{
-			m_aButtons[i]->setVisible(false);
+			m_aButtons[i]->setVisible(true);
 			if (m_aButtons[i]->GetSubMenu() != NULL)
 			{
 				(m_aButtons[i]->GetSubMenu())->RecalculateVisibles(_pos[1] + iCurrentY, true);
@@ -566,7 +567,7 @@ void TeamFortressViewport::Initialize(void)
 
 	// Make sure all menus are hidden
 	HideVGUIMenu();
-	HideCommandMenu();
+	//HideCommandMenu();
 
 	// Clear out some data
 	m_iGotAllMOTD = true;
@@ -1123,13 +1124,13 @@ void TeamFortressViewport::ToggleServerBrowser()
 void TeamFortressViewport::ShowCommandMenu()
 {
 	/*if (!m_iInitialized)
-		return;*/
+		return;
 
 	// Not visible while undefined
 	if (g_iPlayerClass == 0)
 		return;
 
-	/* is the command menu open ?
+	// is the command menu open ?
 	if (m_pCurrentCommandMenu)
 	{
 		HideCommandMenu();
@@ -1175,7 +1176,7 @@ void TeamFortressViewport::InputSignalHideCommandMenu()
 	if ((m_flMenuOpenTime + 0.3) > gHUD.m_flTime)
 		return;
 
-	//HideCommandMenu();
+	HideCommandMenu();
 }
 
 //-----------------------------------------------------------------------------

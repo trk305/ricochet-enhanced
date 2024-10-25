@@ -113,8 +113,8 @@ void set_suicide_frame(entvars_t* pev)
     }
 
     // If the player is using one of the specified models, set the death properties
-   // pev->solid = SOLID_NOT;         // No longer solid (disables collisions)
-    //pev->movetype = MOVETYPE_TOSS;  // Allow the body to move as a ragdoll-like entity
+    pev->solid = SOLID_NOT;         // No longer solid (disables collisions)
+    pev->movetype = MOVETYPE_TOSS;  // Allow the body to move as a ragdoll-like entity
     pev->deadflag = DEAD_DEAD;      // Mark player as officially dead
     pev->nextthink = -1;            // Disable future "thinking" (no updates for this entity)
 }
@@ -315,7 +315,7 @@ void Host_Say( edict_t *pEntity, int teamonly )
 	char	text[128];
 	char    szTemp[256];
 	const char *cpSay = "say";
-	//const char *cpSayTeam = "say_team"; // Ricochet is an FFA game
+	//const char *cpSayTeam = "say_team"; // FFA
 	const char *pcmd = CMD_ARGV(0);
 
 	entvars_t *pev = &pEntity->v;
@@ -724,7 +724,7 @@ void StartFrame( void )
 void ClientPrecache( void )
 {
 	// setup precaches always needed
-	//PRECACHE_SOUND("player/sprayer.wav");			// This is Ricochet, you can't spray.
+	//PRECACHE_SOUND("player/sprayer.wav");			// no spray
 	
 	// PRECACHE_SOUND("player/pl_jumpland2.wav");		// UNDONE: play 2x step sound
 	
@@ -812,7 +812,7 @@ void ClientPrecache( void )
 	PRECACHE_SOUND("player/pl_pain6.wav");
 	PRECACHE_SOUND("player/pl_pain7.wav");
 
-	PRECACHE_MODEL("models/player/female/female.mdl"); // Cut-Content
+	PRECACHE_MODEL("models/player/female/female.mdl");
 	PRECACHE_MODEL("models/player/male/male.mdl");
 
 	// hud sounds
