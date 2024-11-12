@@ -472,7 +472,8 @@ void GameDLLInit( void )
 
 	CVAR_REGISTER (&fragsleft);
 	CVAR_REGISTER (&timeleft);
-
+	CVAR_REGISTER (&enablejump);
+	CVAR_REGISTER (&enablecrouch);
 	CVAR_REGISTER( &allow_spectators );
 
 	// Discwar
@@ -480,8 +481,6 @@ void GameDLLInit( void )
 	CVAR_REGISTER (&rc_playersperteam);
 	CVAR_REGISTER (&rc_arena);
 	CVAR_REGISTER (&rc_powerupsrespawn);
-	CVAR_REGISTER (&enablejump);
-	CVAR_REGISTER (&enablecrouch);
 	CVAR_REGISTER (&friendlyfire);
 	CVAR_REGISTER (&falldamage);
 	CVAR_REGISTER (&weaponstay);

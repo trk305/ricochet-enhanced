@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "E:\\ricochetenhanced\\projects\\vs2019\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\ricochetenhanced\\ricochet\\pm_shared\\pm_shared.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\ricochetenhanced\\ricochet\\dlls\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\ricochetenhanced\\ricochet\\dlls\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\ricochetenhanced\\ricochet\\dlls\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\ricochetenhanced\\ricochet\\pm_shared\\pm_shared.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\ricochetenhanced\\ricochet\\dlls\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\ricochetenhanced\\ricochet\\dlls\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\ricochetenhanced\\ricochet\\dlls\\client.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
@@ -28,7 +28,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
@@ -45,7 +45,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "game.h",
               "DocumentMoniker": "E:\\ricochetenhanced\\ricochet\\dlls\\game.h",
               "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\game.h",
@@ -58,26 +58,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "pm_shared.c",
               "DocumentMoniker": "E:\\ricochetenhanced\\ricochet\\pm_shared\\pm_shared.c",
               "RelativeDocumentMoniker": "..\\..\\ricochet\\pm_shared\\pm_shared.c",
               "ToolTip": "E:\\ricochetenhanced\\ricochet\\pm_shared\\pm_shared.c",
               "RelativeToolTip": "..\\..\\ricochet\\pm_shared\\pm_shared.c",
-              "ViewState": "AgIAAMsHAAAAAAAAAAApwNMHAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAMoHAAAAAAAAAAAQwL8JAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2024-11-12T11:35:26.336Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "player.cpp",
               "DocumentMoniker": "E:\\ricochetenhanced\\ricochet\\dlls\\player.cpp",
               "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\player.cpp",
               "ToolTip": "E:\\ricochetenhanced\\ricochet\\dlls\\player.cpp",
               "RelativeToolTip": "..\\..\\ricochet\\dlls\\player.cpp",
-              "ViewState": "AgIAAFgLAAAAAAAAAAApwGMLAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAFgLAAAAAAAAAAApwGQLAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-12T11:29:32.906Z",
               "EditorCaption": ""
