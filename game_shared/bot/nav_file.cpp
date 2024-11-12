@@ -139,7 +139,7 @@ public:
 	}
 
 	/// load the directory
-	bool Load( SteamFile *file )
+	void Load( SteamFile *file )
 	{
 		// read number of entries
 		EntryType count;
@@ -153,19 +153,10 @@ public:
 		for( int i=0; i<count; ++i )
 		{
 			file->Read( &len, sizeof(unsigned short) );
-			if ( len >= sizeof( placeName ) )
-			{
-				assert( false && "PlaceDirectory::Load: Invalid placeName size" );
-				return false;
-			}
-
 			file->Read( placeName, len );
-			placeName[ sizeof( placeName ) - 1 ] = '\0';
 
 			AddPlace( TheBotPhrases->NameToID( placeName ) );
 		}
-
-		return true;
 	}
 
 private:
@@ -1022,11 +1013,7 @@ NavErrorType LoadNavigationMap( void )
 	// load Place directory
 	if (version >= 5)
 	{
-		if ( !placeDirectory.Load( &navFile ) )
-		{
-			CONSOLE_ECHO( "ERROR: Invalid navigation file '%s'.\n", filename );
-			return NAV_INVALID_FILE;
-		}
+		placeDirectory.Load( &navFile );
 	}
 
 	// get number of areas

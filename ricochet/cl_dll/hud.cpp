@@ -220,13 +220,13 @@ void CHud :: Init( void )
 	HOOK_MESSAGE( Frozen );
 
 	HOOK_COMMAND( "+commandmenu", OpenCommandMenu );
-	HOOK_COMMAND("-commandmenu", CloseCommandMenu);
+	HOOK_COMMAND( "-commandmenu", CloseCommandMenu );
 
 	m_iLogo = 0;
 	m_iFOV = 0;
 
-	CVAR_CREATE( "zoom_sensitivity_ratio", "1.2", FCVAR_ARCHIVE );
-	default_fov = CVAR_CREATE( "default_fov", "90", FCVAR_ARCHIVE );
+	CVAR_CREATE( "zoom_sensitivity_ratio", "1.2", 0 );
+	default_fov = CVAR_CREATE( "default_fov", "90", 0 );
 	m_pCvarStealMouse = CVAR_CREATE( "hud_capturemouse", "1", FCVAR_ARCHIVE );
 	cl_lw = gEngfuncs.pfnGetCvarPointer( "cl_lw" );
 
@@ -312,7 +312,7 @@ int CHud :: GetSpriteIndex( const char *SpriteName )
 
 void CHud :: VidInit( void )
 {
-	gEngfuncs.Con_Printf("Unloading the grenade viewmodel...\n");
+	gEngfuncs.Con_Printf("Fixing the grenade viewmodel...\n");
 	gEngfuncs.Cvar_SetValue("r_drawviewmodel", 1.0f);
 	gEngfuncs.Cvar_SetValue("r_drawviewmodel", 0.0f);
 	m_scrinfo.iSize = sizeof(m_scrinfo);

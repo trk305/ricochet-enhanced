@@ -1,24 +1,24 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\localization-halflife\\projects\\vs2019\\",
+  "WorkspaceRootPath": "E:\\ricochetenhanced\\projects\\vs2019\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\localization-halflife\\ricochet\\dlls\\multiplay_gamerules.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\ricochetenhanced\\ricochet\\pm_shared\\pm_shared.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\localization-halflife\\ricochet\\dlls\\client.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\ricochetenhanced\\ricochet\\dlls\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA7DE935-F997-4EA8-9135-E2FE5E5D2C1B}|ricochet_cdll.vcxproj|E:\\localization-halflife\\ricochet\\cl_dll\\input.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\ricochetenhanced\\ricochet\\dlls\\game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA7DE935-F997-4EA8-9135-E2FE5E5D2C1B}|ricochet_cdll.vcxproj|E:\\localization-halflife\\ricochet\\cl_dll\\cdll_int.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\ricochetenhanced\\ricochet\\dlls\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\localization-halflife\\ricochet\\dlls\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\ricochetenhanced\\ricochet\\dlls\\client.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EA7DE935-F997-4EA8-9135-E2FE5E5D2C1B}|ricochet_cdll.vcxproj|E:\\localization-halflife\\ricochet\\cl_dll\\hud.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|E:\\ricochetenhanced\\ricochet\\dlls\\discwar.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,80 +28,84 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "multiplay_gamerules.cpp",
-              "DocumentMoniker": "E:\\localization-halflife\\ricochet\\dlls\\multiplay_gamerules.cpp",
-              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\multiplay_gamerules.cpp",
-              "ToolTip": "E:\\localization-halflife\\ricochet\\dlls\\multiplay_gamerules.cpp",
-              "RelativeToolTip": "..\\..\\ricochet\\dlls\\multiplay_gamerules.cpp",
-              "ViewState": "AgIAAMEFAAAAAAAAAAAAAM0FAAA3AAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "game.cpp",
+              "DocumentMoniker": "E:\\ricochetenhanced\\ricochet\\dlls\\game.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\game.cpp",
+              "ToolTip": "E:\\ricochetenhanced\\ricochet\\dlls\\game.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\dlls\\game.cpp",
+              "ViewState": "AgIAANkBAAAAAAAAAAAQwOMBAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-25T11:46:59.305Z",
+              "WhenOpened": "2024-11-12T11:39:06.05Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "game.h",
+              "DocumentMoniker": "E:\\ricochetenhanced\\ricochet\\dlls\\game.h",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\game.h",
+              "ToolTip": "E:\\ricochetenhanced\\ricochet\\dlls\\game.h",
+              "RelativeToolTip": "..\\..\\ricochet\\dlls\\game.h",
+              "ViewState": "AgIAABgAAAAAAAAAAAApwCIAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-12T11:38:49.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "pm_shared.c",
+              "DocumentMoniker": "E:\\ricochetenhanced\\ricochet\\pm_shared\\pm_shared.c",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\pm_shared\\pm_shared.c",
+              "ToolTip": "E:\\ricochetenhanced\\ricochet\\pm_shared\\pm_shared.c",
+              "RelativeToolTip": "..\\..\\ricochet\\pm_shared\\pm_shared.c",
+              "ViewState": "AgIAALAJAAAAAAAAAAAQwLcJAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2024-11-12T11:35:26.336Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "cdll_int.cpp",
-              "DocumentMoniker": "E:\\localization-halflife\\ricochet\\cl_dll\\cdll_int.cpp",
-              "RelativeDocumentMoniker": "..\\..\\ricochet\\cl_dll\\cdll_int.cpp",
-              "ToolTip": "E:\\localization-halflife\\ricochet\\cl_dll\\cdll_int.cpp",
-              "RelativeToolTip": "..\\..\\ricochet\\cl_dll\\cdll_int.cpp",
-              "ViewState": "AgIAAP8AAAAAAAAAAAAswAYBAAABAAAAAAAAAA==",
+              "Title": "player.cpp",
+              "DocumentMoniker": "E:\\ricochetenhanced\\ricochet\\dlls\\player.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\player.cpp",
+              "ToolTip": "E:\\ricochetenhanced\\ricochet\\dlls\\player.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\dlls\\player.cpp",
+              "ViewState": "AgIAAFgLAAAAAAAAAAApwGMLAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-18T09:01:17.723Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "input.cpp",
-              "DocumentMoniker": "E:\\localization-halflife\\ricochet\\cl_dll\\input.cpp",
-              "RelativeDocumentMoniker": "..\\..\\ricochet\\cl_dll\\input.cpp",
-              "ToolTip": "E:\\localization-halflife\\ricochet\\cl_dll\\input.cpp",
-              "RelativeToolTip": "..\\..\\ricochet\\cl_dll\\input.cpp",
-              "ViewState": "AgIAACgAAAAAAAAAAAAswDEAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-18T08:48:53.561Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "hud.cpp",
-              "DocumentMoniker": "E:\\localization-halflife\\ricochet\\cl_dll\\hud.cpp",
-              "RelativeDocumentMoniker": "..\\..\\ricochet\\cl_dll\\hud.cpp",
-              "ToolTip": "E:\\localization-halflife\\ricochet\\cl_dll\\hud.cpp",
-              "RelativeToolTip": "..\\..\\ricochet\\cl_dll\\hud.cpp",
-              "ViewState": "AgIAACMBAAAAAAAAAAAnwDwBAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-18T06:59:29.345Z"
+              "WhenOpened": "2024-11-12T11:29:32.906Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "player.cpp",
-              "DocumentMoniker": "E:\\localization-halflife\\ricochet\\dlls\\player.cpp",
-              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\player.cpp",
-              "ToolTip": "E:\\localization-halflife\\ricochet\\dlls\\player.cpp",
-              "RelativeToolTip": "..\\..\\ricochet\\dlls\\player.cpp",
-              "ViewState": "AgIAAE0HAAAAAAAAAAAowFwHAAACAAAAAAAAAA==",
+              "Title": "client.cpp",
+              "DocumentMoniker": "E:\\ricochetenhanced\\ricochet\\dlls\\client.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\client.cpp",
+              "ToolTip": "E:\\ricochetenhanced\\ricochet\\dlls\\client.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\dlls\\client.cpp",
+              "ViewState": "AgIAAMEBAAAAAAAAAAAkwNUBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-14T13:53:12.996Z"
+              "WhenOpened": "2024-11-12T11:17:40.357Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "client.cpp",
-              "DocumentMoniker": "E:\\localization-halflife\\ricochet\\dlls\\client.cpp",
-              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\client.cpp",
-              "ToolTip": "E:\\localization-halflife\\ricochet\\dlls\\client.cpp",
-              "RelativeToolTip": "..\\..\\ricochet\\dlls\\client.cpp",
-              "ViewState": "AgIAAC8BAAAAAAAAAAAAAD0BAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-09-14T11:07:44.942Z",
+              "DocumentIndex": 5,
+              "Title": "discwar.h",
+              "DocumentMoniker": "E:\\ricochetenhanced\\ricochet\\dlls\\discwar.h",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\discwar.h",
+              "ToolTip": "E:\\ricochetenhanced\\ricochet\\dlls\\discwar.h",
+              "RelativeToolTip": "..\\..\\ricochet\\dlls\\discwar.h",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-12T11:01:19.476Z",
               "EditorCaption": ""
             }
           ]

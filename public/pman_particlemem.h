@@ -5,8 +5,6 @@
 #pragma once
 #endif
 
-#undef min
-#undef max
 #include <vector>
 
 class CCoreTriangleEffect;

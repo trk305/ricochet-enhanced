@@ -1,6 +1,6 @@
 /*
   Simple DirectMedia Layer
-  Copyright (C) 1997-2022 Sam Lantinga <slouken@libsdl.org>
+  Copyright (C) 1997-2013 Sam Lantinga <slouken@libsdl.org>
 
   This software is provided 'as-is', without any express or implied
   warranty.  In no event will the authors be held liable for any damages
@@ -21,36 +21,38 @@
 
 /**
  *  \file SDL_test_assert.h
- *
+ *  
  *  Include file for SDL test framework.
  *
  *  This code is a part of the SDL2_test library, not the main SDL library.
  */
 
-/*
+/* 
  *
  * Assert API for test code and test cases
  *
  */
 
-#ifndef SDL_test_assert_h_
-#define SDL_test_assert_h_
+#ifndef _SDL_test_assert_h
+#define _SDL_test_assert_h
 
 #include "begin_code.h"
 /* Set up for C function definitions, even when using C++ */
 #ifdef __cplusplus
+/* *INDENT-OFF* */
 extern "C" {
+/* *INDENT-ON* */
 #endif
 
 /**
  * \brief Fails the assert.
  */
-#define ASSERT_FAIL     0
+#define ASSERT_FAIL		0
 
 /**
  * \brief Passes the assert.
  */
-#define ASSERT_PASS     1
+#define ASSERT_PASS		1
 
 /**
  * \brief Assert that logs and break execution flow on failures.
@@ -58,7 +60,7 @@ extern "C" {
  * \param assertCondition Evaluated condition or variable to assert; fail (==0) or pass (!=0).
  * \param assertDescription Message to log with the assert describing it.
  */
-void SDLTest_Assert(int assertCondition, SDL_PRINTF_FORMAT_STRING const char *assertDescription, ...) SDL_PRINTF_VARARG_FUNC(2);
+void SDLTest_Assert(int assertCondition, const char *assertDescription, ...);
 
 /**
  * \brief Assert for test cases that logs but does not break execution flow on failures. Updates assertion counters.
@@ -66,26 +68,26 @@ void SDLTest_Assert(int assertCondition, SDL_PRINTF_FORMAT_STRING const char *as
  * \param assertCondition Evaluated condition or variable to assert; fail (==0) or pass (!=0).
  * \param assertDescription Message to log with the assert describing it.
  *
- * \returns the assertCondition so it can be used to externally to break execution flow if desired.
+ * \returns Returns the assertCondition so it can be used to externally to break execution flow if desired.
  */
-int SDLTest_AssertCheck(int assertCondition, SDL_PRINTF_FORMAT_STRING const char *assertDescription, ...) SDL_PRINTF_VARARG_FUNC(2);
+int SDLTest_AssertCheck(int assertCondition, const char *assertDescription, ...);
 
 /**
- * \brief Explicitly pass without checking an assertion condition. Updates assertion counter.
+ * \brief Explicitely pass without checking an assertion condition. Updates assertion counter.
  *
  * \param assertDescription Message to log with the assert describing it.
  */
-void SDLTest_AssertPass(SDL_PRINTF_FORMAT_STRING const char *assertDescription, ...) SDL_PRINTF_VARARG_FUNC(1);
+void SDLTest_AssertPass(const char *assertDescription, ...);
 
 /**
  * \brief Resets the assert summary counters to zero.
  */
-void SDLTest_ResetAssertSummary(void);
+void SDLTest_ResetAssertSummary();
 
 /**
  * \brief Logs summary of all assertions (total, pass, fail) since last reset as INFO or ERROR.
  */
-void SDLTest_LogAssertSummary(void);
+void SDLTest_LogAssertSummary();
 
 
 /**
@@ -93,13 +95,15 @@ void SDLTest_LogAssertSummary(void);
  *
  * \returns TEST_RESULT_PASSED, TEST_RESULT_FAILED, or TEST_RESULT_NO_ASSERT
  */
-int SDLTest_AssertSummaryToTestResult(void);
+int SDLTest_AssertSummaryToTestResult();
 
 #ifdef __cplusplus
+/* *INDENT-OFF* */
 }
+/* *INDENT-ON* */
 #endif
 #include "close_code.h"
 
-#endif /* SDL_test_assert_h_ */
+#endif /* _SDL_test_assert_h */
 
 /* vi: set ts=4 sw=4 expandtab: */

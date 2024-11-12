@@ -104,20 +104,17 @@ void LinkUserMessages( void );
  * ROBIN: Moved here from player.cpp, to allow multiple player models
  */
 void set_suicide_frame(entvars_t* pev)
-{
-    // Check if the player's model is not "female.mdl" or "male.mdl", exit if not
-    if (!(FStrEq(STRING(pev->model), "models/player/female/female.mdl") || 
-          FStrEq(STRING(pev->model), "models/player/male/male.mdl")))
-    {
-        return; // Not one of the specific models, no gibbing will happen
-    }
+{       
+	if ( !FStrEq(STRING(pev->model), "models/player/female/female.mdl") && !FStrEq(STRING(pev->model), "models/player/male/male.mdl") )
+		return; // allready gibbed
 
-    // If the player is using one of the specified models, set the death properties
-    pev->solid = SOLID_NOT;         // No longer solid (disables collisions)
-    pev->movetype = MOVETYPE_TOSS;  // Allow the body to move as a ragdoll-like entity
-    pev->deadflag = DEAD_DEAD;      // Mark player as officially dead
-    pev->nextthink = -1;            // Disable future "thinking" (no updates for this entity)
+//	pev->frame		= $deatha11;
+	pev->solid		= SOLID_NOT;
+	pev->movetype	= MOVETYPE_TOSS;
+	pev->deadflag	= DEAD_DEAD;
+	pev->nextthink	= -1;
 }
+
 
 /*
 ===========
@@ -155,14 +152,6 @@ void ClientDisconnect( edict_t *pEntity )
 
 	if (g_fGameOver)
 		return;
-
-//	char text[256];
-//	sprintf( text, "- %s has left the game\n", STRING(pEntity->v.netname) );
-//	MESSAGE_BEGIN( MSG_BROADCAST, gmsgSayText, NULL );
-//		WRITE_BYTE( ENTINDEX(pEntity) );
-//		WRITE_STRING( text );
-//	MESSAGE_END();
-
 	// notify other clients the player has left
 	UTIL_ClientPrintAll( HUD_PRINTNOTIFY, "#Game_disconnected", STRING(pEntity->v.netname) );
 
@@ -325,7 +314,7 @@ void Host_Say( edict_t *pEntity, int teamonly )
 	if ( CMD_ARGC() == 0 )
 		return;
 
-	if ( !stricmp( pcmd, cpSay) )
+	if ( !stricmp( pcmd, cpSay))
 	{
 		if ( CMD_ARGC() >= 2 )
 		{
@@ -372,7 +361,7 @@ void Host_Say( edict_t *pEntity, int teamonly )
 		return;  // no character found, so say nothing
 
 // turn on color set 2  (color on,  no sound)
-    sprintf( text, "%c%s: ", 2, STRING( pEntity->v.netname ) );
+	sprintf( text, "%c%s: ", 2, STRING( pEntity->v.netname ) );
 
 	j = sizeof(text) - 2 - strlen(text);  // -2 for /n and null terminator
 	if ( (int)strlen(p) > j )
@@ -437,6 +426,8 @@ ClientCommand
 called each time a player uses a "cmd" command
 ============
 */
+extern float g_flWeaponCheat;
+
 // Use CMD_ARGV,  CMD_ARGV, and CMD_ARGC to get pointers the character string command.
 void ClientCommand( edict_t *pEntity )
 {
@@ -459,8 +450,23 @@ void ClientCommand( edict_t *pEntity )
 		if ( allow_spectators.value )
 		{
 			CBasePlayer *pPlayer = GetClassPtr((CBasePlayer *)pev);
-			edict_t *pentSpawnSpot = EntSelectSpawnPoint( pPlayer );
-			pPlayer->StartObserver( VARS(pentSpawnSpot)->origin, VARS(pentSpawnSpot)->angles);
+			if (!(pPlayer->pev->flags & FL_SPECTATOR)) {
+				if (pPlayer->m_pCurrentArena) {
+					pPlayer->m_pCurrentArena->BattleOver();
+					pPlayer->m_pCurrentArena->RemoveClient(pPlayer);
+					pPlayer->m_pCurrentArena = NULL;
+				}
+				edict_t* pentSpawnSpot = EntSelectSpawnPoint(pPlayer);
+				pPlayer->StartObserver(VARS(pentSpawnSpot)->origin, VARS(pentSpawnSpot)->angles);
+				pPlayer->pev->flags |= FL_SPECTATOR;
+			}
+			else if (pPlayer->pev->flags & FL_SPECTATOR) {
+				pPlayer->pev->flags &= FL_SPECTATOR;
+				if (InArenaMode())
+					AddClientToArena(pPlayer);
+				else
+					pPlayer->StopObserver();
+			}
 		}
 	}
 
@@ -482,7 +488,7 @@ void ClientCommand( edict_t *pEntity )
 
 	else if ( FStrEq(pcmd, "give" ) )
 	{
-		if ( CVAR_GET_FLOAT( "sv_cheats" ) != 0.0)
+		if ( g_flWeaponCheat != 0.0)
 		{
 			int iszItem = ALLOC_STRING( CMD_ARGV(1) );	// Make a copy of the classname
 			GetClassPtr((CBasePlayer *)pev)->GiveNamedItem( STRING(iszItem) );
@@ -496,7 +502,7 @@ void ClientCommand( edict_t *pEntity )
 	}
 	else if ( FStrEq(pcmd, "fov" ) )
 	{
-		if ( CVAR_GET_FLOAT( "sv_cheats" ) && CMD_ARGC() > 1)
+		if ( g_flWeaponCheat && CMD_ARGC() > 1)
 		{
 			GetClassPtr((CBasePlayer *)pev)->m_iFOV = atoi( CMD_ARGV(1) );
 		}
@@ -589,7 +595,7 @@ void ClientUserInfoChanged( edict_t *pEntity, char *infobuffer )
 	/* Override model
 	if ( (!strcmp( "models/player/female/female.mdl", g_engfuncs.pfnInfoKeyValue( infobuffer, "model" ) )) )//&& (!strcmp( "models/player/hgrunt/hgrunt.mdl" )) )
 		SET_MODEL( pEntity, "models/player/male/male.mdl" );
-	g_engfuncs.pfnSetClientKeyValue( ENTINDEX( pEntity ), infobuffer, "model", "male" ); */
+	g_engfuncs.pfnSetClientKeyValue( ENTINDEX( pEntity ), infobuffer, "model", "male" );*/
 
 	// Set colors
 	int iHue = GetHueFromRGB( g_iaDiscColors[ pEntity->v.team][0] / 255, g_iaDiscColors[pEntity->v.team][1] / 255, g_iaDiscColors[pEntity->v.team][2] / 255 );
@@ -724,7 +730,7 @@ void StartFrame( void )
 void ClientPrecache( void )
 {
 	// setup precaches always needed
-	//PRECACHE_SOUND("player/sprayer.wav");			// no spray
+	PRECACHE_SOUND("player/sprayer.wav");			// spray paint sound for PreAlpha
 	
 	// PRECACHE_SOUND("player/pl_jumpland2.wav");		// UNDONE: play 2x step sound
 	
@@ -812,7 +818,7 @@ void ClientPrecache( void )
 	PRECACHE_SOUND("player/pl_pain6.wav");
 	PRECACHE_SOUND("player/pl_pain7.wav");
 
-	PRECACHE_MODEL("models/player/female/female.mdl");
+	//PRECACHE_MODEL("models/player/female/female.mdl");
 	PRECACHE_MODEL("models/player/male/male.mdl");
 
 	// hud sounds
@@ -1184,12 +1190,6 @@ int AddToFullPack( struct entity_state_s *state, int e, edict_t *ent, edict_t *h
 		state->health		= ent->v.health;
 	}
 
-	CBaseEntity	*pEntity = static_cast<CBaseEntity*>( GET_PRIVATE( ent ) );
-	if ( pEntity && pEntity->Classify() != CLASS_NONE && pEntity->Classify() != CLASS_MACHINE )
-		state->eflags |= EFLAG_FLESH_SOUND;
-	else
-		state->eflags &= ~EFLAG_FLESH_SOUND;
-
 	return 1;
 }
 
@@ -1545,9 +1545,9 @@ int GetWeaponData( struct edict_s *player, struct weapon_data_s *info )
 						item->m_iId						= II.iId;
 						item->m_iClip					= pl->m_rgAmmo[gun->m_iPrimaryAmmoType];//gun->m_iClip;
 
-						item->m_flTimeWeaponIdle		= max( gun->m_flTimeWeaponIdle, -0.001f );
-						item->m_flNextPrimaryAttack		= max( gun->m_flNextPrimaryAttack, -0.001f );
-						item->m_flNextSecondaryAttack	= max( gun->m_flNextSecondaryAttack, -0.001f );
+						item->m_flTimeWeaponIdle		= max( gun->m_flTimeWeaponIdle, -0.001 );
+						item->m_flNextPrimaryAttack		= max( gun->m_flNextPrimaryAttack, -0.001 );
+						item->m_flNextSecondaryAttack	= max( gun->m_flNextSecondaryAttack, -0.001 );
 						item->m_fInReload				= gun->m_fInReload;
 					}
 				}

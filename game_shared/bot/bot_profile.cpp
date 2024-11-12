@@ -1,4 +1,4 @@
-//========= Copyright Â© 1996-2002, Valve LLC, All rights reserved. ============
+//========= Copyright © 1996-2002, Valve LLC, All rights reserved. ============
 //
 // Purpose: 
 //
@@ -364,8 +364,7 @@ void BotProfileManager::Init( const char *filename, unsigned int *checksum )
 
 			// found attribute name - keep it
 			char attributeName[64];
-			strncpy( attributeName, token, sizeof( attributeName ) - 1 );
-			attributeName[ sizeof( attributeName ) - 1 ] = '\0';
+			strcpy( attributeName, token );
 
 			// eat '='
 			dataFile = SharedParse( dataFile );

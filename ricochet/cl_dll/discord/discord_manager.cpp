@@ -23,7 +23,7 @@ static void HandleDiscordSpectate(const char* secret) {}
 static void HandleDiscordJoinRequest(const DiscordUser* request) {}
 
 // Default logo to use as a fallback
-const char* defaultLogo = "logo";
+const char* defaultLogo = "logo.png";
 
 void DiscordMan_Startup(void)
 {

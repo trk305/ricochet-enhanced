@@ -30,7 +30,9 @@ cvar_t  allow_spectators = { "allow_spectators", "1.0", FCVAR_SERVER };		// 0 pr
 cvar_t	rc_rounds			= {"rc_rounds", "3",  FCVAR_SERVER | FCVAR_UNLOGGED };
 cvar_t	rc_playersperteam	= {"rc_playersperteam", "1",  FCVAR_SERVER | FCVAR_UNLOGGED };
 cvar_t	rc_arena			= {"rc_arena", "1",  FCVAR_SERVER | FCVAR_UNLOGGED };
-
+cvar_t  rc_powerupsrespawn = { "rc_powerupsrespawn", "10", FCVAR_SERVER | FCVAR_UNLOGGED };
+cvar_t  enablecrouch = { "rc_enablecrouch", "0", FCVAR_SERVER | FCVAR_UNLOGGED };
+cvar_t  enablejump = { "rc_enablejump", "0", FCVAR_SERVER | FCVAR_UNLOGGED };
 // multiplayer server rules
 cvar_t	teamplay	= {"mp_teamplay","0", FCVAR_SERVER };
 cvar_t	fraglimit	= {"mp_fraglimit","0", FCVAR_SERVER };
@@ -453,8 +455,6 @@ cvar_t	sk_player_leg3	= { "sk_player_leg3","1" };
 
 // END Cvars for Skill Level settings
 
-cvar_t sv_pushable_fixed_tick_fudge = { "sv_pushable_fixed_tick_fudge", "15" };
-
 // Register your console variables here
 // This gets called one time when the game is initialied
 void GameDLLInit( void )
@@ -479,7 +479,9 @@ void GameDLLInit( void )
 	CVAR_REGISTER (&rc_rounds);
 	CVAR_REGISTER (&rc_playersperteam);
 	CVAR_REGISTER (&rc_arena);
-
+	CVAR_REGISTER (&rc_powerupsrespawn);
+	CVAR_REGISTER (&enablejump);
+	CVAR_REGISTER (&enablecrouch);
 	CVAR_REGISTER (&friendlyfire);
 	CVAR_REGISTER (&falldamage);
 	CVAR_REGISTER (&weaponstay);
@@ -892,8 +894,6 @@ void GameDLLInit( void )
 	CVAR_REGISTER ( &sk_player_leg2 );
 	CVAR_REGISTER ( &sk_player_leg3 );
 // END REGISTER CVARS FOR SKILL LEVEL STUFF
-
-	CVAR_REGISTER ( &sv_pushable_fixed_tick_fudge );
 
 	SERVER_COMMAND( "exec skill.cfg\n" );
 }

@@ -50,6 +50,8 @@ CBaseEntity
 #include "monsterevent.h"
 #endif
 
+#include "Platform.h"
+
 // C functions for external declarations that call the appropriate C++ methods
 
 #ifndef CBASE_DLLEXPORT
@@ -58,10 +60,6 @@ CBaseEntity
 #else
 #define CBASE_DLLEXPORT __attribute__ ((visibility("default")))
 #endif
-#endif
-
-#if defined EXPORT
-#undef EXPORT
 #endif
 
 #define EXPORT CBASE_DLLEXPORT
@@ -806,7 +804,6 @@ public:
 	virtual int        Save(CSave& save);
 	virtual int        Restore(CRestore& restore);
 	static    TYPEDESCRIPTION m_SaveData[];
-
 	string_t m_iszChapter;
 	string_t m_iszArea;
 	string_t m_iszImage;

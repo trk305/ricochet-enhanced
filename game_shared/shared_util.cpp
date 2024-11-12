@@ -203,7 +203,7 @@ skipwhite:
 	if (c == s_shared_quote)
 	{
 		data++;
-		while (len < sizeof( s_shared_token ) - 1)
+		while (1)
 		{
 			c = *data++;
 			if (c==s_shared_quote || !c)
@@ -217,31 +217,24 @@ skipwhite:
 	}
 
 // parse single characters
-	if (len < sizeof( s_shared_token ) - 1)
+	if (c=='{' || c=='}'|| c==')'|| c=='(' || c=='\'' || c == ',' )
 	{
-		if (c=='{' || c=='}'|| c==')'|| c=='(' || c=='\'' || c == ',' )
-		{
-			s_shared_token[len] = c;
-			len++;
-			s_shared_token[len] = 0;
-			return data+1;
-		}
+		s_shared_token[len] = c;
+		len++;
+		s_shared_token[len] = 0;
+		return data+1;
 	}
 
 // parse a regular word
-	while (len < sizeof( s_shared_token ) - 1)
+	do
 	{
 		s_shared_token[len] = c;
 		data++;
 		len++;
 		c = *data;
-
-		if (c=='{' || c=='}'|| c==')'|| c=='(' || c=='\'' || c == ',' )
+	if (c=='{' || c=='}'|| c==')'|| c=='(' || c=='\'' || c == ',' )
 			break;
-
-		if (c <= 32)
-			break;
-	}
+	} while (c>32);
 	
 	s_shared_token[len] = 0;
 	return data;

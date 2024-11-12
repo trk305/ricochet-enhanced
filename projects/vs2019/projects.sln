@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.11.35222.181
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ricochetdll", "ricochetdll.vcxproj", "{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}"
 EndProject
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {A85E68C0-A79E-4F65-A56B-3057E4E85856}
+		SolutionGuid = {F7E52B0F-5C26-4CE1-BFF5-300B954535D6}
 	EndGlobalSection
 EndGlobal

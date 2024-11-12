@@ -1282,7 +1282,8 @@ void SENTENCEG_Init()
 	isentencegs = -1;
 
 	
-	int filePos = 0, fileSize;
+	int filePos = 0;
+	int fileSize = 0;
 	byte *pMemFile = g_engfuncs.pfnLoadFileForMe( "sound/sentences.txt", &fileSize );
 	if ( !pMemFile )
 		return;
@@ -1544,8 +1545,7 @@ void TEXTURETYPE_Init()
 	char buffer[512];
 	int i, j;
 	byte *pMemFile;
-	int fileSize = 0;
-	int filePos = 0;
+	int fileSize, filePos;
 
 	if (fTextureTypeInit)
 		return;

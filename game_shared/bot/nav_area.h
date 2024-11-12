@@ -5,8 +5,6 @@
 #ifndef _NAV_AREA_H_
 #define _NAV_AREA_H_
 
-#undef min
-#undef max
 #include <list>
 #include "nav.h"
 #include "steam_util.h"

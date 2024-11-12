@@ -284,8 +284,8 @@ void CGameStudioModelRenderer::StudioEstimateGait( entity_state_t *pplayer )
 	vec3_t est_velocity;
 
 	dt = (m_clTime - m_clOldTime);
-	dt = max( 0.0f, dt );
-	dt = min( 1.0f, dt );
+	dt = max( 0.0, dt );
+	dt = min( 1.0, dt );
 
 	if (dt == 0 || m_pPlayerInfo->renderframe == m_nFrameCount)
 	{
@@ -360,8 +360,8 @@ void CGameStudioModelRenderer::StudioProcessGait( entity_state_t *pplayer )
 	m_pCurrentEntity->latched.prevangles[PITCH] = m_pCurrentEntity->angles[PITCH];
 
 	dt = (m_clTime - m_clOldTime);
-	dt = max( 0.0f, dt );
-	dt = min( 1.0f, dt );
+	dt = max( 0.0, dt );
+	dt = min( 1.0, dt );
 
 	StudioEstimateGait( pplayer );
 
@@ -395,8 +395,8 @@ void CGameStudioModelRenderer::StudioProcessGait( entity_state_t *pplayer )
 	}
 
 	float blend_yaw = ( flYaw / 90.0 ) * 128.0 + 127.0;
-	blend_yaw = min( 255.0f, blend_yaw );
-	blend_yaw = max( 0.0f, blend_yaw );
+	blend_yaw = min( 255.0, blend_yaw );
+	blend_yaw = max( 0.0, blend_yaw );
 	
 	blend_yaw = 255.0 - blend_yaw;
 
@@ -962,7 +962,7 @@ HUD_GetStudioModelInterface
 Export this function for the engine to use the studio renderer class to render objects.
 ====================
 */
-extern "C" int EXPORT HUD_GetStudioModelInterface( int version, struct r_studio_interface_s **ppinterface, struct engine_studio_api_s *pstudio )
+extern "C" int DLLEXPORT HUD_GetStudioModelInterface( int version, struct r_studio_interface_s **ppinterface, struct engine_studio_api_s *pstudio )
 {
 	if ( version != STUDIO_INTERFACE_VERSION )
 		return 0;

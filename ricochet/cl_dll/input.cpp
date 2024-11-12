@@ -29,11 +29,10 @@ extern "C"
 #include <string.h>
 #include <ctype.h>
 // jay - discord rpc
-#include "discord_manager.h"
+#include "discord/discord_manager.h"
 cvar_t* rpc_chapter;
 cvar_t* rpc_area;
 cvar_t* rpc_image;
-
 #include "vgui_TeamFortressViewport.h"
 #include "vgui_discobjects.h"
 
@@ -45,10 +44,10 @@ cvar_t* rpc_image;
 
 extern "C" 
 {
-	struct kbutton_s EXPORT *KB_Find( const char *name );
-	void EXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int active );
-	void EXPORT HUD_Shutdown( void );
-	int EXPORT HUD_Key_Event( int eventcode, int keynum, const char *pszCurrentBinding );
+	struct kbutton_s DLLEXPORT*KB_Find( const char *name );
+	void DLLEXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int active );
+	void DLLEXPORT HUD_Shutdown( void );
+	int DLLEXPORT HUD_Key_Event( int eventcode, int keynum, const char *pszCurrentBinding );
 }
 
 extern int g_weaponselect;
@@ -229,7 +228,7 @@ KB_Find
 Allows the engine to get a kbutton_t directly ( so it can check +mlook state, etc ) for saving out to .cfg files
 ============
 */
-struct kbutton_s EXPORT *KB_Find( const char *name )
+struct kbutton_s DLLEXPORT*KB_Find( const char *name )
 {
 	kblist_t *p;
 	p = g_kbkeys;
@@ -384,7 +383,7 @@ HUD_Key_Event
 Return 1 to allow engine to process the key, otherwise, act on it as needed
 ============
 */
-int EXPORT HUD_Key_Event( int down, int keynum, const char *pszCurrentBinding )
+int DLLEXPORT HUD_Key_Event( int down, int keynum, const char *pszCurrentBinding )
 {
 	if (gViewPort)
 		return gViewPort->KeyInput(down, keynum, pszCurrentBinding);
@@ -620,7 +619,7 @@ if active == 1 then we are 1) not playing back demos ( where our commands are ig
 2 ) we have finished signing on to server
 ================
 */
-void EXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int active )
+void DLLEXPORT CL_CreateMove ( float frametime, struct usercmd_s *cmd, int active )
 {	
 	float spd;
 	vec3_t viewangles;
@@ -959,10 +958,9 @@ void InitInput (void)
 	m_side				= gEngfuncs.pfnRegisterVariable ( "m_side","0.8", FCVAR_ARCHIVE );
 	// jay - discord rpc
 	gEngfuncs.Con_Printf("Initializing Discord RPC CVars\n");
-	rpc_chapter = gEngfuncs.pfnRegisterVariable("rpc_chapter", "", FCVAR_CLIENTDLL);
+	rpc_chapter = gEngfuncs.pfnRegisterVariable("rpc_chapter", "Fighting Ricodudes", FCVAR_CLIENTDLL);
 	rpc_area = gEngfuncs.pfnRegisterVariable("rpc_area", "", FCVAR_CLIENTDLL);
 	rpc_image = gEngfuncs.pfnRegisterVariable("rpc_image", "", FCVAR_CLIENTDLL);
-
 	// Initialize third person camera controls.
 	CAM_Init();
 	// Initialize inputs
@@ -989,7 +987,7 @@ void ShutdownInput (void)
 
 #include "interface.h"
 
-void EXPORT HUD_Shutdown( void )
+void DLLEXPORT HUD_Shutdown( void )
 {
 	// jay - discord rpc
 	gEngfuncs.Con_Printf("Shutting down Discord RPC");

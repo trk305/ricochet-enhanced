@@ -20,7 +20,6 @@
 
 #include "hud.h"
 #include "cl_util.h"
-#include "commonmacros.h"
 #include <string.h>
 #include <stdio.h>
 #include "parsemsg.h"
@@ -144,13 +143,13 @@ void CHudMessage::MessageScanNextChar( void )
 	srcGreen = m_parms.pMessage->g1;
 	srcBlue = m_parms.pMessage->b1;
 	blend = 0;	// Pure source
+	destRed = destGreen = destBlue = 0;
 
 	switch( m_parms.pMessage->effect )
 	{
 	// Fade-in / Fade-out
 	case 0:
 	case 1:
-		destRed = destGreen = destBlue = 0;
 		blend = m_parms.fadeBlend;
 		break;
 
@@ -165,7 +164,6 @@ void CHudMessage::MessageScanNextChar( void )
 		{
 			float deltaTime = m_parms.time - m_parms.charTime;
 
-			destRed = destGreen = destBlue = 0;
 			if ( m_parms.time > m_parms.fadeTime )
 			{
 				blend = m_parms.fadeBlend;
@@ -283,7 +281,7 @@ void CHudMessage::MessageDrawScan( client_textmessage_t *pMessage, float time )
 	{
 		m_parms.lineLength = 0;
 		m_parms.width = 0;
-		while ( *pText && *pText != '\n' && m_parms.lineLength < ARRAYSIZE( line ) - 1 )
+		while ( *pText && *pText != '\n' )
 		{
 			unsigned char c = *pText;
 			line[m_parms.lineLength] = c;

@@ -80,10 +80,6 @@ int CHudMenu :: Draw( float flTime )
 	if ( gViewPort && gViewPort->IsScoreBoardVisible() )
 		return 1;
 
-	SCREENINFO screenInfo;
-	screenInfo.iSize = sizeof(SCREENINFO);
-	gEngfuncs.pfnGetScreenInfo(&screenInfo);
-
 	// draw the menu, along the left-hand side of the screen
 
 	// count the number of newlines
@@ -95,17 +91,15 @@ int CHudMenu :: Draw( float flTime )
 			nlc++;
 	}
 
-	int nFontHeight = max(12, screenInfo.iCharHeight);
-
 	// center it
-	int y = (ScreenHeight / 2) - ((nlc / 2) * nFontHeight) - (3 * nFontHeight + nFontHeight / 3); // make sure it is above the say text
+	int y = (ScreenHeight/2) - ((nlc/2)*12) - 40; // make sure it is above the say text
 	int x = 20;
 
 	i = 0;
 	while ( i < MAX_MENU_STRING && g_szMenuString[i] != '\0' )
 	{
 		gHUD.DrawHudString( x, y, 320, g_szMenuString + i, 255, 255, 255 );
-		y += nFontHeight;
+		y += 12;
 
 		while ( i < MAX_MENU_STRING && g_szMenuString[i] != '\0' && g_szMenuString[i] != '\n' )
 			i++;
