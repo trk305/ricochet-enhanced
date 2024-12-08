@@ -76,6 +76,8 @@
     <ClInclude Include="..\..\ricochet\dlls\decals.h" />
     <ClInclude Include="..\..\ricochet\dlls\discwar.h" />
     <ClInclude Include="..\..\ricochet\dlls\disc_arena.h" />
+    <ClInclude Include="..\..\ricochet\dlls\disc_objects.h" />
+    <ClInclude Include="..\..\ricochet\dlls\disc_weapon.h" />
     <ClInclude Include="..\..\ricochet\dlls\doors.h" />
     <ClInclude Include="..\..\ricochet\dlls\effects.h" />
     <ClInclude Include="..\..\ricochet\dlls\enginecallback.h" />

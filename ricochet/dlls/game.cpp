@@ -33,6 +33,7 @@ cvar_t	rc_arena			= {"rc_arena", "1",  FCVAR_SERVER | FCVAR_UNLOGGED };
 cvar_t  rc_powerupsrespawn = { "rc_powerupsrespawn", "10", FCVAR_SERVER | FCVAR_UNLOGGED };
 cvar_t  enablecrouch = { "rc_enablecrouch", "0", FCVAR_SERVER | FCVAR_UNLOGGED };
 cvar_t  enablejump = { "rc_enablejump", "0", FCVAR_SERVER | FCVAR_UNLOGGED };
+cvar_t  givepowerup = { "rc_givepowerup", "", FCVAR_SERVER | FCVAR_UNLOGGED }; // not yet
 // multiplayer server rules
 cvar_t	teamplay	= {"mp_teamplay","0", FCVAR_SERVER };
 cvar_t	fraglimit	= {"mp_fraglimit","0", FCVAR_SERVER };
@@ -459,6 +460,81 @@ cvar_t	sk_player_leg3	= { "sk_player_leg3","1" };
 // This gets called one time when the game is initialied
 void GameDLLInit( void )
 {
+#include "client.h"
+	g_engfuncs.pfnAddServerCommand("bot", []()
+		{
+			if (CMD_ARGC() != 3) // Ensure exactly 2 arguments: <name> and <modelname>
+			{
+				g_engfuncs.pfnServerPrint("Usage: bot <bot_name> <model_name>\n");
+				return;
+			}
+
+			const char* name = CMD_ARGV(1);
+			const char* modelName = CMD_ARGV(2);
+
+			// Validate model name
+			char botModelPath[256];
+			snprintf(botModelPath, sizeof(botModelPath), "models/player/%s/%s.mdl", modelName, modelName);
+
+			// Check if the model file exists
+			void* modelFile = g_engfuncs.pfnLoadFileForMe((char*)botModelPath, NULL);
+			if (modelFile == NULL)
+			{
+				g_engfuncs.pfnServerPrint(UTIL_VarArgs("Model file %s does not exist.\n", botModelPath));
+				return;
+			}
+
+			auto fakeClient = g_engfuncs.pfnCreateFakeClient(name);
+			if (!fakeClient)
+			{
+				g_engfuncs.pfnServerPrint("Failed to create fake client.\n");
+				return;
+			}
+
+			char reject[128];
+			if (0 == ClientConnect(fakeClient, STRING(fakeClient->v.netname), "127.0.0.1", reject))
+			{
+				SERVER_COMMAND(UTIL_VarArgs("kick %s\n", STRING(fakeClient->v.netname)));
+				return;
+			}
+
+			ClientPutInServer(fakeClient);
+
+			// Precache the model
+			g_engfuncs.pfnPrecacheModel((char*)botModelPath);
+
+			// Set the server-side model
+			fakeClient->v.model = ALLOC_STRING(botModelPath);
+			fakeClient->v.modelindex = g_engfuncs.pfnModelIndex(botModelPath);
+
+			// Retrieve the bot's info buffer
+			char* infobuffer = g_engfuncs.pfnGetInfoKeyBuffer(fakeClient);
+			if (!infobuffer)
+			{
+				g_engfuncs.pfnServerPrint("Failed to retrieve bot info buffer.\n");
+				return;
+			}
+
+			// Update the client key-value for "model"
+			g_engfuncs.pfnSetClientKeyValue(ENTINDEX(fakeClient), infobuffer, "model", (char*)modelName);
+
+			// Debugging: Confirm the model
+			const char* modelValue = g_engfuncs.pfnInfoKeyValue(infobuffer, "model");
+			if (modelValue)
+			{
+				g_engfuncs.pfnServerPrint(UTIL_VarArgs("Bot %s added with model %s\n", STRING(fakeClient->v.netname), modelValue));
+			}
+			else
+			{
+				g_engfuncs.pfnServerPrint("Failed to retrieve model key-value from info buffer.\n");
+			}
+
+			// Free the model file memory
+			g_engfuncs.pfnFreeFile(modelFile);
+			//Do remaining logic at least one frame later to avoid race conditions.
+
+		});
+
 	// Register cvars here:
 	g_psv_gravity = CVAR_GET_POINTER( "sv_gravity" );
 	g_psv_aim = CVAR_GET_POINTER( "sv_aim" );

@@ -199,7 +199,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;WIN32;NDEBUG;_WINDOWS;CLIENT_DLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
-      <AdditionalIncludeDirectories>E:\ricochetenhanced\ricochet\cl_dll\discord;..\..\ricochet;..\..\ricochet\dlls;..\..\ricochet\cl_dll;..\..\game_shared;..\..\engine;..\..\public;..\..\common;..\..\ricochet\pm_shared;..\..\utils\vgui\include;..\..\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\ricochetenhanced\utils\discord;..\..\ricochet;..\..\ricochet\dlls;..\..\ricochet\cl_dll;..\..\game_shared;..\..\engine;..\..\public;..\..\common;..\..\ricochet\pm_shared;..\..\utils\vgui\include;..\..\external;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>

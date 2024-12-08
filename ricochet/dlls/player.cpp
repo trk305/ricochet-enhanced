@@ -2894,7 +2894,8 @@ void CBasePlayer::Spawn( void )
 	pev->solid			= SOLID_SLIDEBOX;
 	pev->movetype		= MOVETYPE_WALK;
 	pev->max_health		= pev->health;
-	pev->flags			= FL_CLIENT;
+	pev->flags &= FL_FAKECLIENT; // keep fakeclient flags set by engine
+	pev->flags |= FL_CLIENT;
 	pev->air_finished	= gpGlobals->time + 12;
 	pev->dmg			= 2;				// initial water damage
 	pev->effects		= 0;

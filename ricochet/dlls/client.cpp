@@ -173,6 +173,13 @@ void ClientDisconnect( edict_t *pEntity )
 	g_pGameRules->ClientDisconnected( pEntity );
 
 	pPlayer->m_bHasDisconnected = true;
+
+	pPlayer = reinterpret_cast<CBasePlayer*>(GET_PRIVATE(pEntity));
+
+	if (pPlayer)
+	{
+		pPlayer->m_bIsConnected = false;
+	}
 }
 
 
@@ -713,6 +720,7 @@ void ParmsChangeLevel( void )
 //
 // GLOBALS ASSUMED SET:  g_ulFrameCount
 //
+static float g_LastBotUpdateTime = 0;
 void StartFrame( void )
 {
 	if ( g_pGameRules )
@@ -724,6 +732,44 @@ void StartFrame( void )
 	gpGlobals->teamplay = CVAR_GET_FLOAT("teamplay");
 	g_iSkillLevel = CVAR_GET_FLOAT("skill");
 	g_ulFrameCount++;
+	// Handle level changes and other problematic time changes.
+	float frametime = gpGlobals->time - g_LastBotUpdateTime;
+
+	if (frametime > 0.25f || frametime < 0)
+	{
+		frametime = 0;
+	}
+
+	const byte msec = byte(frametime * 1000);
+
+	g_LastBotUpdateTime = gpGlobals->time;
+
+	for (int i = 1; i <= gpGlobals->maxClients; ++i)
+	{
+		auto player = static_cast<CBasePlayer*>(UTIL_PlayerByIndex(i));
+
+		if (!player)
+		{
+			continue;
+		}
+
+		if (!player->m_bIsConnected)
+		{
+			continue;
+		}
+
+		if ((player->pev->flags & FL_FAKECLIENT) == 0)
+		{
+			continue;
+		}
+
+		//If bot is newly created finish setup here.
+
+		//Run bot think here.
+
+		//Now update the bot.
+		g_engfuncs.pfnRunPlayerMove(player->edict(), player->pev->angles, 0, 0, 0, player->pev->button, player->pev->impulse, msec);
+	}
 }
 
 
@@ -818,7 +864,7 @@ void ClientPrecache( void )
 	PRECACHE_SOUND("player/pl_pain6.wav");
 	PRECACHE_SOUND("player/pl_pain7.wav");
 
-	//PRECACHE_MODEL("models/player/female/female.mdl");
+	PRECACHE_MODEL("models/player/female/female.mdl");
 	PRECACHE_MODEL("models/player/male/male.mdl");
 
 	// hud sounds
