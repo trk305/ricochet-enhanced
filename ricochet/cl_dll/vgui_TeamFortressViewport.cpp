@@ -289,7 +289,7 @@ bool CCommandMenu::RecalculateVisibles( int iNewYPos, bool bHideAll )
 		int iClass = m_aButtons[i]->GetPlayerClass();
 		if ( (iClass && iClass != g_iPlayerClass ) || ( m_aButtons[i]->IsNotValid() ) || bHideAll )
 		{
-			m_aButtons[i]->setVisible( false );
+			m_aButtons[i]->setVisible( true );
 			if ( m_aButtons[i]->GetSubMenu() != NULL )
 			{
 				(m_aButtons[i]->GetSubMenu())->RecalculateVisibles( _pos[1] + iCurrentY, true );
@@ -482,8 +482,8 @@ TeamFortressViewport::TeamFortressViewport(int x,int y,int wide,int tall) : Pane
 	m_pCurrentMenu = NULL;
 	m_pCurrentCommandMenu = NULL;
 
-	CVAR_CREATE( "hud_classautokill", "1", FCVAR_ARCHIVE );		// controls whether or not to suicide immediately on TF class switch
-	CVAR_CREATE( "hud_takesshots", "0", FCVAR_ARCHIVE );		// controls whether or not to automatically take screenshots at the end of a round
+	//CVAR_CREATE( "hud_classautokill", "1", FCVAR_ARCHIVE );		// controls whether or not to suicide immediately on TF class switch
+	//CVAR_CREATE( "hud_takesshots", "0", FCVAR_ARCHIVE );		// controls whether or not to automatically take screenshots at the end of a round
 
 	Initialize();
 	addInputSignal( new CViewPortInputHandler );
@@ -1127,18 +1127,18 @@ void TeamFortressViewport::ShowCommandMenu()
 
 	// Not visible while undefined
 	if (g_iPlayerClass == 0)
-		return;
+		//return;
 
 	// is the command menu open?
 	if ( m_pCurrentCommandMenu )
 	{
-		HideCommandMenu();
-		return;
+		//HideCommandMenu();
+		//return;
 	}
 
 	// Not visible while in intermission
 	if ( gHUD.m_iIntermission )
-		return;
+		//return;
 
 	// Recalculate visible menus
 	UpdateCommandMenu();
@@ -1541,10 +1541,10 @@ void TeamFortressViewport::ShowVGUIMenu( int iMenu )
 	}
 
 	if (!pNewMenu)
-		return;
+		//return;
 
 	// Close the Command Menu if it's open
-	HideCommandMenu();
+	//HideCommandMenu();
 
 	pNewMenu->SetMenuID( iMenu );
 	pNewMenu->SetActive( true );
