@@ -3,16 +3,37 @@
   "WorkspaceRootPath": "D:\\ricochetenhanced\\projects\\vs2019\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|D:\\ricochetenhanced\\ricochet\\dlls\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|D:\\ricochetenhanced\\ricochet\\dlls\\client.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|D:\\ricochetenhanced\\ricochet\\dlls\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|D:\\ricochetenhanced\\ricochet\\dlls\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|D:\\ricochetenhanced\\ricochet\\dlls\\combat.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|D:\\ricochetenhanced\\ricochet\\dlls\\world.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA7DE935-F997-4EA8-9135-E2FE5E5D2C1B}|ricochet_cdll.vcxproj|D:\\ricochetenhanced\\ricochet\\cl_dll\\view.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|D:\\ricochetenhanced\\ricochet\\dlls\\game.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|D:\\ricochetenhanced\\ricochet\\dlls\\disc_arena.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|D:\\ricochetenhanced\\ricochet\\dlls\\disc_powerups.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA7DE935-F997-4EA8-9135-E2FE5E5D2C1B}|ricochet_cdll.vcxproj|D:\\ricochetenhanced\\ricochet\\cl_dll\\Ricochet_JumpPads.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EA7DE935-F997-4EA8-9135-E2FE5E5D2C1B}|ricochet_cdll.vcxproj|D:\\ricochetenhanced\\ricochet\\cl_dll\\vgui_TeamFortressViewport.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE8DCBE4-D8DB-46E5-8607-8FCC5FA667FB}|ricochetdll.vcxproj|D:\\ricochetenhanced\\ricochet\\dlls\\spectator.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,59 +43,143 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "combat.cpp",
+              "DocumentMoniker": "D:\\ricochetenhanced\\ricochet\\dlls\\combat.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\combat.cpp",
+              "ToolTip": "D:\\ricochetenhanced\\ricochet\\dlls\\combat.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\dlls\\combat.cpp",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAmwHwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-27T15:40:31.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "world.cpp",
+              "DocumentMoniker": "D:\\ricochetenhanced\\ricochet\\dlls\\world.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\world.cpp",
+              "ToolTip": "D:\\ricochetenhanced\\ricochet\\dlls\\world.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\dlls\\world.cpp",
+              "ViewState": "AgIAACICAAAAAAAAAAAmwDwCAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-27T15:39:08.655Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "disc_arena.cpp",
+              "DocumentMoniker": "D:\\ricochetenhanced\\ricochet\\dlls\\disc_arena.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\disc_arena.cpp",
+              "ToolTip": "D:\\ricochetenhanced\\ricochet\\dlls\\disc_arena.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\dlls\\disc_arena.cpp",
+              "ViewState": "AgIAAA4EAAAAAAAAAAAAACQEAABhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-01T12:15:17.519Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "vgui_TeamFortressViewport.cpp",
+              "DocumentMoniker": "D:\\ricochetenhanced\\ricochet\\cl_dll\\vgui_TeamFortressViewport.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\cl_dll\\vgui_TeamFortressViewport.cpp",
+              "ToolTip": "D:\\ricochetenhanced\\ricochet\\cl_dll\\vgui_TeamFortressViewport.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\cl_dll\\vgui_TeamFortressViewport.cpp",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAEwDwAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-01-01T12:07:26.264Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Ricochet_JumpPads.cpp",
+              "DocumentMoniker": "D:\\ricochetenhanced\\ricochet\\cl_dll\\Ricochet_JumpPads.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\cl_dll\\Ricochet_JumpPads.cpp",
+              "ToolTip": "D:\\ricochetenhanced\\ricochet\\cl_dll\\Ricochet_JumpPads.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\cl_dll\\Ricochet_JumpPads.cpp",
+              "ViewState": "AgIAADICAAAAAAAAAAAUwAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-18T15:39:56.915Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "spectator.cpp",
+              "DocumentMoniker": "D:\\ricochetenhanced\\ricochet\\dlls\\spectator.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\spectator.cpp",
+              "ToolTip": "D:\\ricochetenhanced\\ricochet\\dlls\\spectator.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\dlls\\spectator.cpp",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACUAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-18T15:20:36.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "view.cpp",
+              "DocumentMoniker": "D:\\ricochetenhanced\\ricochet\\cl_dll\\view.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\cl_dll\\view.cpp",
+              "ToolTip": "D:\\ricochetenhanced\\ricochet\\cl_dll\\view.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\cl_dll\\view.cpp",
+              "ViewState": "AgIAANcBAAAAAAAAAAAEwPEBAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-18T11:24:10.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "disc_powerups.cpp",
+              "DocumentMoniker": "D:\\ricochetenhanced\\ricochet\\dlls\\disc_powerups.cpp",
+              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\disc_powerups.cpp",
+              "ToolTip": "D:\\ricochetenhanced\\ricochet\\dlls\\disc_powerups.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\dlls\\disc_powerups.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-08T14:40:17.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "player.cpp",
               "DocumentMoniker": "D:\\ricochetenhanced\\ricochet\\dlls\\player.cpp",
               "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\player.cpp",
               "ToolTip": "D:\\ricochetenhanced\\ricochet\\dlls\\player.cpp",
               "RelativeToolTip": "..\\..\\ricochet\\dlls\\player.cpp",
-              "ViewState": "AgIAAHELAAAAAAAAAAD4v34LAAA0AAAAAAAAAA==",
+              "ViewState": "AgIAAF0CAAAAAAAAAAAUwHUCAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-04T12:34:52.816Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "client.cpp",
               "DocumentMoniker": "D:\\ricochetenhanced\\ricochet\\dlls\\client.cpp",
               "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\client.cpp",
               "ToolTip": "D:\\ricochetenhanced\\ricochet\\dlls\\client.cpp",
               "RelativeToolTip": "..\\..\\ricochet\\dlls\\client.cpp",
-              "ViewState": "AgIAAPICAAAAAAAAAAD4vwIDAAB+AAAAAAAAAA==",
+              "ViewState": "AgIAAPAAAAAAAAAAAAAmwAEBAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-04T12:34:50.869Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "game.cpp",
               "DocumentMoniker": "D:\\ricochetenhanced\\ricochet\\dlls\\game.cpp",
               "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\game.cpp",
-              "ToolTip": "D:\\ricochetenhanced\\ricochet\\dlls\\game.cpp*",
-              "RelativeToolTip": "..\\..\\ricochet\\dlls\\game.cpp*",
-              "ViewState": "AgIAAMYBAAAAAAAAAAAIwNIBAAAmAAAAAAAAAA==",
+              "ToolTip": "D:\\ricochetenhanced\\ricochet\\dlls\\game.cpp",
+              "RelativeToolTip": "..\\..\\ricochet\\dlls\\game.cpp",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACoAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-12-04T12:34:49.171Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "player.h",
-              "DocumentMoniker": "D:\\ricochetenhanced\\ricochet\\dlls\\player.h",
-              "RelativeDocumentMoniker": "..\\..\\ricochet\\dlls\\player.h",
-              "ToolTip": "D:\\ricochetenhanced\\ricochet\\dlls\\player.h",
-              "RelativeToolTip": "..\\..\\ricochet\\dlls\\player.h",
-              "ViewState": "AgIAAEcBAAAAAAAAAAD4v1UBAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-04T12:34:40.414Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-04T12:34:49.171Z"
             }
           ]
         }
