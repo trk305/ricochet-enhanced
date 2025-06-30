@@ -1166,10 +1166,10 @@ void CEnvSpark::Spawn(void)
 	else
 		SetThink(&CEnvSpark::SparkThink);
 		
-	pev->nextthink = gpGlobals->time + ( 0.1 + RANDOM_FLOAT ( 0, 1.5 ) );
+	pev->nextthink = gpGlobals->time + ( 0.1 + RANDOM_FLOAT ( 0, 1.5f ) );
 
-	if (m_flDelay <= 0)
-		m_flDelay = 1.5;
+	if (m_flDelay <= 0.0f)
+		m_flDelay = 1.5f;
 
 	Precache( );
 }

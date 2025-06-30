@@ -197,6 +197,12 @@ int __MsgFunc_Frozen(const char *pszName, int iSize, void *pbuf)
 		return gViewPort->MsgFunc_Frozen( pszName, iSize, pbuf );
 	return 0;
 }
+int __MsgFunc_MOTD(const char* pszName, int iSize, void* pbuf)
+{
+	if (gViewPort)
+		return gViewPort->MsgFunc_MOTD(pszName, iSize, pbuf);
+	return 0;
+}
 
 // This is called every time the DLL is loaded
 void CHud :: Init( void )
@@ -207,7 +213,7 @@ void CHud :: Init( void )
 	HOOK_MESSAGE( InitHUD );
 	HOOK_MESSAGE( SetFOV );
 	HOOK_MESSAGE( Concuss );
-
+	HOOK_MESSAGE(MOTD);
 	HOOK_MESSAGE( ScoreInfo );
 	HOOK_MESSAGE( TeamScore );
 	HOOK_MESSAGE( TeamInfo );

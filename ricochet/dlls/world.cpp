@@ -570,6 +570,7 @@ void CWorld :: Precache( void )
 	PRECACHE_SOUND( "decap.wav" );		// decapitation sound
 	PRECACHE_SOUND( "shatter.wav" );	// freeze decapitation sound
 	PRECACHE_MODEL( "models/head.mdl" ); // head
+	PRECACHE_MODEL("models/fhead.mdl"); // female head
 	
 	g_Language = (int)CVAR_GET_FLOAT( "sv_language" );
 	if ( g_Language == LANGUAGE_GERMAN )

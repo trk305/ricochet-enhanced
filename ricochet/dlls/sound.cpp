@@ -27,7 +27,7 @@
 #if !defined ( _WIN32 )
 #include <ctype.h>
 #endif
-
+#define itoa(num, str, base) sprintf(str, "%d", num)
 static char *memfgets( byte *pMemFile, int fileSize, int &filePos, char *pBuffer, int bufferSize );
 
 

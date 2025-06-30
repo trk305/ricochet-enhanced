@@ -110,7 +110,7 @@ void set_suicide_frame(entvars_t* pev)
 
 //	pev->frame		= $deatha11;
 	pev->solid		= SOLID_NOT;
-	pev->movetype	= MOVETYPE_TOSS;
+	pev->movetype	= MOVETYPE_NONE;
 	pev->deadflag	= DEAD_DEAD;
 	pev->nextthink	= -1;
 }
@@ -250,6 +250,23 @@ void ClientPutInServer( edict_t *pEntity )
 
 	pPlayer = GetClassPtr((CBasePlayer *)pev);
 	pPlayer->SetCustomDecalFrames(-1); // Assume none;
+	
+	if (!pEntity || pEntity->free)
+		return;
+
+	/* Get the player's model preference from a cvar
+	CVAR_GET_POINTER(pPlayer-
+	const char* model = "male"; // Default to male
+	if (model && FStrEq(model->string, "female"))
+	{
+		model = "female";
+	}
+
+	// Set the "model" key in the player's infobuffer
+	g_engfuncs.pfnSetClientKeyValue(pEntity->v.netname, g_engfuncs.pfnGetInfoKeyBuffer(pEntity), "model", model);
+
+	// Debug output
+	ALERT(at_console, "ClientPutInServer: Set model key to %s for player %s\n", model, STRING(pEntity->v.netname));*/
 
 	// Allocate a CBasePlayer for pev, and call spawn
 	pPlayer->Spawn();
@@ -258,8 +275,8 @@ void ClientPutInServer( edict_t *pEntity )
 
 	// Reset interpolation during first frame
 	pPlayer->pev->effects |= EF_NOINTERP;
-	pPlayer->m_pCurrentArena = NULL;
-	pPlayer->m_flKnownItemTime = gpGlobals->time + 0.3;
+	pPlayer->m_pCurrentArena = nullptr;
+	pPlayer->m_flKnownItemTime = gpGlobals->time + 0.3f;
 	pPlayer->m_iLastGameResult = GAME_DIDNTPLAY;	
 
 	// Add to an Arena (1 maxplayer allows mapmakers to run around their map)
@@ -433,7 +450,7 @@ ClientCommand
 called each time a player uses a "cmd" command
 ============
 */
-extern float g_flWeaponCheat;
+//extern float g_flWeaponCheat;
 
 // Use CMD_ARGV,  CMD_ARGV, and CMD_ARGC to get pointers the character string command.
 void ClientCommand( edict_t *pEntity )
@@ -495,7 +512,7 @@ void ClientCommand( edict_t *pEntity )
 
 	else if ( FStrEq(pcmd, "give" ) )
 	{
-		if ( g_flWeaponCheat != 0.0)
+		if ( CVAR_GET_FLOAT("sv_cheats") != 0.0)
 		{
 			int iszItem = ALLOC_STRING( CMD_ARGV(1) );	// Make a copy of the classname
 			GetClassPtr((CBasePlayer *)pev)->GiveNamedItem( STRING(iszItem) );
@@ -505,11 +522,11 @@ void ClientCommand( edict_t *pEntity )
 	else if ( FStrEq(pcmd, "drop" ) )
 	{
 		// player is dropping an item. 
-		GetClassPtr((CBasePlayer *)pev)->DropPlayerItem((char *)CMD_ARGV(1));
+		GetClassPtr((CBasePlayer*)pev)->DropPlayerItem((const_cast<char*>(CMD_ARGV(1))));
 	}
 	else if ( FStrEq(pcmd, "fov" ) )
 	{
-		if ( g_flWeaponCheat && CMD_ARGC() > 1)
+		if ( CVAR_GET_FLOAT("sv_cheats") && CMD_ARGC() > 1)
 		{
 			GetClassPtr((CBasePlayer *)pev)->m_iFOV = atoi( CMD_ARGV(1) );
 		}
@@ -563,7 +580,7 @@ void ClientUserInfoChanged( edict_t *pEntity, char *infobuffer )
 	if ( !pEntity->pvPrivateData )
 		return;
 
-	// msg everyone if someone changes their name,  and it isn't the first time (changing no name to current name)
+	// msg everyone if someone changes their name, and it isn't the first time (changing no name to current name)
 	if ( pEntity->v.netname && STRING(pEntity->v.netname)[0] != 0 && !FStrEq( STRING(pEntity->v.netname), g_engfuncs.pfnInfoKeyValue( infobuffer, "name" )) )
 	{
 		char sName[256];
@@ -603,7 +620,7 @@ void ClientUserInfoChanged( edict_t *pEntity, char *infobuffer )
 	if ( (!strcmp( "models/player/female/female.mdl", g_engfuncs.pfnInfoKeyValue( infobuffer, "model" ) )) )//&& (!strcmp( "models/player/hgrunt/hgrunt.mdl" )) )
 		SET_MODEL( pEntity, "models/player/male/male.mdl" );
 	g_engfuncs.pfnSetClientKeyValue( ENTINDEX( pEntity ), infobuffer, "model", "male" );*/
-
+	
 	// Set colors
 	int iHue = GetHueFromRGB( g_iaDiscColors[ pEntity->v.team][0] / 255, g_iaDiscColors[pEntity->v.team][1] / 255, g_iaDiscColors[pEntity->v.team][2] / 255 );
 	g_engfuncs.pfnSetClientKeyValue( ENTINDEX( pEntity ), infobuffer, "topcolor", UTIL_VarArgs("%d", iHue) );
@@ -901,7 +918,7 @@ const char *GetGameDescription()
 	if ( g_pGameRules ) // this function may be called before the world has spawned, and the game rules initialized
 		return g_pGameRules->GetGameDescription();
 	else
-		return "Ricochet";
+		return "Ricochet Enhanced";
 }
 
 /*
@@ -1363,7 +1380,7 @@ void Entity_Encode( struct delta_s *pFields, const unsigned char *from, const un
 		DELTA_UNSETBYINDEX( pFields, entity_field_alias[ FIELD_ORIGIN2 ].field );
 	}
 
-	if ( ( t->impacttime != 0 ) && ( t->starttime != 0 ) )
+	if (t->impacttime != 0.0f && t->starttime != 0.0f)
 	{
 		DELTA_UNSETBYINDEX( pFields, entity_field_alias[ FIELD_ORIGIN0 ].field );
 		DELTA_UNSETBYINDEX( pFields, entity_field_alias[ FIELD_ORIGIN1 ].field );

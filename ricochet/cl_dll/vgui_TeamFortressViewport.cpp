@@ -1126,8 +1126,8 @@ void TeamFortressViewport::ShowCommandMenu()
 		return;
 
 	// Not visible while undefined
-	if (g_iPlayerClass == 0)
-		//return;
+	/*if (g_iPlayerClass == 0)
+		return;
 
 	// is the command menu open?
 	if ( m_pCurrentCommandMenu )
@@ -1138,7 +1138,7 @@ void TeamFortressViewport::ShowCommandMenu()
 
 	// Not visible while in intermission
 	if ( gHUD.m_iIntermission )
-		//return;
+		//return;*/
 
 	// Recalculate visible menus
 	UpdateCommandMenu();
@@ -1394,7 +1394,7 @@ CMenuPanel* TeamFortressViewport::CreateTextWindow( int iTextToShow )
 	if ( iTextToShow == SHOW_MOTD )
 	{
 		if (!m_szServerName || !m_szServerName[0])
-			strcpy( cTitle, "Half-Life" );
+			strcpy( cTitle, "Ricochet Enhanced" );
 		else
 			strncpy( cTitle, m_szServerName, MAX_TITLE_LENGTH );
 		cTitle[MAX_TITLE_LENGTH-1] = 0;

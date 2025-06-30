@@ -327,28 +327,37 @@ Ricochet_LoadJumpPads
 Load in the .bsp file and process the entities
 ==============================
 */
-void Ricochet_LoadJumpPads( const char *map )
+void Ricochet_LoadJumpPads(const char* map)
 {
-	char	*buffer = NULL;
-	char	filename[ 256 ];
+	if (!map) return;
 
-	sprintf( filename, "%s/%s", gEngfuncs.pfnGetGameDirectory(), map );
+	char* buffer = NULL;
+	char filename[256];
 
-	// TODO:  Fix Slashes?
+#ifdef _WIN32
+#define PATH_SEP '\\'
+#else
+#define PATH_SEP '/'
+#endif
 
-	// Reset count
+	snprintf(filename, sizeof(filename), "%s%c%s", gEngfuncs.pfnGetGameDirectory(), PATH_SEP, map);
+
+	// Reset global jump pad counter
 	s_num_pads = 0;
 
 	// Load entity lump
-	buffer = Ricochet_LoadEntityLump( filename );
-	if ( !buffer )
+	buffer = Ricochet_LoadEntityLump(filename);
+	if (!buffer)
+	{
+		gEngfuncs.Con_Printf("Ricochet_LoadJumpPads: Failed to load entity lump for %s\n", filename);
 		return;
+	}
 
 	// Process buffer and extract pads/targets
-	Ricochet_ProcessEnts( buffer );
+	Ricochet_ProcessEnts(buffer);
 
 	// Discard buffer
-	free( buffer );
+	free(buffer); // free(NULL) is safe, so no check needed
 }
 
 /*
@@ -463,10 +472,11 @@ void Ricochet_PadTouched( int numpads, ric_pad_t *pads, ric_pad_t *pad, struct l
 	}
 
 	// Play sound if appropriate
-	if ( s_usJump && g_runfuncs )
+	if (s_usJump && g_runfuncs && !(player->client.flags & FL_SPECTATOR))
 	{
-		gEngfuncs.pfnPlaybackEvent( FEV_NOTHOST, NULL, s_usJump, 0.0, zero, zero, 0.0, 0.0, 0, 0, 0, 0 );
+		gEngfuncs.pfnPlaybackEvent(FEV_NOTHOST, NULL, s_usJump, 0.0, zero, zero, 0.0, 0.0, 0, 0, 0, 0);
 	}
+
 }
 
 /*
@@ -572,7 +582,7 @@ void Ricochet_CheckJumpPads( struct local_state_s *from, struct local_state_s *t
 	}
 
 	// Not while spectating
-	if ( to->client.iuser1 )
+	if (to->client.iuser1)
 		return;
 
 	// Run test

@@ -16,13 +16,14 @@
 #include "eiface.h"
 #include "util.h"
 #include "game.h"
-
+#include "cbase.h"
+#include "player.h"
 
 cvar_t	displaysoundlist = {"displaysoundlist","0"};
 
 // multiplayer server rules
 cvar_t	fragsleft	= {"mp_fragsleft","0", FCVAR_SERVER | FCVAR_UNLOGGED };	  // Don't spam console/log files/users with this changing
-cvar_t	timeleft	= {"mp_timeleft","0" , FCVAR_SERVER | FCVAR_UNLOGGED };	  // "      "
+cvar_t	timeleft	= {"mp_timeleft","0" , FCVAR_SERVER | FCVAR_UNLOGGED };
 
 cvar_t  allow_spectators = { "allow_spectators", "1.0", FCVAR_SERVER };		// 0 prevents players from being spectators
 
@@ -33,7 +34,7 @@ cvar_t	rc_arena			= {"rc_arena", "1",  FCVAR_SERVER | FCVAR_UNLOGGED };
 cvar_t  rc_powerupsrespawn = { "rc_powerupsrespawn", "10", FCVAR_SERVER | FCVAR_UNLOGGED };
 cvar_t  enablecrouch = { "rc_enablecrouch", "0", FCVAR_SERVER | FCVAR_UNLOGGED };
 cvar_t  enablejump = { "rc_enablejump", "0", FCVAR_SERVER | FCVAR_UNLOGGED };
-cvar_t  givepowerup = { "rc_givepowerup", "", FCVAR_SERVER | FCVAR_UNLOGGED }; // not yet
+cvar_t  givepowerup = { "rc_givepowerup", "", FCVAR_EXTDLL | FCVAR_UNLOGGED }; // not yet
 // multiplayer server rules
 cvar_t	teamplay	= {"mp_teamplay","0", FCVAR_SERVER };
 cvar_t	fraglimit	= {"mp_fraglimit","0", FCVAR_SERVER };
@@ -41,7 +42,7 @@ cvar_t	timelimit	= {"mp_timelimit","0", FCVAR_SERVER };
 cvar_t	friendlyfire= {"mp_friendlyfire","0", FCVAR_SERVER };
 cvar_t	falldamage	= {"mp_falldamage","0", FCVAR_SERVER };
 cvar_t	weaponstay	= {"mp_weaponstay","0", FCVAR_SERVER };
-cvar_t	forcerespawn= {"mp_forcerespawn","1", FCVAR_SERVER };
+cvar_t	forcerespawn = {"mp_forcerespawn","1", FCVAR_SERVER };
 cvar_t	flashlight	= {"mp_flashlight","0", FCVAR_SERVER };
 cvar_t	aimcrosshair= {"mp_autocrosshair","1", FCVAR_SERVER };
 cvar_t	decalfrequency = {"decalfrequency","30", FCVAR_SERVER };
@@ -50,9 +51,9 @@ cvar_t	teamoverride = {"mp_teamoverride","1" };
 cvar_t	defaultteam = {"mp_defaultteam","0" };
 cvar_t	allowmonsters={"mp_allowmonsters","0", FCVAR_SERVER };
 
-cvar_t 	*g_psv_gravity = NULL;
-cvar_t	*g_psv_aim = NULL;
-cvar_t	*g_footsteps = NULL;
+cvar_t 	*g_psv_gravity = nullptr;
+cvar_t	*g_psv_aim = nullptr;
+cvar_t	*g_footsteps = nullptr;
 
 //CVARS FOR SKILL LEVEL SETTINGS
 // Agrunt
@@ -458,82 +459,159 @@ cvar_t	sk_player_leg3	= { "sk_player_leg3","1" };
 
 // Register your console variables here
 // This gets called one time when the game is initialied
-void GameDLLInit( void )
+// Register your console variables here
+// This gets called one time when the game is initialized
+void GameDLLInit(void)
 {
-#include "client.h"
-	g_engfuncs.pfnAddServerCommand("bot", []()
+	// Addbot command
+	g_engfuncs.pfnAddServerCommand("addbot", []()
 		{
-			if (CMD_ARGC() != 3) // Ensure exactly 2 arguments: <name> and <modelname>
+#include "client.h"
+			// Validate argument count
+			if (CMD_ARGC() != 3) // Expecting: "addbot" + <name> + <model>
 			{
-				g_engfuncs.pfnServerPrint("Usage: bot <bot_name> <model_name>\n");
+				g_engfuncs.pfnServerPrint("Usage: addbot <bot_name> <model_name>\n");
 				return;
 			}
 
 			const char* name = CMD_ARGV(1);
 			const char* modelName = CMD_ARGV(2);
 
-			// Validate model name
+			// Validate bot name and model name
+			if (!name || !name[0] || !modelName || !modelName[0])
+			{
+				g_engfuncs.pfnServerPrint("Error: Bot name and model name cannot be empty.\n");
+				return;
+			}
+
+			// Construct model path
 			char botModelPath[256];
 			snprintf(botModelPath, sizeof(botModelPath), "models/player/%s/%s.mdl", modelName, modelName);
 
-			// Check if the model file exists
-			void* modelFile = g_engfuncs.pfnLoadFileForMe((char*)botModelPath, NULL);
-			if (modelFile == NULL)
+			// Check if the model exists
+			void* modelFile = g_engfuncs.pfnLoadFileForMe(botModelPath, 0);
+			if (!modelFile)
 			{
-				g_engfuncs.pfnServerPrint(UTIL_VarArgs("Model file %s does not exist.\n", botModelPath));
+				g_engfuncs.pfnServerPrint(UTIL_VarArgs("Error: Model file '%s' does not exist.\n", botModelPath));
+				return;
+			}
+			g_engfuncs.pfnFreeFile(modelFile);
+
+			// Create fake client
+			edict_t* fakeClient = g_engfuncs.pfnCreateFakeClient(name);
+			if (!fakeClient || fakeClient->free)
+			{
+				g_engfuncs.pfnServerPrint("Error: Failed to create fake client (server full?).\n");
 				return;
 			}
 
-			auto fakeClient = g_engfuncs.pfnCreateFakeClient(name);
-			if (!fakeClient)
+			// Attempt client connection
+			char rejectReason[128];
+			if (!ClientConnect(fakeClient, STRING(fakeClient->v.netname), "127.0.0.1", rejectReason))
 			{
-				g_engfuncs.pfnServerPrint("Failed to create fake client.\n");
+				g_engfuncs.pfnServerPrint(UTIL_VarArgs("Error: Bot connection rejected: %s\n", rejectReason));
+				SERVER_COMMAND(UTIL_VarArgs("kick \"%s\"\n", STRING(fakeClient->v.netname)));
 				return;
 			}
 
-			char reject[128];
-			if (0 == ClientConnect(fakeClient, STRING(fakeClient->v.netname), "127.0.0.1", reject))
-			{
-				SERVER_COMMAND(UTIL_VarArgs("kick %s\n", STRING(fakeClient->v.netname)));
-				return;
-			}
-
+			// Put bot in game
 			ClientPutInServer(fakeClient);
 
-			// Precache the model
-			g_engfuncs.pfnPrecacheModel((char*)botModelPath);
-
-			// Set the server-side model
+			// Precache and assign model
+			PRECACHE_MODEL(botModelPath);
 			fakeClient->v.model = ALLOC_STRING(botModelPath);
-			fakeClient->v.modelindex = g_engfuncs.pfnModelIndex(botModelPath);
+			fakeClient->v.modelindex = MODEL_INDEX(botModelPath);
 
-			// Retrieve the bot's info buffer
+			// Update bot's model in info buffer
 			char* infobuffer = g_engfuncs.pfnGetInfoKeyBuffer(fakeClient);
 			if (!infobuffer)
 			{
-				g_engfuncs.pfnServerPrint("Failed to retrieve bot info buffer.\n");
+				g_engfuncs.pfnServerPrint("Error: Failed to get bot's info buffer.\n");
 				return;
 			}
 
-			// Update the client key-value for "model"
 			g_engfuncs.pfnSetClientKeyValue(ENTINDEX(fakeClient), infobuffer, "model", (char*)modelName);
 
-			// Debugging: Confirm the model
-			const char* modelValue = g_engfuncs.pfnInfoKeyValue(infobuffer, "model");
-			if (modelValue)
+			// Debug output
+			const char* actualModel = g_engfuncs.pfnInfoKeyValue(infobuffer, "model");
+			if (actualModel)
 			{
-				g_engfuncs.pfnServerPrint(UTIL_VarArgs("Bot %s added with model %s\n", STRING(fakeClient->v.netname), modelValue));
+				g_engfuncs.pfnServerPrint(UTIL_VarArgs("Success: Added bot '%s' with model '%s'.\n",
+					STRING(fakeClient->v.netname), actualModel));
 			}
 			else
 			{
-				g_engfuncs.pfnServerPrint("Failed to retrieve model key-value from info buffer.\n");
+				g_engfuncs.pfnServerPrint("Warning: Model key not found in bot's info buffer (but bot added).\n");
 			}
-
-			// Free the model file memory
-			g_engfuncs.pfnFreeFile(modelFile);
-			//Do remaining logic at least one frame later to avoid race conditions.
-
 		});
+
+	g_engfuncs.pfnAddServerCommand("rc_givepowerup", []() {
+		// Helper function for powerup conversion
+		auto PowerupStringToType = [](const char* name) -> int {
+			if (!strcmp(name, "triple")) return (1 << 0); // POW_TRIPLE - TRIPLE SHOT
+			if (!strcmp(name, "fast"))   return (1 << 1); // POW_FAST - FAST SHOT
+			if (!strcmp(name, "hard"))   return (1 << 2); // POW_HARD - POWER SHOT
+			if (!strcmp(name, "freeze")) return (1 << 3); // POW_FREEZE - FREEZE SHOT
+			return 0;
+			};
+
+		// Usage check
+		if (CMD_ARGC() < 2) {
+			g_engfuncs.pfnServerPrint("Usage: rc_givepowerup <triple|fast|hard|freeze> [player_name]\n");
+			g_engfuncs.pfnServerPrint("'hard' is power shot btw\n");
+			return;
+		}
+
+		// Resolve powerup type
+		const char* typeStr = CMD_ARGV(1);
+		int powerupType = PowerupStringToType(typeStr);
+		if (!powerupType) {
+			g_engfuncs.pfnServerPrint(UTIL_VarArgs("Error: Invalid powerup '%s'. Valid options: triple, fast, hard, freeze\n", typeStr));
+			return;
+		}
+
+		// Resolve target player
+		CBasePlayer* target = nullptr;
+
+		if (CMD_ARGC() >= 3) {
+			// Target by name if specified
+			for (int i = 1; i <= gpGlobals->maxClients; i++) {
+				edict_t* pEdict = INDEXENT(i);
+				if (!pEdict || pEdict->free) continue;
+
+				CBasePlayer* pPlayer = (CBasePlayer*)GET_PRIVATE(pEdict);
+				if (pPlayer && !strcmp(STRING(pEdict->v.netname), CMD_ARGV(2))) {
+					target = pPlayer;
+					break;
+				}
+			}
+		}
+		else {
+			// Find first valid player if no target specified
+			for (int i = 1; i <= gpGlobals->maxClients; i++) {
+				edict_t* pEdict = INDEXENT(i);
+				if (!pEdict || pEdict->free) continue;
+
+				target = (CBasePlayer*)GET_PRIVATE(pEdict);
+				if (target) break;
+			}
+		}
+
+		if (!target) {
+			g_engfuncs.pfnServerPrint("Error: No valid Player found\n");
+			return;
+		}
+
+		// Apply powerup
+		target->GivePowerup(powerupType);
+		g_engfuncs.pfnServerPrint(UTIL_VarArgs(
+			"Granted powerup '%s' to Player '%s'\n",
+			typeStr,
+			STRING(target->edict()->v.netname)
+		));
+		});
+
+
 
 	// Register cvars here:
 	g_psv_gravity = CVAR_GET_POINTER( "sv_gravity" );
@@ -568,6 +646,7 @@ void GameDLLInit( void )
 	CVAR_REGISTER (&teamoverride);
 	CVAR_REGISTER (&defaultteam);
 	CVAR_REGISTER (&allowmonsters);
+	CVAR_REGISTER (&givepowerup);
 
 // REGISTER CVARS FOR SKILL LEVEL STUFF
 	// Agrunt

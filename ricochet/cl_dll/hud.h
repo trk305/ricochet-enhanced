@@ -49,7 +49,7 @@ typedef struct {
 #define HUD_INTERMISSION 2
 
 #define MAX_PLAYER_NAME_LENGTH		32
-#define	MAX_MOTD_LENGTH				1024
+#define	MAX_MOTD_LENGTH				9999
 
 #ifndef _WIN32
 #define _cdecl

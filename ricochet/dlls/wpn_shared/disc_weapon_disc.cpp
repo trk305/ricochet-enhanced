@@ -249,7 +249,7 @@ void CDisc::DiscTouch ( CBaseEntity *pOther )
 						((CBasePlayer*)pOther)->m_flLastDiscHitTeleport = gpGlobals->time;
 					((CBasePlayer*)pOther)->Decapitate( ((CBaseEntity*)m_hOwner)->pev );
 
-					m_fDontTouchEnemies = gpGlobals->time + 0.5;
+					m_fDontTouchEnemies = gpGlobals->time + 2.0;
 				}
 				else 
 				{

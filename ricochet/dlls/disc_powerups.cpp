@@ -58,6 +58,7 @@ void CDiscwarPowerup::Spawn( void )
 	// Use first model for now
 	SET_MODEL(ENT(pev), szPowerupModels[0]);
 	pev->effects |= EF_NODRAW;
+	pev->renderfx = 14;
 }
 
 void CDiscwarPowerup::Activate( void )
@@ -122,7 +123,7 @@ void CDiscwarPowerup::PowerupTouch( CBaseEntity *pOther )
 	pev->nextthink = gpGlobals->time + CVAR_GET_FLOAT("rc_powerupsrespawn");
 
 	// Play the powerup sound
-	EMIT_SOUND_DYN( pOther->edict(), CHAN_STATIC, "powerup.wav", 1.0, ATTN_NORM, 0, 98 + RANDOM_LONG(0,3)); 
+	EMIT_SOUND_DYN( pOther->edict(), CHAN_STATIC, "powerup.wav", 1.0f	, ATTN_NORM, 0, 98 + RANDOM_LONG(0,3)); 
 }
 
 // Disappear and don't appear again until enabled
@@ -139,7 +140,7 @@ void CDiscwarPowerup::Enable()
 {
 	// Pick a powerup 
 	SetThink( &CDiscwarPowerup::ChoosePowerupThink );
-	pev->nextthink = gpGlobals->time + (DISC_POWERUP_RESPAWN_TIME / 2);
+	pev->nextthink = gpGlobals->time + DISC_POWERUP_RESPAWN_TIME / 2;
 }
 
 //=========================================================
@@ -160,19 +161,19 @@ void CDiscwarPowerup::ChoosePowerupThink( void )
 	ResetSequenceInfo();
 
 	SetThink(&CDiscwarPowerup::AnimateThink);
-	pev->nextthink = gpGlobals->time + 0.1;
+	pev->nextthink = gpGlobals->time + 0.1f;
 
 	pev->rendermode = kRenderTransAdd;
 	pev->renderamt = 150;
 
 	// Play the powerup appear sound
-	EMIT_SOUND_DYN( edict(), CHAN_STATIC, "pspawn.wav", 1.0, ATTN_NORM, 0, 98 + RANDOM_LONG(0,3)); 
+	EMIT_SOUND_DYN( edict(), CHAN_STATIC, "pspawn.wav", 1.0f, ATTN_NORM, 0, 98 + RANDOM_LONG(0,3)); 
 }
 
 void CDiscwarPowerup::AnimateThink( void )
 {
 	StudioFrameAdvance();
-	pev->nextthink = gpGlobals->time + 0.1;
+	pev->nextthink = gpGlobals->time + 0.1f;
 }
 
 // Remove the powerup from the person we gave it to
@@ -198,7 +199,7 @@ void CBasePlayer::GivePowerup( int iPowerupType )
 	if ( m_iPowerups & POW_HARD )
 		strcpy( m_szAnimExtention, "models/p_disc_hard.mdl" );
 
-	MESSAGE_BEGIN( MSG_ONE, gmsgPowerup, NULL, pev );
+	MESSAGE_BEGIN( MSG_ONE, gmsgPowerup, nullptr, pev );
 		WRITE_BYTE( m_iPowerups );
 	MESSAGE_END();
 
@@ -212,7 +213,7 @@ void CBasePlayer::RemovePowerup( int iPowerupType )
 
 	m_iPowerups &= ~iPowerupType;
 
-	MESSAGE_BEGIN( MSG_ONE, gmsgPowerup, NULL, pev );
+	MESSAGE_BEGIN( MSG_ONE, gmsgPowerup, nullptr, pev );
 		WRITE_BYTE( m_iPowerups );
 	MESSAGE_END();
 
@@ -224,7 +225,7 @@ void CBasePlayer::RemoveAllPowerups( void )
 	m_iPowerups = 0;
 	m_iPowerupDiscs = 0;
 
-	MESSAGE_BEGIN( MSG_ONE, gmsgPowerup, NULL, pev );
+	MESSAGE_BEGIN( MSG_ONE, gmsgPowerup, nullptr, pev );
 		WRITE_BYTE( m_iPowerups );
 	MESSAGE_END();
 }

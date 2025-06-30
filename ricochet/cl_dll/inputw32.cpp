@@ -17,7 +17,6 @@
 #include "../public/keydefs.h"
 #include "view.h"
 #include "Exports.h"
-
 #define MOUSE_BUTTON_COUNT 5
 
 // Set this to 1 to show mouse cursor.  Experimental

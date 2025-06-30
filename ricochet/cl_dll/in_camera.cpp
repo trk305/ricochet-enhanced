@@ -96,15 +96,43 @@ void CAM_ToFirstPerson(void);
 void CAM_StartDistance(void);
 void CAM_EndDistance(void);
 
-void SDL_GetCursorPos( POINT *p )
+// These functions should appear ONLY ONCE in your entire codebase
+// Best placed in in_camera.cpp
+
+#ifdef _WIN32
+#include <windows.h>  // Provides the real tagPOINT / POINT struct
+
+// You can define your SDL_GetCursorPos wrapper for Windows here,
+// or just use the Windows API directly.
+void SDL_GetCursorPos(tagPOINT* p)
 {
-	SDL_GetMouseState( (int *)&p->x, (int *)&p->y );
+	POINT pt;
+	::GetCursorPos(&pt);
+	p->x = pt.x;
+	p->y = pt.y;
 }
 
-void SDL_SetCursorPos( const int x, const int y )
+void SDL_SetCursorPos(const int x, const int y)
 {
+	::SetCursorPos(x, y);
 }
 
+#else // Linux or other platforms
+
+#include "port.h"  // make sure this is included where POINT is defined
+
+void SDL_GetCursorPos(POINT* p)
+{
+	SDL_GetMouseState(&p->x, &p->y);
+}
+
+
+void SDL_SetCursorPos(const int x, const int y)
+{
+	// Optionally implement or leave empty
+}
+
+#endif
 
 //-------------------------------------------------- Local Functions
 
@@ -494,9 +522,9 @@ void CAM_Init( void )
 
 	cam_command				= gEngfuncs.pfnRegisterVariable ( "cam_command", "0", 0 );	 // tells camera to go to thirdperson
 	cam_snapto				= gEngfuncs.pfnRegisterVariable ( "cam_snapto", "0", 0 );	 // snap to thirdperson view
-	cam_idealyaw			= gEngfuncs.pfnRegisterVariable ( "cam_idealyaw", "0", 0 );	 // ? yaw
+	cam_idealyaw			= gEngfuncs.pfnRegisterVariable ( "cam_idealyaw", "360", 0 );	 // ? yaw
 	cam_idealpitch			= gEngfuncs.pfnRegisterVariable ( "cam_idealpitch", "0", 0 );	 // thirperson pitch
-	cam_idealdist			= gEngfuncs.pfnRegisterVariable ( "cam_idealdist", "196", 0 );	 // thirdperson distance
+	cam_idealdist			= gEngfuncs.pfnRegisterVariable ( "cam_idealdist", "64", 0 );	 // thirdperson distance
 	cam_contain				= gEngfuncs.pfnRegisterVariable ( "cam_contain", "0", 0 );	// contain camera to world
 
 	c_maxpitch				= gEngfuncs.pfnRegisterVariable ( "c_maxpitch", "90.0", 0 );

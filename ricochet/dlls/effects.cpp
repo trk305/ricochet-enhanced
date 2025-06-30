@@ -312,12 +312,12 @@ void CBeam::SetObjectCollisionBox( void )
 {
 	const Vector &startPos = GetStartPos(), &endPos = GetEndPos();
 
-	pev->absmin.x = min( startPos.x, endPos.x );
-	pev->absmin.y = min( startPos.y, endPos.y );
-	pev->absmin.z = min( startPos.z, endPos.z );
-	pev->absmax.x = max( startPos.x, endPos.x );
-	pev->absmax.y = max( startPos.y, endPos.y );
-	pev->absmax.z = max( startPos.z, endPos.z );
+	pev->absmin.x = fmin( startPos.x, endPos.x );
+	pev->absmin.y = fmin( startPos.y, endPos.y );
+	pev->absmin.z = fmin( startPos.z, endPos.z );
+	pev->absmax.x = fmax( startPos.x, endPos.x );
+	pev->absmax.y = fmax( startPos.y, endPos.y );
+	pev->absmax.z = fmax( startPos.z, endPos.z );
 }
 #endif
 

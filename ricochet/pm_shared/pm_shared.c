@@ -28,15 +28,8 @@
 #include <string.h> // strcpy
 #include <stdlib.h> // atoi
 #include <ctype.h>  // isspace
+#include "../cl_dll/camera_shared.h"
 
-#ifdef CLIENT_DLL
-	// Spectator Mode
-	float	vecNewViewAngles[3];
-	float	vecNewViewOrigin[3];
-	int		iHasNewViewAngles;
-	int		iHasNewViewOrigin;
-	int		iIsSpectator;
-#endif
 
 static int pm_shared_initialized = 0;
 
@@ -1978,7 +1971,7 @@ void PM_FixPlayerCrouchStuck( int direction )
 }
 #include "../engine/eiface.h"
 extern enginefuncs_t g_engfuncs;
-#include "game.h"
+#include "../dlls/game.h" 
 void PM_Duck( void )
 {
 	int i;

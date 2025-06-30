@@ -320,6 +320,7 @@ public:
 	int GetFallAnimation( void );
 	void Decapitate( entvars_t *pevKiller );
 	void Shatter( entvars_t *pevKiller );
+	void CorpseAnimationThink();
 
 	float	m_flThrowTime;
 	float	m_flBackupTime;

@@ -29,6 +29,7 @@
 #include "animation.h"
 #include "weapons.h"
 #include "func_break.h"
+#include "player.h"
 
 extern DLL_GLOBAL Vector		g_vecAttackDir;
 extern DLL_GLOBAL int			g_iSkillLevel;
@@ -122,42 +123,61 @@ void CGib :: SpawnStickyGibs( entvars_t *pevVictim, Vector vecOrigin, int cGibs 
 	}
 }
 
-void CGib :: SpawnHeadGib( entvars_t *pevVictim )
+void CGib::SpawnHeadGib(entvars_t* pevVictim)
 {
-	CGib *pGib = GetClassPtr( (CGib *)NULL );
+	CGib* pGib = GetClassPtr((CGib*)NULL);
 
-	if ( g_Language == LANGUAGE_GERMAN )
+	if (g_Language == LANGUAGE_GERMAN)
 	{
-		pGib->Spawn( "models/germangibs.mdl" );// throw one head
+		pGib->Spawn("models/germangibs.mdl");// throw one head
 		pGib->pev->body = 0;
 	}
-	else
+	// Get model path using engine's string table
+		//const char* modelPath = g_engfuncs.pfnSzFromIndex(pGib->pev->model);
+	// Get the player entity from the gib's owner (assuming pGib is created by a player)
+	CBaseEntity* pPlayer = CBaseEntity::Instance(pGib->pev->owner);
+
+	if (pPlayer && pPlayer->IsPlayer())  // Verify it's a valid player
 	{
-		pGib->Spawn( "models/head.mdl" );// throw one head
+		// Get player's info buffer
+		char* infobuffer = g_engfuncs.pfnGetInfoKeyBuffer(pPlayer->edict());
+
+		// Get player model
+		const char* model = g_engfuncs.pfnInfoKeyValue(infobuffer, "model");
+
+		// Spawn appropriate gib
+		if (strcmp(model, "models/player/female/female.mdl") == 0)
+		{
+			pGib->Spawn("models/fhead.mdl");
+		}
+		if (strcmp(model, "models/player/male/male.mdl") == 0)
+		{
+			pGib->Spawn("models/head.mdl");
+		}
+		if (pevVictim)
+		{
+			pGib->pev->origin = pevVictim->origin + pevVictim->view_ofs;
+
+			edict_t* pentPlayer = FIND_CLIENT_IN_PVS(pGib->edict());
+
+			pGib->pev->velocity = Vector(RANDOM_FLOAT(-100, 100), RANDOM_FLOAT(-100, 100), RANDOM_FLOAT(300, 400));
+
+			pGib->pev->avelocity.x = RANDOM_FLOAT(100, 200);
+			pGib->pev->avelocity.y = RANDOM_FLOAT(100, 300);
+
+			// copy owner's blood color
+			pGib->m_bloodColor = (CBaseEntity::Instance(pevVictim))->BloodColor();
+
+			// Set its groupinfo to the player's
+			pGib->pev->groupinfo = pevVictim->groupinfo;
+			// Since this only ever happens when a player is hit by a frozen decapitator disc, make the gibs glow
+			pGib->pev->renderfx = kRenderFxGlowShell;
+			pGib->pev->rendercolor = Vector(100, 100, 250);
+			pGib->pev->renderamt = 25;
+		}
+
+		pGib->LimitVelocity();
 	}
-
-	if ( pevVictim )
-	{
-		pGib->pev->origin = pevVictim->origin + pevVictim->view_ofs;
-		
-		edict_t		*pentPlayer = FIND_CLIENT_IN_PVS( pGib->edict() );
-
-		pGib->pev->velocity = Vector (RANDOM_FLOAT(-100,100), RANDOM_FLOAT(-100,100), RANDOM_FLOAT(300,400));
-
-		pGib->pev->avelocity.x = RANDOM_FLOAT ( 100, 200 );
-		pGib->pev->avelocity.y = RANDOM_FLOAT ( 100, 300 );
-
-		// copy owner's blood color
-		pGib->m_bloodColor = (CBaseEntity::Instance(pevVictim))->BloodColor();
-
-		// Set its groupinfo to the player's
-		pGib->pev->groupinfo = pevVictim->groupinfo;
-		// Since this only ever happens when a player is hit by a frozen decapitator disc, make the gibs glow
-		pGib->pev->renderfx = kRenderFxGlowShell;
-		pGib->pev->rendercolor = Vector( 100,100, 250 );
-		pGib->pev->renderamt = 25;
-	}
-	pGib->LimitVelocity();
 }
 
 void CGib :: SpawnRandomGibs( entvars_t *pevVictim, int cGibs, int human )

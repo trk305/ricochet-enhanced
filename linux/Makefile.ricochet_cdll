@@ -12,6 +12,7 @@ PUBLIC_OBJ_DIR=$(RICOCHET_OBJ_DIR)/public
 COMMON_OBJ_DIR=$(RICOCHET_OBJ_DIR)/common
 GAME_SHARED_OBJ_DIR=$(RICOCHET_OBJ_DIR)/game_shared
 PM_SHARED_OBJ_DIR=$(RICOCHET_OBJ_DIR)/pm_shared
+RICOCHET_OUTPUT_DIR=$(SOURCE_DIR)/game/mod
 
 CFLAGS=$(BASE_CFLAGS) $(ARCH_CFLAGS) -DCLIENT_DLL -I/usr/include/malloc -D_snwprintf=swprintf \
 		 -DDISABLE_JUMP_ORIGIN -DDISABLE_VEC_ORIGIN -D_MAX_PATH=PATH_MAX
@@ -20,19 +21,20 @@ INCLUDEDIRS=-I$(RICOCHET_SRC_DIR) -I$(RICOCHET_SRC_DIR)/../dlls -I../engine -I$(
 	 -I../game_shared -I$(RICOCHET_SRC_DIR)/../pm_shared  -I../utils/vgui/include -I../utils/common -I../external
 
 ifeq ($(OS),Darwin)
-LDFLAGS=$(SHLIBLDFLAGS) $(CPP_LIB) -framework Carbon $(CFG)/vgui.dylib -L. -lSDL2-2.0.0
+LDFLAGS = $(SHLIBLDFLAGS) $(CPP_LIB) -framework Carbon $(CFG)/vgui.dylib -lSDL2
 else
-LDFLAGS=$(SHLIBLDFLAGS) $(CPP_LIB) vgui.so -L. libSDL2-2.0.so.0
+LDFLAGS = $(SHLIBLDFLAGS) $(CPP_LIB) $(CFG)/vgui.so -lSDL2
 endif
 
-DO_CC=$(CPLUS) $(INCLUDEDIRS) $(CFLAGS) -o $@ -c $<
-DO_PUBLIC_CC=$(CPLUS) $(COMMON_INCLUDEDIRS) $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $<
-DO_COMMON_CC=$(CPLUS) $(INCLUDEDIRS)  $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $<
-DO_PM_SHARED_CC=$(CC) $(INCLUDEDIRS)  $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $<
+DO_CC=$(CPLUS) $(INCLUDEDIRS) $(CFLAGS) -o $@ -c $< -fPIC
+DO_PUBLIC_CC=$(CPLUS) $(COMMON_INCLUDEDIRS) $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $< -fPIC
+DO_COMMON_CC=$(CPLUS) $(INCLUDEDIRS)  $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $< -fPIC
+DO_PM_SHARED_CC=$(CC) $(INCLUDEDIRS)  $(CFLAGS) $(SHLIBCFLAGS) -o $@ -c $< -fPIC
 
 #####################################################################
 
 RICOCHET_OBJS = \
+	$(RICOCHET_OBJ_DIR)/discord/discord_manager.o \
 	$(RICOCHET_OBJ_DIR)/ev_common.o \
 	$(RICOCHET_OBJ_DIR)/ev_hldm.o \
 	$(RICOCHET_OBJ_DIR)/hl/hl_baseentity.o \
@@ -85,13 +87,13 @@ RICOCHET_OBJS = \
 	$(RICOCHET_OBJ_DIR)/vgui_TeamFortressViewport.o \
 	$(RICOCHET_OBJ_DIR)/vgui_SchemeManager.o \
 	$(RICOCHET_OBJ_DIR)/studio_util.o \
-	$(RICOCHET_OBJ_DIR)/voice_status.o \
+	$(RICOCHET_OBJ_DIR)/voice_status.o
 
 PUBLIC_OBJS = \
-	$(PUBLIC_OBJ_DIR)/interface.o \
+	$(PUBLIC_OBJ_DIR)/interface.o 
 
 COMMON_OBJS = \
-	$(COMMON_OBJ_DIR)/parsemsg.o \
+	$(COMMON_OBJ_DIR)/parsemsg.o 
 
 GAME_SHARED_OBJS = \
 	$(GAME_SHARED_OBJ_DIR)/voice_banmgr.o \
@@ -102,21 +104,32 @@ GAME_SHARED_OBJS = \
 	$(GAME_SHARED_OBJ_DIR)/vgui_loadtga.o \
 	$(GAME_SHARED_OBJ_DIR)/vgui_scrollbar2.o \
 	$(GAME_SHARED_OBJ_DIR)/vgui_slider2.o \
-#	$(GAME_SHARED_OBJ_DIR)/voice_status.o \
+#	$(GAME_SHARED_OBJ_DIR)/voice_status.o 
 
 PM_SHARED_OBJS = \
 	$(PM_SHARED_OBJ_DIR)/pm_debug.o \
 	$(PM_SHARED_OBJ_DIR)/pm_shared.o \
-	$(PM_SHARED_OBJ_DIR)/pm_math.o \
-
+	$(PM_SHARED_OBJ_DIR)/pm_math.o
 
 all: client_ricochet.$(SHLIBEXT)
 
 client_ricochet.$(SHLIBEXT): $(RICOCHET_OBJS) $(PUBLIC_OBJS) $(COMMON_OBJS) $(GAME_SHARED_OBJS) $(PM_SHARED_OBJS)
-	$(CLINK) -o $(BUILD_DIR)/$@ $(RICOCHET_OBJS) $(PUBLIC_OBJS) $(COMMON_OBJS) $(GAME_SHARED_OBJS) $(PM_SHARED_OBJS) $(LDFLAGS)  $(CPP_LIB)
-	p4 edit ../../game/mod/cl_dlls/client.$(SHLIBEXT)
-	cp $(BUILD_DIR)/$@  ../../game/mod/cl_dlls/client.$(SHLIBEXT)
-	./gendbg.sh ../../game/mod/cl_dlls/client.$(SHLIBEXT)		
+	$(info --- Debug Info Start ---)
+	$(info RICOCHET_OBJS = $(RICOCHET_OBJS))
+	$(info PUBLIC_OBJS = $(PUBLIC_OBJS))
+	$(info COMMON_OBJS = $(COMMON_OBJS))
+	$(info GAME_SHARED_OBJS = $(GAME_SHARED_OBJS))
+	$(info PM_SHARED_OBJS = $(PM_SHARED_OBJS))
+	$(info LDFLAGS = $(LDFLAGS))
+	$(info CPP_LIB = $(CPP_LIB))
+	$(info --- Debug Info End ---)
+	$(CLINK) -o $(BUILD_DIR)/$@ $(RICOCHET_OBJS) $(PUBLIC_OBJS) $(COMMON_OBJS) $(GAME_SHARED_OBJS) $(PM_SHARED_OBJS) $(LDFLAGS) $(CPP_LIB)
+ifeq ($(CREATE_OUTPUT_DIRS),1)
+	mkdir -p $(RICOCHET_OUTPUT_DIR)/cl_dlls
+endif
+	$(P4_EDIT_START) $(RICOCHET_OUTPUT_DIR)/cl_dlls/client.$(SHLIBEXT) $(P4_EDIT_END)
+	cp $(BUILD_DIR)/$@  $(RICOCHET_OUTPUT_DIR)/cl_dlls/client.$(SHLIBEXT)
+	./gendbg.sh $(RICOCHET_OUTPUT_DIR)/cl_dlls/client.$(SHLIBEXT)		
 
 $(RICOCHET_OBJ_DIR):
 	mkdir -p $(RICOCHET_OBJ_DIR)
@@ -156,7 +169,6 @@ $(GAME_SHARED_OBJ_DIR)/%.o : $(GAME_SHARED_SRC_DIR)/%.cpp $(filter-out $(wildcar
 
 $(PM_SHARED_OBJ_DIR)/%.o : $(PM_SHARED_SRC_DIR)/%.c $(filter-out $(wildcard  $(PM_SHARED_OBJ_DIR)),  $(PM_SHARED_OBJ_DIR))
 	$(DO_PM_SHARED_CC)
-
 
 clean:
 	-rm -rf $(RICOCHET_OBJ_DIR)
