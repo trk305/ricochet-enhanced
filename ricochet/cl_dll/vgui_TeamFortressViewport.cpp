@@ -550,7 +550,7 @@ TeamFortressViewport::TeamFortressViewport(int x,int y,int wide,int tall) : Pane
 //-----------------------------------------------------------------------------
 // Purpose: Called everytime a new level is started. Viewport clears out it's data.
 //-----------------------------------------------------------------------------
-void TeamFortressViewport::Initialize( void )
+void TeamFortressViewport::Initialize(void)
 {
 	// Force each menu to Initialize
 	if (m_pScoreBoard)
@@ -561,22 +561,33 @@ void TeamFortressViewport::Initialize( void )
 	if (m_pSpectatorMenu)
 	{
 		// Spectator menu doesn't need initializing
-		m_pSpectatorMenu->setVisible( false );
+		m_pSpectatorMenu->setVisible(false);
 	}
-
 	// Make sure all menus are hidden
 	HideVGUIMenu();
 	HideCommandMenu();
-
 	// Clear out some data
 	m_iGotAllMOTD = true;
 	m_iRandomPC = false;
 	m_flScoreBoardLastUpdated = 0;
 
+	// Reset powerup state when joining server/changing maps
+	m_iDiscPowerup = 0;
+
+	// Clear disc icons
+	for (int i = 0; i < MAX_DISCS; i++)
+	{
+		if (m_pDiscIcons[i])
+			m_pDiscIcons[i]->Update(i, false, 0);
+	}
+
+	// Clear powerup window
+	if (m_pDiscPowerupWindow)
+		m_pDiscPowerupWindow->RecalculateText(0);
+
 	// reset player info
 	g_iPlayerClass = 0;
 	g_iTeamNumber = 0;
-
 	strcpy(m_sMapName, "");
 	strcpy(m_szServerName, "");
 	for (int i = 0; i < 5; i++)
@@ -584,8 +595,7 @@ void TeamFortressViewport::Initialize( void )
 		m_iValidClasses[i] = 0;
 		strcpy(m_sTeamNames[i], "");
 	}
-
-	App::getInstance()->setCursorOveride( App::getInstance()->getScheme()->getCursor(Scheme::scu_none) );
+	App::getInstance()->setCursorOveride(App::getInstance()->getScheme()->getCursor(Scheme::scu_none));
 }
 
 class CException;

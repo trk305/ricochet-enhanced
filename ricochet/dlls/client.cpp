@@ -615,11 +615,14 @@ void ClientUserInfoChanged( edict_t *pEntity, char *infobuffer )
 	}
 
 	g_pGameRules->ClientUserInfoChanged( GetClassPtr((CBasePlayer *)&pEntity->v), infobuffer );
-
-	/* Override model
-	if ( (!strcmp( "models/player/female/female.mdl", g_engfuncs.pfnInfoKeyValue( infobuffer, "model" ) )) )//&& (!strcmp( "models/player/hgrunt/hgrunt.mdl" )) )
-		SET_MODEL( pEntity, "models/player/male/male.mdl" );
-	g_engfuncs.pfnSetClientKeyValue( ENTINDEX( pEntity ), infobuffer, "model", "male" );*/
+	extern cvar_t misogyny;
+	// Override model only by sv_misogyny
+	if (misogyny.value)
+	{
+		if ((!strcmp("models/player/female/female.mdl", g_engfuncs.pfnInfoKeyValue(infobuffer, "model"))))//&& (!strcmp( "models/player/hgrunt/hgrunt.mdl" )) )
+			SET_MODEL(pEntity, "models/player/male/male.mdl");
+		g_engfuncs.pfnSetClientKeyValue(ENTINDEX(pEntity), infobuffer, "model", "male");
+	}
 	
 	// Set colors
 	int iHue = GetHueFromRGB( g_iaDiscColors[ pEntity->v.team][0] / 255, g_iaDiscColors[pEntity->v.team][1] / 255, g_iaDiscColors[pEntity->v.team][2] / 255 );

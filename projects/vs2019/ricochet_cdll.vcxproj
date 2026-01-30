@@ -85,6 +85,7 @@
     <ClInclude Include="..\..\ricochet\cl_dll\ammo.h" />
     <ClInclude Include="..\..\ricochet\cl_dll\ammohistory.h" />
     <ClInclude Include="..\..\ricochet\cl_dll\camera.h" />
+    <ClInclude Include="..\..\ricochet\cl_dll\camera_shared.h" />
     <ClInclude Include="..\..\ricochet\cl_dll\cl_dll.h" />
     <ClInclude Include="..\..\ricochet\cl_dll\cl_util.h" />
     <ClInclude Include="..\..\ricochet\cl_dll\com_weapons.h" />

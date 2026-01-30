@@ -33,6 +33,11 @@ extern "C"
 cvar_t* rpc_chapter;
 cvar_t* rpc_area;
 cvar_t* rpc_image;
+cvar_t* rpc_small_image;
+cvar_t* rpc_small_text;
+cvar_t* rpc_party_size;
+cvar_t* rpc_party_max;
+
 #include "vgui_TeamFortressViewport.h"
 #include "vgui_discobjects.h"
 
@@ -961,6 +966,11 @@ void InitInput (void)
 	rpc_chapter = gEngfuncs.pfnRegisterVariable("rpc_chapter", "Fighting Ricodudes", FCVAR_CLIENTDLL);
 	rpc_area = gEngfuncs.pfnRegisterVariable("rpc_area", "", FCVAR_CLIENTDLL);
 	rpc_image = gEngfuncs.pfnRegisterVariable("rpc_image", "", FCVAR_CLIENTDLL);
+	rpc_small_image = gEngfuncs.pfnRegisterVariable("rpc_small_image", "powerup_speed", FCVAR_CLIENTDLL);
+	rpc_small_text = gEngfuncs.pfnRegisterVariable("rpc_small_text", "", FCVAR_CLIENTDLL);
+	rpc_party_size = gEngfuncs.pfnRegisterVariable("rpc_party_size", "0", FCVAR_CLIENTDLL);
+	rpc_party_max = gEngfuncs.pfnRegisterVariable("rpc_party_max", "0", FCVAR_CLIENTDLL);
+
 	// Initialize third person camera controls.
 	CAM_Init();
 	// Initialize inputs

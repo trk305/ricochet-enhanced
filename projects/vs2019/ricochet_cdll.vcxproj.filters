@@ -398,5 +398,8 @@
     <ClInclude Include="..\..\ricochet\cl_dll\discord\discord_rpc.h">
       <Filter>Source Files\ricochet\cl_dll\discord</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\ricochet\cl_dll\camera_shared.h">
+      <Filter>Header Files\ricochet\cl_dll</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

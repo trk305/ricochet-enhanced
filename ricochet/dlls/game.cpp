@@ -35,6 +35,8 @@ cvar_t  rc_powerupsrespawn = { "rc_powerupsrespawn", "10", FCVAR_SERVER | FCVAR_
 cvar_t  enablecrouch = { "rc_enablecrouch", "0", FCVAR_SERVER | FCVAR_UNLOGGED };
 cvar_t  enablejump = { "rc_enablejump", "0", FCVAR_SERVER | FCVAR_UNLOGGED };
 cvar_t  givepowerup = { "rc_givepowerup", "", FCVAR_EXTDLL | FCVAR_UNLOGGED }; // not yet
+cvar_t  misogyny = { "sv_misogyny", "0", FCVAR_SERVER | FCVAR_UNLOGGED };
+cvar_t schizophrenia = { "rc_schizophrenia", "0", FCVAR_SERVER | FCVAR_UNLOGGED };
 // multiplayer server rules
 cvar_t	teamplay	= {"mp_teamplay","0", FCVAR_SERVER };
 cvar_t	fraglimit	= {"mp_fraglimit","0", FCVAR_SERVER };
@@ -647,7 +649,8 @@ void GameDLLInit(void)
 	CVAR_REGISTER (&defaultteam);
 	CVAR_REGISTER (&allowmonsters);
 	CVAR_REGISTER (&givepowerup);
-
+	CVAR_REGISTER(&misogyny);
+	CVAR_REGISTER(&schizophrenia);
 // REGISTER CVARS FOR SKILL LEVEL STUFF
 	// Agrunt
 	CVAR_REGISTER ( &sk_agrunt_health1 );// {"sk_agrunt_health1","0"};

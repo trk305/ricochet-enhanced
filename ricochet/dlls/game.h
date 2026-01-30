@@ -38,6 +38,8 @@ extern cvar_t	allow_spectators;
 extern cvar_t   rc_powerupsrespawn;
 extern cvar_t   enablecrouch;
 extern cvar_t   enablejump;
+extern cvar_t   misogyny;
+extern cvar_t   schizophrenia;
 // Engine Cvars
 extern cvar_t	*g_psv_gravity;
 extern cvar_t	*g_psv_aim;

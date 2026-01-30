@@ -23,9 +23,11 @@ float vecNewViewOrigin[3] = { 0 };
 int iHasNewViewAngles = 0;
 int iHasNewViewOrigin = 0;
 int iIsSpectator = 0;
-
-
+cvar_t* cl_schizophrenia = NULL;
+float g_flLastScreamTime = 0.0f;
+float g_flNextScreamDelay = 0.0f;
 extern float g_flStartScaleTime;
+static int g_iPreFallCameraState = 0;
 extern int iMouseInUse;
 void CAM_ToThirdPerson(void);
 void CAM_ToFirstPerson(void);
@@ -522,29 +524,53 @@ void V_CalcNormalRefdef(struct ref_params_s* pparams)
 		// Get the angles from the physics code
 		VectorCopy(vecNewViewAngles, pparams->cl_viewangles);
 	}
-	else if (pparams->health == -5) // when player is -5 health which means he fell into the void
-	{
-		CAM_ToThirdPerson(); // switch to thirdperson
+	static int iPreviousHealth = 0; // Declare ONCE at the top, outside the if/else
 
+	if (pparams->health == -5)
+	{
+		// Check if we just ENTERED the fall state this frame
+		if (iPreviousHealth != -5)
+		{
+			// This is the first frame of the fall state
+			// Store the user's current camera preference
+			g_iPreFallCameraState = CL_IsThirdPerson(); // 1 for third, 0 for first
+		}
+
+		iPreviousHealth = -5; // Mark that we're in fall state
+
+		CAM_ToThirdPerson();
 		// Lock mouse movement
 		iMouseInUse = 1;
-
-		pparams->cl_viewangles[0] = 89; // spinning animation
-
-		// Spin the view -- spinning animation
+		pparams->cl_viewangles[0] = 89;
+		// Spin the view
 		float flTimeDelta = (pparams->time - g_flStartScaleTime);
 		if (flTimeDelta > 0)
 		{
 			float flROFSpin = 1.0 + (flTimeDelta * 2.0);
 			float flSpin = flTimeDelta * 45;
-
 			pparams->cl_viewangles[1] = flSpin * flROFSpin;
 		}
 	}
-	else // This code below has nothing to do with the animation
+	else
 	{
-		//CAM_ToFirstPerson();
+		// Only restore camera ONCE when transitioning FROM fall state
+		if (iPreviousHealth == -5)
+		{
+			// We JUST respawned from the fall state
+			// Restore the camera based on the user's original preference
+			if (g_iPreFallCameraState == 1)
+			{
+				// User was in third person before the fall
+				CAM_ToThirdPerson();
+			}
+			else
+			{
+				// User was in first person before the fall
+				CAM_ToFirstPerson();
+			}
+		}
 
+		iPreviousHealth = pparams->health; // Update for next frame
 		// Unlock mouse movement
 		iMouseInUse = 0;
 	}
@@ -906,6 +932,45 @@ void DLLEXPORT V_CalcRefdef(struct ref_params_s* pparams)
 		V_CalcNormalRefdef(pparams);
 	}
 
+	if (cl_schizophrenia && cl_schizophrenia->value)
+	{
+		// Initialize delay on first run
+		if (g_flNextScreamDelay == 0.0f)
+		{
+			g_flNextScreamDelay = gEngfuncs.pfnRandomFloat(30.0f, 90.0f);
+			gEngfuncs.Con_Printf("[SCHIZO] Initialized. Next scream in %.1f seconds\n", g_flNextScreamDelay);
+		}
+
+		// Check if enough time has passed
+		if (pparams->time - g_flLastScreamTime >= g_flNextScreamDelay)
+		{
+			// Pick a random scream
+			int screamNum = gEngfuncs.pfnRandomLong(1, 3);
+			char screamSound[64];
+			sprintf(screamSound, "scream%d.wav", screamNum);
+
+			// Create a distant position in a random direction
+			float soundOrigin[3];
+			float distance = gEngfuncs.pfnRandomFloat(800.0f, 1500.0f);
+			float angle = gEngfuncs.pfnRandomFloat(0.0f, 6.28318f); // 0 to 2*PI
+
+			soundOrigin[0] = pparams->vieworg[0] + (cos(angle) * distance);
+			soundOrigin[1] = pparams->vieworg[1] + (sin(angle) * distance);
+			soundOrigin[2] = pparams->vieworg[2] + gEngfuncs.pfnRandomFloat(-500.0f, 500.0f);
+
+			// Play 3D positional sound using client functions
+			gEngfuncs.pfnPlaySoundByNameAtLocation(screamSound, 1.0f, soundOrigin);
+
+			gEngfuncs.Con_Printf("[SCHIZO] Playing: %s from distant position\n", screamSound);
+
+			// Set next scream time
+			g_flLastScreamTime = pparams->time;
+			g_flNextScreamDelay = gEngfuncs.pfnRandomFloat(40.0f, 120.0f);
+
+			gEngfuncs.Con_Printf("[SCHIZO] Next scream in %.1f seconds\n", g_flNextScreamDelay);
+		}
+	}
+
 	/*
 	// Example of how to overlay the whole screen with red at 50 % alpha
 	#define SF_TEST
@@ -974,6 +1039,7 @@ void V_Init(void)
 	cl_bob = gEngfuncs.pfnRegisterVariable("cl_bob", "0.01", 0);// best default for my experimental gun wag (sjb)
 	cl_bobup = gEngfuncs.pfnRegisterVariable("cl_bobup", "0.5", 0);
 	cl_waterdist = gEngfuncs.pfnRegisterVariable("cl_waterdist", "4", 0);
+	cl_schizophrenia = gEngfuncs.pfnRegisterVariable("cl_schizophrenia", "0", FCVAR_ARCHIVE);
 }
 
 

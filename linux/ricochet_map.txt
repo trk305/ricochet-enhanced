@@ -7176,7 +7176,7 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/13/../../../i386-linux-gnu/crtn.o
 .plt.sec
  *(.plt.sec)
 
-.text           0x0001c390    0x6c978
+.text           0x0001c390    0x6c988
  *(.text.unlikely .text.*_unlikely .text.unlikely.*)
  .text.unlikely
                 0x0001c390       0xd0 release/obj/ricochetdll/cbase.o
@@ -8531,7 +8531,7 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/13/../../../i386-linux-gnu/crtn.o
                 0x0004be20                CBaseMonster::MakeIdealYaw(Vector)
                 0x0004be30                CBaseMonster::KeyValue(KeyValueData_s*)
  *fill*         0x0004be51        0xf 
- .text          0x0004be60     0x2dcf release/obj/ricochetdll/multiplay_gamerules.o
+ .text          0x0004be60     0x2ddf release/obj/ricochetdll/multiplay_gamerules.o
                 0x0004be60                CHalfLifeMultiplay::IsMultiplayer()
                 0x0004be60                CHalfLifeMultiplay::IsDeathmatch()
                 0x0004be70                CHalfLifeMultiplay::IsCoOp()
@@ -8589,1224 +8589,1224 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/13/../../../i386-linux-gnu/crtn.o
                 0x0004e170                ExtractCommandString(char*, char*)
                 0x0004e2b0                CHalfLifeMultiplay::ChangeLevel()
                 0x0004e6f0                CHalfLifeMultiplay::SendMOTDToClient(edict_s*)
-                0x0004e900                CHalfLifeMultiplay::InitHUD(CBasePlayer*)
- *fill*         0x0004ec2f        0x1 
+                0x0004e910                CHalfLifeMultiplay::InitHUD(CBasePlayer*)
+ *fill*         0x0004ec3f        0x1 
  .text._ZN15CBasePlayerItem9CanDeployEv
-                0x0004ec30        0x6 release/obj/ricochetdll/multiplay_gamerules.o
-                0x0004ec30                CBasePlayerItem::CanDeploy()
- *fill*         0x0004ec36        0xa 
+                0x0004ec40        0x6 release/obj/ricochetdll/multiplay_gamerules.o
+                0x0004ec40                CBasePlayerItem::CanDeploy()
+ *fill*         0x0004ec46        0xa 
  .text._ZN18CHalfLifeMultiplay9GetTeamIDEP11CBaseEntity
-                0x0004ec40       0x11 release/obj/ricochetdll/multiplay_gamerules.o
-                0x0004ec40                CHalfLifeMultiplay::GetTeamID(CBaseEntity*)
- *fill*         0x0004ec51        0xf 
+                0x0004ec50       0x11 release/obj/ricochetdll/multiplay_gamerules.o
+                0x0004ec50                CHalfLifeMultiplay::GetTeamID(CBaseEntity*)
+ *fill*         0x0004ec61        0xf 
  .text._ZN18CHalfLifeMultiplay17PlayTextureSoundsEv
-                0x0004ec60        0x3 release/obj/ricochetdll/multiplay_gamerules.o
-                0x0004ec60                CHalfLifeMultiplay::PlayTextureSounds()
- *fill*         0x0004ec63        0xd 
+                0x0004ec70        0x3 release/obj/ricochetdll/multiplay_gamerules.o
+                0x0004ec70                CHalfLifeMultiplay::PlayTextureSounds()
+ *fill*         0x0004ec73        0xd 
  .text._ZN23CMultiplayGameMgrHelperD2Ev
-                0x0004ec70        0x1 release/obj/ricochetdll/multiplay_gamerules.o
-                0x0004ec70                CMultiplayGameMgrHelper::~CMultiplayGameMgrHelper()
-                0x0004ec70                CMultiplayGameMgrHelper::~CMultiplayGameMgrHelper()
- *fill*         0x0004ec71        0xf 
- .text._ZN23CMultiplayGameMgrHelperD0Ev
-                0x0004ec80       0x1d release/obj/ricochetdll/multiplay_gamerules.o
+                0x0004ec80        0x1 release/obj/ricochetdll/multiplay_gamerules.o
                 0x0004ec80                CMultiplayGameMgrHelper::~CMultiplayGameMgrHelper()
- *fill*         0x0004ec9d        0x3 
+                0x0004ec80                CMultiplayGameMgrHelper::~CMultiplayGameMgrHelper()
+ *fill*         0x0004ec81        0xf 
+ .text._ZN23CMultiplayGameMgrHelperD0Ev
+                0x0004ec90       0x1d release/obj/ricochetdll/multiplay_gamerules.o
+                0x0004ec90                CMultiplayGameMgrHelper::~CMultiplayGameMgrHelper()
+ *fill*         0x0004ecad        0x3 
  .text._ZN23CMultiplayGameMgrHelper19CanPlayerHearPlayerEP11CBasePlayerS1_
-                0x0004eca0       0x52 release/obj/ricochetdll/multiplay_gamerules.o
-                0x0004eca0                CMultiplayGameMgrHelper::CanPlayerHearPlayer(CBasePlayer*, CBasePlayer*)
- *fill*         0x0004ecf2        0xe 
+                0x0004ecb0       0x52 release/obj/ricochetdll/multiplay_gamerules.o
+                0x0004ecb0                CMultiplayGameMgrHelper::CanPlayerHearPlayer(CBasePlayer*, CBasePlayer*)
+ *fill*         0x0004ed02        0xe 
  .text._ZN18CHalfLifeMultiplay18EndMultiplayerGameEv
-                0x0004ed00       0x89 release/obj/ricochetdll/multiplay_gamerules.o
-                0x0004ed00                CHalfLifeMultiplay::EndMultiplayerGame()
- *fill*         0x0004ed89        0x7 
- .text          0x0004ed90      0x9ea release/obj/ricochetdll/observer.o
-                0x0004ed90                CBasePlayer::StopObserver()
-                0x0004ee60                CBasePlayer::Observer_FindNextPlayer(bool)
-                0x0004f0a0                CBasePlayer::ObserverInput_NextPlayer()
-                0x0004f0d0                CBasePlayer::ObserverInput_PrevPlayer()
-                0x0004f100                CBasePlayer::Observer_HandleButtons()
-                0x0004f180                CBasePlayer::Observer_SetMode(int)
-                0x0004f3a0                CBasePlayer::StartObserver(Vector, Vector)
-                0x0004f720                CBasePlayer::ObserverInput_ChangeMode()
- *fill*         0x0004f77a        0x6 
- .text          0x0004f780     0x1334 release/obj/ricochetdll/pathcorner.o
-                0x0004f780                CPathCorner::Spawn()
-                0x0004f790                CPathTrack::Spawn()
-                0x0004f820                CPathCorner::Save(CSave&)
-                0x0004f870                CPathTrack::Save(CSave&)
-                0x0004f8c0                CPathCorner::Restore(CRestore&)
-                0x0004f910                CPathTrack::Restore(CRestore&)
-                0x0004f960                CPathTrack::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x0004fa10                CPathCorner::KeyValue(KeyValueData_s*)
-                0x0004fa80                CPathTrack::KeyValue(KeyValueData_s*)
-                0x0004fb70                path_corner
-                0x0004fbf0                path_track
-                0x0004fc70                CPathTrack::Link()
-                0x0004fe70                CPathTrack::Activate()
-                0x0004fe90                CPathTrack::ValidPath(CPathTrack*, int)
-                0x0004fec0                CPathTrack::Project(CPathTrack*, CPathTrack*, Vector*, float)
-                0x0004ff70                CPathTrack::GetNext()
-                0x0004ffa0                CPathTrack::GetPrevious()
-                0x0004ffd0                CPathTrack::SetPrevious(CPathTrack*)
-                0x00050020                CPathTrack::LookAhead(Vector*, float, int)
-                0x00050910                CPathTrack::Nearest(Vector)
-                0x00050a60                CPathTrack::Instance(edict_s*)
- *fill*         0x00050ab4        0xc 
+                0x0004ed10       0x89 release/obj/ricochetdll/multiplay_gamerules.o
+                0x0004ed10                CHalfLifeMultiplay::EndMultiplayerGame()
+ *fill*         0x0004ed99        0x7 
+ .text          0x0004eda0      0x9ea release/obj/ricochetdll/observer.o
+                0x0004eda0                CBasePlayer::StopObserver()
+                0x0004ee70                CBasePlayer::Observer_FindNextPlayer(bool)
+                0x0004f0b0                CBasePlayer::ObserverInput_NextPlayer()
+                0x0004f0e0                CBasePlayer::ObserverInput_PrevPlayer()
+                0x0004f110                CBasePlayer::Observer_HandleButtons()
+                0x0004f190                CBasePlayer::Observer_SetMode(int)
+                0x0004f3b0                CBasePlayer::StartObserver(Vector, Vector)
+                0x0004f730                CBasePlayer::ObserverInput_ChangeMode()
+ *fill*         0x0004f78a        0x6 
+ .text          0x0004f790     0x1334 release/obj/ricochetdll/pathcorner.o
+                0x0004f790                CPathCorner::Spawn()
+                0x0004f7a0                CPathTrack::Spawn()
+                0x0004f830                CPathCorner::Save(CSave&)
+                0x0004f880                CPathTrack::Save(CSave&)
+                0x0004f8d0                CPathCorner::Restore(CRestore&)
+                0x0004f920                CPathTrack::Restore(CRestore&)
+                0x0004f970                CPathTrack::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x0004fa20                CPathCorner::KeyValue(KeyValueData_s*)
+                0x0004fa90                CPathTrack::KeyValue(KeyValueData_s*)
+                0x0004fb80                path_corner
+                0x0004fc00                path_track
+                0x0004fc80                CPathTrack::Link()
+                0x0004fe80                CPathTrack::Activate()
+                0x0004fea0                CPathTrack::ValidPath(CPathTrack*, int)
+                0x0004fed0                CPathTrack::Project(CPathTrack*, CPathTrack*, Vector*, float)
+                0x0004ff80                CPathTrack::GetNext()
+                0x0004ffb0                CPathTrack::GetPrevious()
+                0x0004ffe0                CPathTrack::SetPrevious(CPathTrack*)
+                0x00050030                CPathTrack::LookAhead(Vector*, float, int)
+                0x00050920                CPathTrack::Nearest(Vector)
+                0x00050a70                CPathTrack::Instance(edict_s*)
+ *fill*         0x00050ac4        0xc 
  .text._ZN11CPathCorner8GetDelayEv
-                0x00050ac0        0x8 release/obj/ricochetdll/pathcorner.o
-                0x00050ac0                CPathCorner::GetDelay()
- *fill*         0x00050ac8        0x8 
- .text          0x00050ad0       0x88 release/obj/ricochetdll/plane.o
-                0x00050ad0                CPlane::CPlane()
-                0x00050ad0                CPlane::CPlane()
-                0x00050ae0                CPlane::InitializePlane(Vector const&, Vector const&)
-                0x00050b20                CPlane::PointInFront(Vector const&)
- *fill*         0x00050b58        0x8 
- .text          0x00050b60     0x6492 release/obj/ricochetdll/plats.o
-                0x00050b60                CBasePlatTrain::Precache()
-                0x00050dd0                CFuncTrain::Blocked(CBaseEntity*)
-                0x00050e30                CFuncTrain::Precache()
-                0x00050e40                CFuncTrackTrain::OverrideReset()
-                0x00050e90                CFuncTrackTrain::Precache()
-                0x00050fb0                CFuncTrackChange::Touch(CBaseEntity*)
-                0x00050fc0                CFuncTrackChange::OverrideReset()
-                0x00051000                CBasePlatTrain::KeyValue(KeyValueData_s*)
-                0x00051250                CFuncTrackChange::KeyValue(KeyValueData_s*)
-                0x00051350                CGunTarget::Spawn()
-                0x00051440                CFuncTrainControls::Spawn()
-                0x000514f0                CFuncTrackTrain::Spawn()
-                0x000516d0                CFuncPlat::GoDown()
-                0x000517a0                CFuncPlat::GoUp()
-                0x00051870                CFuncPlat::HitBottom()
-                0x00051930                CFuncPlat::HitTop()
-                0x00051a30                CFuncPlat::Blocked(CBaseEntity*)
-                0x00051b20                CFuncTrackTrain::KeyValue(KeyValueData_s*)
-                0x00051cb0                CFuncTrain::Wait()
-                0x00051f00                CFuncTrain::Next()
-                0x00052250                CGunTarget::TakeDamage(entvars_s*, entvars_s*, float, int)
-                0x00052320                CFuncTrackTrain::Blocked(CBaseEntity*)
-                0x00052480                CFuncTrackTrain::DeadEnd()
-                0x00052620                CFuncTrackTrain::OnControls(entvars_s*)
-                0x000527b0                CFuncTrackTrain::NearestPath()
-                0x000529d0                CGunTarget::Activate()
-                0x00052a90                CGunTarget::Next()
-                0x00052bc0                CGunTarget::Wait()
-                0x00052ce0                CBasePlatTrain::Save(CSave&)
-                0x00052d30                CGunTarget::Save(CSave&)
-                0x00052d80                CBasePlatTrain::Restore(CRestore&)
-                0x00052dd0                CGunTarget::Restore(CRestore&)
-                0x00052e20                CFuncPlat::PlatUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x00052ec0                CFuncTrackTrain::Save(CSave&)
-                0x00052f10                CFuncTrackTrain::Restore(CRestore&)
-                0x00052f60                CFuncTrain::OverrideReset()
-                0x00053040                CFuncTrain::Activate()
-                0x00053180                CFuncTrain::KeyValue(KeyValueData_s*)
-                0x000531e0                CFuncTrain::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x000532c0                CGunTarget::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x00053390                CPlatTrigger::Touch(CBaseEntity*)
-                0x00053430                CFuncTrackChange::UpdateAutoTargets(int)
-                0x000534a0                CFuncTrain::Spawn()
-                0x00053600                CFuncPlatRot::Restore(CRestore&)
-                0x00053680                CFuncTrain::Save(CSave&)
-                0x00053700                CFuncPlatRot::Save(CSave&)
-                0x00053780                CFuncTrain::Restore(CRestore&)
-                0x00053800                CFuncTrackChange::Save(CSave&)
-                0x000538a0                CFuncTrackChange::Restore(CRestore&)
-                0x00053940                CFuncTrackChange::HitTop()
-                0x00053a50                CGunTarget::Start()
-                0x00053b40                CFuncPlatRot::HitBottom()
-                0x00053c40                CFuncTrainControls::Find()
-                0x00053de0                CFuncTrackChange::HitBottom()
-                0x00053f90                CFuncPlatRot::HitTop()
-                0x000540c0                CFuncPlatRot::GoDown()
-                0x00054210                CFuncPlatRot::GoUp()
-                0x00054360                CFuncTrackChange::Find()
-                0x00054690                func_plat
-                0x00054710                CFuncPlat::Setup()
-                0x00054870                CFuncPlat::Spawn()
-                0x000548f0                CFuncPlatRot::Spawn()
-                0x00054a50                CPlatTrigger::SpawnInsideTrigger(CFuncPlat*)
-                0x00054bc0                CFuncPlat::Precache()
-                0x00054ce0                CFuncTrackChange::Precache()
-                0x00054e10                func_platrot
-                0x00054e90                CFuncPlatRot::SetupRotation()
-                0x00054f80                CFuncTrackChange::Spawn()
-                0x000551b0                CFuncPlatRot::RotMove(Vector&, float)
-                0x00055240                func_train
-                0x000552c0                func_tracktrain
-                0x00055340                CFuncTrackTrain::NextThink(float, int)
-                0x00055380                CFuncTrackTrain::StopSound()
-                0x00055430                CFuncTrackTrain::UpdateSound()
-                0x000555c0                CFuncTrackTrain::Next()
-                0x00055e70                CFuncTrackTrain::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x00056030                CFuncTrackAuto::UpdateAutoTargets(int)
-                0x000561b0                CFuncTrackTrain::Find()
-                0x000563a0                CFuncTrackTrain::SetControls(entvars_s*)
-                0x00056410                CFuncTrackTrain::Instance(edict_s*)
-                0x00056470                func_traincontrols
-                0x000564f0                func_trackchange
-                0x00056570                CFuncTrackChange::EvaluateTrain(CPathTrack*)
-                0x00056610                CFuncTrackChange::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x000566f0                CFuncTrackAuto::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x00056870                CFuncTrackChange::UpdateTrain(Vector&)
-                0x00056a40                CFuncTrackChange::GoDown()
-                0x00056c80                CFuncTrackChange::GoUp()
-                0x00056eb0                func_trackautochange
-                0x00056f30                func_guntarget
-                0x00056fb0                CGunTarget::Stop()
- *fill*         0x00056ff2        0xe 
+                0x00050ad0        0x8 release/obj/ricochetdll/pathcorner.o
+                0x00050ad0                CPathCorner::GetDelay()
+ *fill*         0x00050ad8        0x8 
+ .text          0x00050ae0       0x88 release/obj/ricochetdll/plane.o
+                0x00050ae0                CPlane::CPlane()
+                0x00050ae0                CPlane::CPlane()
+                0x00050af0                CPlane::InitializePlane(Vector const&, Vector const&)
+                0x00050b30                CPlane::PointInFront(Vector const&)
+ *fill*         0x00050b68        0x8 
+ .text          0x00050b70     0x6492 release/obj/ricochetdll/plats.o
+                0x00050b70                CBasePlatTrain::Precache()
+                0x00050de0                CFuncTrain::Blocked(CBaseEntity*)
+                0x00050e40                CFuncTrain::Precache()
+                0x00050e50                CFuncTrackTrain::OverrideReset()
+                0x00050ea0                CFuncTrackTrain::Precache()
+                0x00050fc0                CFuncTrackChange::Touch(CBaseEntity*)
+                0x00050fd0                CFuncTrackChange::OverrideReset()
+                0x00051010                CBasePlatTrain::KeyValue(KeyValueData_s*)
+                0x00051260                CFuncTrackChange::KeyValue(KeyValueData_s*)
+                0x00051360                CGunTarget::Spawn()
+                0x00051450                CFuncTrainControls::Spawn()
+                0x00051500                CFuncTrackTrain::Spawn()
+                0x000516e0                CFuncPlat::GoDown()
+                0x000517b0                CFuncPlat::GoUp()
+                0x00051880                CFuncPlat::HitBottom()
+                0x00051940                CFuncPlat::HitTop()
+                0x00051a40                CFuncPlat::Blocked(CBaseEntity*)
+                0x00051b30                CFuncTrackTrain::KeyValue(KeyValueData_s*)
+                0x00051cc0                CFuncTrain::Wait()
+                0x00051f10                CFuncTrain::Next()
+                0x00052260                CGunTarget::TakeDamage(entvars_s*, entvars_s*, float, int)
+                0x00052330                CFuncTrackTrain::Blocked(CBaseEntity*)
+                0x00052490                CFuncTrackTrain::DeadEnd()
+                0x00052630                CFuncTrackTrain::OnControls(entvars_s*)
+                0x000527c0                CFuncTrackTrain::NearestPath()
+                0x000529e0                CGunTarget::Activate()
+                0x00052aa0                CGunTarget::Next()
+                0x00052bd0                CGunTarget::Wait()
+                0x00052cf0                CBasePlatTrain::Save(CSave&)
+                0x00052d40                CGunTarget::Save(CSave&)
+                0x00052d90                CBasePlatTrain::Restore(CRestore&)
+                0x00052de0                CGunTarget::Restore(CRestore&)
+                0x00052e30                CFuncPlat::PlatUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x00052ed0                CFuncTrackTrain::Save(CSave&)
+                0x00052f20                CFuncTrackTrain::Restore(CRestore&)
+                0x00052f70                CFuncTrain::OverrideReset()
+                0x00053050                CFuncTrain::Activate()
+                0x00053190                CFuncTrain::KeyValue(KeyValueData_s*)
+                0x000531f0                CFuncTrain::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x000532d0                CGunTarget::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x000533a0                CPlatTrigger::Touch(CBaseEntity*)
+                0x00053440                CFuncTrackChange::UpdateAutoTargets(int)
+                0x000534b0                CFuncTrain::Spawn()
+                0x00053610                CFuncPlatRot::Restore(CRestore&)
+                0x00053690                CFuncTrain::Save(CSave&)
+                0x00053710                CFuncPlatRot::Save(CSave&)
+                0x00053790                CFuncTrain::Restore(CRestore&)
+                0x00053810                CFuncTrackChange::Save(CSave&)
+                0x000538b0                CFuncTrackChange::Restore(CRestore&)
+                0x00053950                CFuncTrackChange::HitTop()
+                0x00053a60                CGunTarget::Start()
+                0x00053b50                CFuncPlatRot::HitBottom()
+                0x00053c50                CFuncTrainControls::Find()
+                0x00053df0                CFuncTrackChange::HitBottom()
+                0x00053fa0                CFuncPlatRot::HitTop()
+                0x000540d0                CFuncPlatRot::GoDown()
+                0x00054220                CFuncPlatRot::GoUp()
+                0x00054370                CFuncTrackChange::Find()
+                0x000546a0                func_plat
+                0x00054720                CFuncPlat::Setup()
+                0x00054880                CFuncPlat::Spawn()
+                0x00054900                CFuncPlatRot::Spawn()
+                0x00054a60                CPlatTrigger::SpawnInsideTrigger(CFuncPlat*)
+                0x00054bd0                CFuncPlat::Precache()
+                0x00054cf0                CFuncTrackChange::Precache()
+                0x00054e20                func_platrot
+                0x00054ea0                CFuncPlatRot::SetupRotation()
+                0x00054f90                CFuncTrackChange::Spawn()
+                0x000551c0                CFuncPlatRot::RotMove(Vector&, float)
+                0x00055250                func_train
+                0x000552d0                func_tracktrain
+                0x00055350                CFuncTrackTrain::NextThink(float, int)
+                0x00055390                CFuncTrackTrain::StopSound()
+                0x00055440                CFuncTrackTrain::UpdateSound()
+                0x000555d0                CFuncTrackTrain::Next()
+                0x00055e80                CFuncTrackTrain::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x00056040                CFuncTrackAuto::UpdateAutoTargets(int)
+                0x000561c0                CFuncTrackTrain::Find()
+                0x000563b0                CFuncTrackTrain::SetControls(entvars_s*)
+                0x00056420                CFuncTrackTrain::Instance(edict_s*)
+                0x00056480                func_traincontrols
+                0x00056500                func_trackchange
+                0x00056580                CFuncTrackChange::EvaluateTrain(CPathTrack*)
+                0x00056620                CFuncTrackChange::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x00056700                CFuncTrackAuto::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x00056880                CFuncTrackChange::UpdateTrain(Vector&)
+                0x00056a50                CFuncTrackChange::GoDown()
+                0x00056c90                CFuncTrackChange::GoUp()
+                0x00056ec0                func_trackautochange
+                0x00056f40                func_guntarget
+                0x00056fc0                CGunTarget::Stop()
+ *fill*         0x00057002        0xe 
  .text._ZN15CFuncTrackTrain10ObjectCapsEv
-                0x00057000        0x6 release/obj/ricochetdll/plats.o
-                0x00057000                CFuncTrackTrain::ObjectCaps()
- *fill*         0x00057006        0xa 
+                0x00057010        0x6 release/obj/ricochetdll/plats.o
+                0x00057010                CFuncTrackTrain::ObjectCaps()
+ *fill*         0x00057016        0xa 
  .text._ZN14CBasePlatTrain10ObjectCapsEv
-                0x00057010        0x3 release/obj/ricochetdll/plats.o
-                0x00057010                CBasePlatTrain::ObjectCaps()
- *fill*         0x00057013        0xd 
+                0x00057020        0x3 release/obj/ricochetdll/plats.o
+                0x00057020                CBasePlatTrain::ObjectCaps()
+ *fill*         0x00057023        0xd 
  .text._ZN14CBasePlatTrain12IsTogglePlatEv
-                0x00057020       0x11 release/obj/ricochetdll/plats.o
-                0x00057020                CBasePlatTrain::IsTogglePlat()
- *fill*         0x00057031        0xf 
+                0x00057030       0x11 release/obj/ricochetdll/plats.o
+                0x00057030                CBasePlatTrain::IsTogglePlat()
+ *fill*         0x00057041        0xf 
  .text._ZN9CFuncPlat10CallGoDownEv
-                0x00057040        0xc release/obj/ricochetdll/plats.o
-                0x00057040                CFuncPlat::CallGoDown()
- *fill*         0x0005704c        0x4 
- .text._ZN9CFuncPlat10CallHitTopEv
                 0x00057050        0xc release/obj/ricochetdll/plats.o
-                0x00057050                CFuncPlat::CallHitTop()
+                0x00057050                CFuncPlat::CallGoDown()
  *fill*         0x0005705c        0x4 
- .text._ZN9CFuncPlat13CallHitBottomEv
+ .text._ZN9CFuncPlat10CallHitTopEv
                 0x00057060        0xc release/obj/ricochetdll/plats.o
-                0x00057060                CFuncPlat::CallHitBottom()
+                0x00057060                CFuncPlat::CallHitTop()
  *fill*         0x0005706c        0x4 
+ .text._ZN9CFuncPlat13CallHitBottomEv
+                0x00057070        0xc release/obj/ricochetdll/plats.o
+                0x00057070                CFuncPlat::CallHitBottom()
+ *fill*         0x0005707c        0x4 
  .text._ZN12CPlatTrigger10ObjectCapsEv
-                0x00057070        0x6 release/obj/ricochetdll/plats.o
-                0x00057070                CPlatTrigger::ObjectCaps()
- *fill*         0x00057076        0xa 
+                0x00057080        0x6 release/obj/ricochetdll/plats.o
+                0x00057080                CPlatTrigger::ObjectCaps()
+ *fill*         0x00057086        0xa 
  .text._ZN18CFuncTrainControls10ObjectCapsEv
-                0x00057080        0x3 release/obj/ricochetdll/plats.o
-                0x00057080                CFuncTrainControls::ObjectCaps()
- *fill*         0x00057083        0xd 
+                0x00057090        0x3 release/obj/ricochetdll/plats.o
+                0x00057090                CFuncTrainControls::ObjectCaps()
+ *fill*         0x00057093        0xd 
  .text._ZN16CFuncTrackChange12IsTogglePlatEv
-                0x00057090        0x6 release/obj/ricochetdll/plats.o
-                0x00057090                CFuncTrackChange::IsTogglePlat()
- *fill*         0x00057096        0xa 
- .text._ZN10CGunTarget10BloodColorEv
                 0x000570a0        0x6 release/obj/ricochetdll/plats.o
-                0x000570a0                CGunTarget::BloodColor()
+                0x000570a0                CFuncTrackChange::IsTogglePlat()
  *fill*         0x000570a6        0xa 
- .text._ZN10CGunTarget8ClassifyEv
+ .text._ZN10CGunTarget10BloodColorEv
                 0x000570b0        0x6 release/obj/ricochetdll/plats.o
-                0x000570b0                CGunTarget::Classify()
+                0x000570b0                CGunTarget::BloodColor()
  *fill*         0x000570b6        0xa 
+ .text._ZN10CGunTarget8ClassifyEv
+                0x000570c0        0x6 release/obj/ricochetdll/plats.o
+                0x000570c0                CGunTarget::Classify()
+ *fill*         0x000570c6        0xa 
  .text._ZN10CGunTarget10BodyTargetERK6Vector
-                0x000570c0       0x1f release/obj/ricochetdll/plats.o
-                0x000570c0                CGunTarget::BodyTarget(Vector const&)
- *fill*         0x000570df        0x1 
+                0x000570d0       0x1f release/obj/ricochetdll/plats.o
+                0x000570d0                CGunTarget::BodyTarget(Vector const&)
+ *fill*         0x000570ef        0x1 
  .text._ZN10CGunTarget10ObjectCapsEv
-                0x000570e0        0x3 release/obj/ricochetdll/plats.o
-                0x000570e0                CGunTarget::ObjectCaps()
- *fill*         0x000570e3        0xd 
- .text          0x000570f0     0xa4ec release/obj/ricochetdll/player.o
-                0x000570f0                CBasePlayer::GetGunPosition()
-                0x00057130                CBasePlayer::TakeDamage(entvars_s*, entvars_s*, float, int)
-                0x000571e0                CBasePlayer::RenewItems()
-                0x000571e0                CBasePlayer::Duck()
-                0x000571f0                CBasePlayer::Classify()
-                0x00057200                CBasePlayer::AddPoints(int, int)
-                0x00057290                CBasePlayer::TeamID()
-                0x000572c0                CBasePlayer::RemovePlayerItem(CBasePlayerItem*)
-                0x00057440                CBasePlayer::FBecomeProne()
-                0x00057460                CBasePlayer::Illumination()
-                0x000574a0                CBasePlayer::TakeHealth(float, int)
-                0x000574d0                CInfoIntermission::Spawn()
-                0x00057550                CDeadHEV::Spawn()
-                0x00057640                CBasePlayer::AddPointsToTeam(int, int)
-                0x00057700                CSprayCan::Think()
-                0x00057890                CBloodSplat::Spray()
-                0x00057990                CRevertSaved::KeyValue(KeyValueData_s*)
-                0x00057aa0                CRevertSaved::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x00057b30                CRevertSaved::LoadThink()
-                0x00057b70                CRevertSaved::MessageThink()
-                0x00057c00                CBasePlayer::Save(CSave&)
-                0x00057c50                CRevertSaved::Save(CSave&)
-                0x00057ca0                CRevertSaved::Restore(CRestore&)
-                0x00057cf0                CDeadHEV::KeyValue(KeyValueData_s*)
-                0x000580d0                CBasePlayer::Precache()
-                0x000581b0                CBasePlayer::TraceAttack(entvars_s*, float, Vector, TraceResult*, int)
-                0x00058360                CBasePlayer::GiveAmmo(int, char*, int)
-                0x000584e0                CInfoIntermission::Think()
-                0x00058620                CBasePlayer::Spawn()
-                0x00058b50                LinkUserMessages()
-                0x00058b80                player
-                0x00058c00                CBasePlayer::Pain()
-                0x00058cd0                VecVelocityForDamage(float)
-                0x00058db0                TrainSpeed(int, int)
-                0x00058e10                CBasePlayer::DeathSound()
-                0x00058e20                CBasePlayer::RemoveAllItems(int)
-                0x00059030                CStripWeapons::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x000590d0                CBasePlayer::Shatter(entvars_s*)
-                0x00059290                CBasePlayer::Decapitate(entvars_s*)
-                0x00059650                CBasePlayer::GetThrowAnim()
-                0x000596b0                CBasePlayer::GetHoldAnim()
-                0x00059770                CBasePlayer::GetFallAnimation()
-                0x000598e0                CBasePlayer::SetAnimation(PLAYER_ANIM)
-                0x0005a050                CBasePlayer::Jump()
-                0x0005a0f0                CBasePlayer::Killed(entvars_s*, int)
-                0x0005a500                CBasePlayer::WaterMove()
-                0x0005ab40                CBasePlayer::IsOnLadder()
-                0x0005ab60                CBasePlayer::StartDeathCam()
-                0x0005ada0                CBasePlayer::PlayerDeathThink()
-                0x0005b000                CBasePlayer::PlayerUse()
-                0x0005b4e0                FixPlayerCrouchStuck(edict_s*)
-                0x0005b570                CBasePlayer::PlayStepSound(int, float)
-                0x0005bc40                MapTextureTypeStepType(char)
-                0x0005bc70                CBasePlayer::UpdateStepSound()
-                0x0005c0c0                CBasePlayer::UpdateGeigerCounter()
-                0x0005c1b0                CBasePlayer::CheckSuitUpdate()
-                0x0005c3c0                CBasePlayer::SetSuitUpdate(char*, int, int)
-                0x0005c5b0                CBasePlayer::CheckTimeBasedDamage()
-                0x0005c900                CBasePlayer::PreThink()
-                0x0005cfe0                CBasePlayer::UpdatePlayerSound()
-                0x0005d230                CBasePlayer::PostThink()
-                0x0005d8d0                IsSpawnPointValid(CBaseEntity*, CBaseEntity*)
-                0x0005d990                EntSelectSpawnPoint(CBaseEntity*)
-                0x0005ddd0                CBasePlayer::Restore(CRestore&)
-                0x0005df90                CBasePlayer::SelectNextItem(int)
-                0x0005e0c0                CBasePlayer::SelectItem(char const*)
-                0x0005e240                CBasePlayer::SelectLastItem()
-                0x0005e360                CBasePlayer::HasWeapons()
-                0x0005e3b0                CBasePlayer::SelectPrevItem(int)
-                0x0005e3c0                CSprayCan::Spawn(entvars_s*)
-                0x0005e470                CBloodSplat::Spawn(entvars_s*)
-                0x0005e500                CBasePlayer::GiveNamedItem(char const*)
-                0x0005e5c0                FindEntityForward(CBaseEntity*)
-                0x0005eef0                CBasePlayer::FlashlightIsOn()
-                0x0005ef10                CBasePlayer::FlashlightTurnOn()
-                0x0005f000                CBasePlayer::FlashlightTurnOff()
-                0x0005f0b0                CBasePlayer::ImpulseCommands()
-                0x0005f460                CBasePlayer::ForceClientDllUpdate()
-                0x0005f4a0                CBasePlayer::CheatImpulseCommands(int)
-                0x0005f4f0                CBasePlayer::ItemPreFrame()
-                0x0005f540                CBasePlayer::ItemPostFrame()
-                0x0005f5b0                CBasePlayer::AmmoInventory(int)
-                0x0005f5d0                CBasePlayer::GetAmmoIndex(char const*)
-                0x0005f640                CBasePlayer::SendAmmoUpdate()
-                0x0005f6e0                CBasePlayer::UpdateClientData()
-                0x00060200                CBasePlayer::BarnacleVictimBitten(entvars_s*)
-                0x000602a0                CBasePlayer::BarnacleVictimReleased()
-                0x000602b0                CBasePlayer::EnableControl(int)
-                0x000602e0                CBasePlayer::AutoaimDeflection(Vector&, float, float)
-                0x000609d0                CBasePlayer::GetAutoaimVector(float)
-                0x00060dd0                CBasePlayer::ResetAutoaim()
-                0x00060e50                CBasePlayer::SetCustomDecalFrames(int)
-                0x00060e70                CBasePlayer::GetCustomDecalFrames()
-                0x00060e80                CBasePlayer::DropPlayerItem(char*)
-                0x00060e90                CBasePlayer::HasPlayerItem(CBasePlayerItem*)
-                0x00060f20                CBasePlayer::HasNamedPlayerItem(char const*)
-                0x00060fc0                CBasePlayer::SwitchWeapon(CBasePlayerItem*)
-                0x000610a0                CBasePlayer::AddPlayerItem(CBasePlayerItem*)
-                0x00061260                monster_hevsuit_dead
-                0x000612e0                player_weaponstrip
-                0x00061360                player_loadsaved
-                0x000613e0                info_intermission
-                0x00061460                CBasePlayer::Freeze()
-                0x000614d0                CBasePlayer::ClearFreezeAndRender()
-                0x00061560                CBasePlayer::ClientHearVox(char const*)
- *fill*         0x000615dc        0x4 
+                0x000570f0        0x3 release/obj/ricochetdll/plats.o
+                0x000570f0                CGunTarget::ObjectCaps()
+ *fill*         0x000570f3        0xd 
+ .text          0x00057100     0xa4ec release/obj/ricochetdll/player.o
+                0x00057100                CBasePlayer::GetGunPosition()
+                0x00057140                CBasePlayer::TakeDamage(entvars_s*, entvars_s*, float, int)
+                0x000571f0                CBasePlayer::RenewItems()
+                0x000571f0                CBasePlayer::Duck()
+                0x00057200                CBasePlayer::Classify()
+                0x00057210                CBasePlayer::AddPoints(int, int)
+                0x000572a0                CBasePlayer::TeamID()
+                0x000572d0                CBasePlayer::RemovePlayerItem(CBasePlayerItem*)
+                0x00057450                CBasePlayer::FBecomeProne()
+                0x00057470                CBasePlayer::Illumination()
+                0x000574b0                CBasePlayer::TakeHealth(float, int)
+                0x000574e0                CInfoIntermission::Spawn()
+                0x00057560                CDeadHEV::Spawn()
+                0x00057650                CBasePlayer::AddPointsToTeam(int, int)
+                0x00057710                CSprayCan::Think()
+                0x000578a0                CBloodSplat::Spray()
+                0x000579a0                CRevertSaved::KeyValue(KeyValueData_s*)
+                0x00057ab0                CRevertSaved::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x00057b40                CRevertSaved::LoadThink()
+                0x00057b80                CRevertSaved::MessageThink()
+                0x00057c10                CBasePlayer::Save(CSave&)
+                0x00057c60                CRevertSaved::Save(CSave&)
+                0x00057cb0                CRevertSaved::Restore(CRestore&)
+                0x00057d00                CDeadHEV::KeyValue(KeyValueData_s*)
+                0x000580e0                CBasePlayer::Precache()
+                0x000581c0                CBasePlayer::TraceAttack(entvars_s*, float, Vector, TraceResult*, int)
+                0x00058370                CBasePlayer::GiveAmmo(int, char*, int)
+                0x000584f0                CInfoIntermission::Think()
+                0x00058630                CBasePlayer::Spawn()
+                0x00058b60                LinkUserMessages()
+                0x00058b90                player
+                0x00058c10                CBasePlayer::Pain()
+                0x00058ce0                VecVelocityForDamage(float)
+                0x00058dc0                TrainSpeed(int, int)
+                0x00058e20                CBasePlayer::DeathSound()
+                0x00058e30                CBasePlayer::RemoveAllItems(int)
+                0x00059040                CStripWeapons::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x000590e0                CBasePlayer::Shatter(entvars_s*)
+                0x000592a0                CBasePlayer::Decapitate(entvars_s*)
+                0x00059660                CBasePlayer::GetThrowAnim()
+                0x000596c0                CBasePlayer::GetHoldAnim()
+                0x00059780                CBasePlayer::GetFallAnimation()
+                0x000598f0                CBasePlayer::SetAnimation(PLAYER_ANIM)
+                0x0005a060                CBasePlayer::Jump()
+                0x0005a100                CBasePlayer::Killed(entvars_s*, int)
+                0x0005a510                CBasePlayer::WaterMove()
+                0x0005ab50                CBasePlayer::IsOnLadder()
+                0x0005ab70                CBasePlayer::StartDeathCam()
+                0x0005adb0                CBasePlayer::PlayerDeathThink()
+                0x0005b010                CBasePlayer::PlayerUse()
+                0x0005b4f0                FixPlayerCrouchStuck(edict_s*)
+                0x0005b580                CBasePlayer::PlayStepSound(int, float)
+                0x0005bc50                MapTextureTypeStepType(char)
+                0x0005bc80                CBasePlayer::UpdateStepSound()
+                0x0005c0d0                CBasePlayer::UpdateGeigerCounter()
+                0x0005c1c0                CBasePlayer::CheckSuitUpdate()
+                0x0005c3d0                CBasePlayer::SetSuitUpdate(char*, int, int)
+                0x0005c5c0                CBasePlayer::CheckTimeBasedDamage()
+                0x0005c910                CBasePlayer::PreThink()
+                0x0005cff0                CBasePlayer::UpdatePlayerSound()
+                0x0005d240                CBasePlayer::PostThink()
+                0x0005d8e0                IsSpawnPointValid(CBaseEntity*, CBaseEntity*)
+                0x0005d9a0                EntSelectSpawnPoint(CBaseEntity*)
+                0x0005dde0                CBasePlayer::Restore(CRestore&)
+                0x0005dfa0                CBasePlayer::SelectNextItem(int)
+                0x0005e0d0                CBasePlayer::SelectItem(char const*)
+                0x0005e250                CBasePlayer::SelectLastItem()
+                0x0005e370                CBasePlayer::HasWeapons()
+                0x0005e3c0                CBasePlayer::SelectPrevItem(int)
+                0x0005e3d0                CSprayCan::Spawn(entvars_s*)
+                0x0005e480                CBloodSplat::Spawn(entvars_s*)
+                0x0005e510                CBasePlayer::GiveNamedItem(char const*)
+                0x0005e5d0                FindEntityForward(CBaseEntity*)
+                0x0005ef00                CBasePlayer::FlashlightIsOn()
+                0x0005ef20                CBasePlayer::FlashlightTurnOn()
+                0x0005f010                CBasePlayer::FlashlightTurnOff()
+                0x0005f0c0                CBasePlayer::ImpulseCommands()
+                0x0005f470                CBasePlayer::ForceClientDllUpdate()
+                0x0005f4b0                CBasePlayer::CheatImpulseCommands(int)
+                0x0005f500                CBasePlayer::ItemPreFrame()
+                0x0005f550                CBasePlayer::ItemPostFrame()
+                0x0005f5c0                CBasePlayer::AmmoInventory(int)
+                0x0005f5e0                CBasePlayer::GetAmmoIndex(char const*)
+                0x0005f650                CBasePlayer::SendAmmoUpdate()
+                0x0005f6f0                CBasePlayer::UpdateClientData()
+                0x00060210                CBasePlayer::BarnacleVictimBitten(entvars_s*)
+                0x000602b0                CBasePlayer::BarnacleVictimReleased()
+                0x000602c0                CBasePlayer::EnableControl(int)
+                0x000602f0                CBasePlayer::AutoaimDeflection(Vector&, float, float)
+                0x000609e0                CBasePlayer::GetAutoaimVector(float)
+                0x00060de0                CBasePlayer::ResetAutoaim()
+                0x00060e60                CBasePlayer::SetCustomDecalFrames(int)
+                0x00060e80                CBasePlayer::GetCustomDecalFrames()
+                0x00060e90                CBasePlayer::DropPlayerItem(char*)
+                0x00060ea0                CBasePlayer::HasPlayerItem(CBasePlayerItem*)
+                0x00060f30                CBasePlayer::HasNamedPlayerItem(char const*)
+                0x00060fd0                CBasePlayer::SwitchWeapon(CBasePlayerItem*)
+                0x000610b0                CBasePlayer::AddPlayerItem(CBasePlayerItem*)
+                0x00061270                monster_hevsuit_dead
+                0x000612f0                player_weaponstrip
+                0x00061370                player_loadsaved
+                0x000613f0                info_intermission
+                0x00061470                CBasePlayer::Freeze()
+                0x000614e0                CBasePlayer::ClearFreezeAndRender()
+                0x00061570                CBasePlayer::ClientHearVox(char const*)
+ *fill*         0x000615ec        0x4 
  .text._ZN11CBasePlayer13StartSneakingEv
-                0x000615e0       0x21 release/obj/ricochetdll/player.o
-                0x000615e0                CBasePlayer::StartSneaking()
- *fill*         0x00061601        0xf 
+                0x000615f0       0x21 release/obj/ricochetdll/player.o
+                0x000615f0                CBasePlayer::StartSneaking()
+ *fill*         0x00061611        0xf 
  .text._ZN11CBasePlayer12StopSneakingEv
-                0x00061610       0x25 release/obj/ricochetdll/player.o
-                0x00061610                CBasePlayer::StopSneaking()
- *fill*         0x00061635        0xb 
+                0x00061620       0x25 release/obj/ricochetdll/player.o
+                0x00061620                CBasePlayer::StopSneaking()
+ *fill*         0x00061645        0xb 
  .text._ZN11CBasePlayer10IsSneakingEv
-                0x00061640       0x2a release/obj/ricochetdll/player.o
-                0x00061640                CBasePlayer::IsSneaking()
- *fill*         0x0006166a        0x6 
+                0x00061650       0x2a release/obj/ricochetdll/player.o
+                0x00061650                CBasePlayer::IsSneaking()
+ *fill*         0x0006167a        0x6 
  .text._ZN11CBasePlayer17ShouldFadeOnDeathEv
-                0x00061670        0x3 release/obj/ricochetdll/player.o
-                0x00061670                CBasePlayer::ShouldFadeOnDeath()
- *fill*         0x00061673        0xd 
- .text._ZN11CBasePlayer10ObjectCapsEv
                 0x00061680        0x3 release/obj/ricochetdll/player.o
-                0x00061680                CBasePlayer::ObjectCaps()
+                0x00061680                CBasePlayer::ShouldFadeOnDeath()
  *fill*         0x00061683        0xd 
+ .text._ZN11CBasePlayer10ObjectCapsEv
+                0x00061690        0x3 release/obj/ricochetdll/player.o
+                0x00061690                CBasePlayer::ObjectCaps()
+ *fill*         0x00061693        0xd 
  .text._ZN14CHalfLifeRules16FAllowFlashlightEv
-                0x00061690        0x6 release/obj/ricochetdll/player.o
-                0x00061690                CHalfLifeRules::FAllowFlashlight()
- *fill*         0x00061696        0xa 
- .text._ZN9CSprayCan10ObjectCapsEv
                 0x000616a0        0x6 release/obj/ricochetdll/player.o
-                0x000616a0                CSprayCan::ObjectCaps()
+                0x000616a0                CHalfLifeRules::FAllowFlashlight()
  *fill*         0x000616a6        0xa 
- .text._ZN8CDeadHEV8ClassifyEv
+ .text._ZN9CSprayCan10ObjectCapsEv
                 0x000616b0        0x6 release/obj/ricochetdll/player.o
-                0x000616b0                CDeadHEV::Classify()
+                0x000616b0                CSprayCan::ObjectCaps()
  *fill*         0x000616b6        0xa 
+ .text._ZN8CDeadHEV8ClassifyEv
+                0x000616c0        0x6 release/obj/ricochetdll/player.o
+                0x000616c0                CDeadHEV::Classify()
+ *fill*         0x000616c6        0xa 
  .text._ZN11CBasePlayer10BodyTargetERK6Vector
-                0x000616c0      0x115 release/obj/ricochetdll/player.o
-                0x000616c0                CBasePlayer::BodyTarget(Vector const&)
- *fill*         0x000617d5        0xb 
- .text          0x000617e0      0x2e6 release/obj/ricochetdll/singleplay_gamerules.o
-                0x000617e0                CHalfLifeRules::Think()
-                0x000617f0                CHalfLifeRules::IsCoOp()
-                0x000617f0                CHalfLifeRules::IsDeathmatch()
-                0x000617f0                CHalfLifeRules::IsMultiplayer()
-                0x00061800                CHalfLifeRules::PlayerRelationship(CBaseEntity*, CBaseEntity*)
-                0x00061800                CHalfLifeRules::GetNextBestWeapon(CBasePlayer*, CBasePlayerItem*)
-                0x00061810                CHalfLifeRules::ClientConnected(edict_s*, char const*, char const*, char*)
-                0x00061820                CHalfLifeRules::ClientDisconnected(edict_s*)
-                0x00061820                CHalfLifeRules::InitHUD(CBasePlayer*)
-                0x00061820                CHalfLifeRules::PlayerThink(CBasePlayer*)
-                0x00061830                CHalfLifeRules::FlPlayerFallDamage(CBasePlayer*)
-                0x00061870                CHalfLifeRules::AllowAutoTargetCrosshair()
-                0x00061890                CHalfLifeRules::FlPlayerSpawnTime(CBasePlayer*)
-                0x000618b0                CHalfLifeRules::IPointsForKill(CBasePlayer*, CBasePlayer*)
-                0x000618b0                CHalfLifeRules::CanHaveItem(CBasePlayer*, CItem*)
-                0x000618c0                CHalfLifeRules::PlayerKilled(CBasePlayer*, entvars_s*, entvars_s*)
-                0x000618c0                CHalfLifeRules::DeathNotice(CBasePlayer*, entvars_s*, entvars_s*)
-                0x000618d0                CHalfLifeRules::PlayerGotItem(CBasePlayer*, CItem*)
-                0x000618d0                CHalfLifeRules::PlayerGotWeapon(CBasePlayer*, CBasePlayerItem*)
-                0x000618e0                CHalfLifeRules::FlAmmoRespawnTime(CBasePlayerAmmo*)
-                0x000618e0                CHalfLifeRules::FlItemRespawnTime(CItem*)
-                0x000618e0                CHalfLifeRules::FlWeaponRespawnTime(CBasePlayerItem*)
-                0x000618f0                CHalfLifeRules::FlWeaponTryRespawn(CBasePlayerItem*)
-                0x00061900                CHalfLifeRules::VecWeaponRespawnSpot(CBasePlayerItem*)
-                0x00061920                CHalfLifeRules::WeaponShouldRespawn(CBasePlayerItem*)
-                0x00061930                CHalfLifeRules::ItemShouldRespawn(CItem*)
-                0x00061940                CHalfLifeRules::VecItemRespawnSpot(CItem*)
-                0x00061960                CHalfLifeRules::IsAllowedToSpawn(CBaseEntity*)
-                0x00061960                CHalfLifeRules::FPlayerCanRespawn(CBasePlayer*)
-                0x00061970                CHalfLifeRules::PlayerGotAmmo(CBasePlayer*, char*, int)
-                0x00061980                CHalfLifeRules::AmmoShouldRespawn(CBasePlayerAmmo*)
-                0x00061990                CHalfLifeRules::VecAmmoRespawnSpot(CBasePlayerAmmo*)
-                0x000619b0                CHalfLifeRules::FlHealthChargerRechargeTime()
-                0x000619c0                CHalfLifeRules::DeadPlayerWeapons(CBasePlayer*)
-                0x000619d0                CHalfLifeRules::DeadPlayerAmmo(CBasePlayer*)
-                0x000619e0                CHalfLifeRules::FAllowMonsters()
-                0x000619f0                CHalfLifeRules::PlayerSpawn(CBasePlayer*)
-                0x00061a30                CHalfLifeRules::FShouldSwitchWeapon(CBasePlayer*, CBasePlayerItem*)
-                0x00061aa0                CHalfLifeRules::CHalfLifeRules()
-                0x00061aa0                CHalfLifeRules::CHalfLifeRules()
- *fill*         0x00061ac6        0xa 
+                0x000616d0      0x115 release/obj/ricochetdll/player.o
+                0x000616d0                CBasePlayer::BodyTarget(Vector const&)
+ *fill*         0x000617e5        0xb 
+ .text          0x000617f0      0x2e6 release/obj/ricochetdll/singleplay_gamerules.o
+                0x000617f0                CHalfLifeRules::Think()
+                0x00061800                CHalfLifeRules::IsCoOp()
+                0x00061800                CHalfLifeRules::IsDeathmatch()
+                0x00061800                CHalfLifeRules::IsMultiplayer()
+                0x00061810                CHalfLifeRules::PlayerRelationship(CBaseEntity*, CBaseEntity*)
+                0x00061810                CHalfLifeRules::GetNextBestWeapon(CBasePlayer*, CBasePlayerItem*)
+                0x00061820                CHalfLifeRules::ClientConnected(edict_s*, char const*, char const*, char*)
+                0x00061830                CHalfLifeRules::ClientDisconnected(edict_s*)
+                0x00061830                CHalfLifeRules::InitHUD(CBasePlayer*)
+                0x00061830                CHalfLifeRules::PlayerThink(CBasePlayer*)
+                0x00061840                CHalfLifeRules::FlPlayerFallDamage(CBasePlayer*)
+                0x00061880                CHalfLifeRules::AllowAutoTargetCrosshair()
+                0x000618a0                CHalfLifeRules::FlPlayerSpawnTime(CBasePlayer*)
+                0x000618c0                CHalfLifeRules::IPointsForKill(CBasePlayer*, CBasePlayer*)
+                0x000618c0                CHalfLifeRules::CanHaveItem(CBasePlayer*, CItem*)
+                0x000618d0                CHalfLifeRules::PlayerKilled(CBasePlayer*, entvars_s*, entvars_s*)
+                0x000618d0                CHalfLifeRules::DeathNotice(CBasePlayer*, entvars_s*, entvars_s*)
+                0x000618e0                CHalfLifeRules::PlayerGotItem(CBasePlayer*, CItem*)
+                0x000618e0                CHalfLifeRules::PlayerGotWeapon(CBasePlayer*, CBasePlayerItem*)
+                0x000618f0                CHalfLifeRules::FlAmmoRespawnTime(CBasePlayerAmmo*)
+                0x000618f0                CHalfLifeRules::FlItemRespawnTime(CItem*)
+                0x000618f0                CHalfLifeRules::FlWeaponRespawnTime(CBasePlayerItem*)
+                0x00061900                CHalfLifeRules::FlWeaponTryRespawn(CBasePlayerItem*)
+                0x00061910                CHalfLifeRules::VecWeaponRespawnSpot(CBasePlayerItem*)
+                0x00061930                CHalfLifeRules::WeaponShouldRespawn(CBasePlayerItem*)
+                0x00061940                CHalfLifeRules::ItemShouldRespawn(CItem*)
+                0x00061950                CHalfLifeRules::VecItemRespawnSpot(CItem*)
+                0x00061970                CHalfLifeRules::IsAllowedToSpawn(CBaseEntity*)
+                0x00061970                CHalfLifeRules::FPlayerCanRespawn(CBasePlayer*)
+                0x00061980                CHalfLifeRules::PlayerGotAmmo(CBasePlayer*, char*, int)
+                0x00061990                CHalfLifeRules::AmmoShouldRespawn(CBasePlayerAmmo*)
+                0x000619a0                CHalfLifeRules::VecAmmoRespawnSpot(CBasePlayerAmmo*)
+                0x000619c0                CHalfLifeRules::FlHealthChargerRechargeTime()
+                0x000619d0                CHalfLifeRules::DeadPlayerWeapons(CBasePlayer*)
+                0x000619e0                CHalfLifeRules::DeadPlayerAmmo(CBasePlayer*)
+                0x000619f0                CHalfLifeRules::FAllowMonsters()
+                0x00061a00                CHalfLifeRules::PlayerSpawn(CBasePlayer*)
+                0x00061a40                CHalfLifeRules::FShouldSwitchWeapon(CBasePlayer*, CBasePlayerItem*)
+                0x00061ab0                CHalfLifeRules::CHalfLifeRules()
+                0x00061ab0                CHalfLifeRules::CHalfLifeRules()
+ *fill*         0x00061ad6        0xa 
  .text._ZN14CHalfLifeRules9GetTeamIDEP11CBaseEntity
-                0x00061ad0       0x11 release/obj/ricochetdll/singleplay_gamerules.o
-                0x00061ad0                CHalfLifeRules::GetTeamID(CBaseEntity*)
- *fill*         0x00061ae1        0xf 
- .text          0x00061af0       0x8e release/obj/ricochetdll/skill.o
-                0x00061af0                GetSkillCvar(char*)
- *fill*         0x00061b7e        0x2 
- .text          0x00061b80     0x43d8 release/obj/ricochetdll/sound.o
-                0x00061b80                CAmbientGeneric::Spawn()
-                0x00061ce0                CEnvSound::Spawn()
-                0x00061d30                CSpeaker::ToggleUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x00061e00                CAmbientGeneric::RampThink()
-                0x000622b0                CAmbientGeneric::KeyValue(KeyValueData_s*)
-                0x00062810                CSpeaker::Precache()
-                0x00062870                CAmbientGeneric::Save(CSave&)
-                0x000628c0                CEnvSound::Save(CSave&)
-                0x00062910                CSpeaker::Save(CSave&)
-                0x00062960                CAmbientGeneric::Restore(CRestore&)
-                0x000629b0                CEnvSound::Restore(CRestore&)
-                0x00062a00                CSpeaker::Restore(CRestore&)
-                0x00062a50                CEnvSound::KeyValue(KeyValueData_s*)
-                0x00062af0                CSpeaker::KeyValue(KeyValueData_s*)
-                0x00062c10                CSpeaker::Spawn()
-                0x00062d60                CAmbientGeneric::Precache()
-                0x00063080                CAmbientGeneric::ToggleUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x00063550                ambient_generic
-                0x000635d0                CAmbientGeneric::InitModulationParms()
-                0x000637d0                env_sound
-                0x00063850                FEnvSoundInRange(entvars_s*, entvars_s*, float*)
-                0x00063a10                CEnvSound::Think()
-                0x00063ca0                USENTENCEG_InitLRU(unsigned char*, int)
-                0x00063d90                USENTENCEG_PickSequential(int, char*, int, int)
-                0x00063e60                USENTENCEG_Pick(int, char*)
-                0x00064070                SENTENCEG_GetIndex(char const*)
-                0x000640f0                SENTENCEG_PlayRndI(edict_s*, int, float, float, int, int)
-                0x00064290                SENTENCEG_Stop(edict_s*, int, int)
-                0x00064460                SENTENCEG_Init()
-                0x000648c0                SENTENCEG_Lookup(char const*, char*)
-                0x00064990                EMIT_SOUND_DYN(edict_s*, int, char const*, float, float, int, int)
-                0x00064ad0                SENTENCEG_PlayRndSz(edict_s*, char const*, float, float, int, int)
-                0x00064c00                CSpeaker::SpeakerThink()
-                0x00064e60                SENTENCEG_PlaySequentialSz(edict_s*, char const*, float, float, int, int, int, int)
-                0x00064f70                EMIT_SOUND_SUIT(edict_s*, char const*)
-                0x00065010                EMIT_GROUPID_SUIT(edict_s*, int)
-                0x00065100                EMIT_GROUPNAME_SUIT(edict_s*, char const*)
-                0x000651a0                TEXTURETYPE_Init()
-                0x00065400                TEXTURETYPE_Find(char*)
-                0x00065470                TEXTURETYPE_PlaySound(TraceResult*, Vector, Vector, int)
-                0x00065ee0                speaker
- *fill*         0x00065f58        0x8 
+                0x00061ae0       0x11 release/obj/ricochetdll/singleplay_gamerules.o
+                0x00061ae0                CHalfLifeRules::GetTeamID(CBaseEntity*)
+ *fill*         0x00061af1        0xf 
+ .text          0x00061b00       0x8e release/obj/ricochetdll/skill.o
+                0x00061b00                GetSkillCvar(char*)
+ *fill*         0x00061b8e        0x2 
+ .text          0x00061b90     0x43d8 release/obj/ricochetdll/sound.o
+                0x00061b90                CAmbientGeneric::Spawn()
+                0x00061cf0                CEnvSound::Spawn()
+                0x00061d40                CSpeaker::ToggleUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x00061e10                CAmbientGeneric::RampThink()
+                0x000622c0                CAmbientGeneric::KeyValue(KeyValueData_s*)
+                0x00062820                CSpeaker::Precache()
+                0x00062880                CAmbientGeneric::Save(CSave&)
+                0x000628d0                CEnvSound::Save(CSave&)
+                0x00062920                CSpeaker::Save(CSave&)
+                0x00062970                CAmbientGeneric::Restore(CRestore&)
+                0x000629c0                CEnvSound::Restore(CRestore&)
+                0x00062a10                CSpeaker::Restore(CRestore&)
+                0x00062a60                CEnvSound::KeyValue(KeyValueData_s*)
+                0x00062b00                CSpeaker::KeyValue(KeyValueData_s*)
+                0x00062c20                CSpeaker::Spawn()
+                0x00062d70                CAmbientGeneric::Precache()
+                0x00063090                CAmbientGeneric::ToggleUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x00063560                ambient_generic
+                0x000635e0                CAmbientGeneric::InitModulationParms()
+                0x000637e0                env_sound
+                0x00063860                FEnvSoundInRange(entvars_s*, entvars_s*, float*)
+                0x00063a20                CEnvSound::Think()
+                0x00063cb0                USENTENCEG_InitLRU(unsigned char*, int)
+                0x00063da0                USENTENCEG_PickSequential(int, char*, int, int)
+                0x00063e70                USENTENCEG_Pick(int, char*)
+                0x00064080                SENTENCEG_GetIndex(char const*)
+                0x00064100                SENTENCEG_PlayRndI(edict_s*, int, float, float, int, int)
+                0x000642a0                SENTENCEG_Stop(edict_s*, int, int)
+                0x00064470                SENTENCEG_Init()
+                0x000648d0                SENTENCEG_Lookup(char const*, char*)
+                0x000649a0                EMIT_SOUND_DYN(edict_s*, int, char const*, float, float, int, int)
+                0x00064ae0                SENTENCEG_PlayRndSz(edict_s*, char const*, float, float, int, int)
+                0x00064c10                CSpeaker::SpeakerThink()
+                0x00064e70                SENTENCEG_PlaySequentialSz(edict_s*, char const*, float, float, int, int, int, int)
+                0x00064f80                EMIT_SOUND_SUIT(edict_s*, char const*)
+                0x00065020                EMIT_GROUPID_SUIT(edict_s*, int)
+                0x00065110                EMIT_GROUPNAME_SUIT(edict_s*, char const*)
+                0x000651b0                TEXTURETYPE_Init()
+                0x00065410                TEXTURETYPE_Find(char*)
+                0x00065480                TEXTURETYPE_PlaySound(TraceResult*, Vector, Vector, int)
+                0x00065ef0                speaker
+ *fill*         0x00065f68        0x8 
  .text._ZN15CAmbientGeneric10ObjectCapsEv
-                0x00065f60        0x3 release/obj/ricochetdll/sound.o
-                0x00065f60                CAmbientGeneric::ObjectCaps()
- *fill*         0x00065f63        0xd 
- .text._ZN8CSpeaker10ObjectCapsEv
                 0x00065f70        0x3 release/obj/ricochetdll/sound.o
-                0x00065f70                CSpeaker::ObjectCaps()
+                0x00065f70                CAmbientGeneric::ObjectCaps()
  *fill*         0x00065f73        0xd 
- .text          0x00065f80      0x7e4 release/obj/ricochetdll/soundent.o
-                0x00065f80                CSoundEnt::Precache()
-                0x00065f90                CSoundEnt::Think()
-                0x000661b0                soundent
-                0x00066230                CSound::Clear()
-                0x00066280                CSound::Reset()
-                0x000662c0                CSound::FIsSound()
-                0x000662d0                CSound::FIsScent()
-                0x000662e0                CSoundEnt::FreeSound(int, int)
-                0x00066330                CSoundEnt::IAllocSound()
-                0x000663a0                CSoundEnt::InsertSound(int, Vector const&, int, float)
-                0x00066470                CSoundEnt::Initialize()
-                0x000665c0                CSoundEnt::Spawn()
-                0x00066610                CSoundEnt::ISoundsInList(int)
-                0x00066680                CSoundEnt::ActiveList()
-                0x000666a0                CSoundEnt::FreeList()
-                0x000666c0                CSoundEnt::SoundPointerForIndex(int)
-                0x00066740                CSoundEnt::ClientSoundIndex(edict_s*)
- *fill*         0x00066764        0xc 
+ .text._ZN8CSpeaker10ObjectCapsEv
+                0x00065f80        0x3 release/obj/ricochetdll/sound.o
+                0x00065f80                CSpeaker::ObjectCaps()
+ *fill*         0x00065f83        0xd 
+ .text          0x00065f90      0x7e4 release/obj/ricochetdll/soundent.o
+                0x00065f90                CSoundEnt::Precache()
+                0x00065fa0                CSoundEnt::Think()
+                0x000661c0                soundent
+                0x00066240                CSound::Clear()
+                0x00066290                CSound::Reset()
+                0x000662d0                CSound::FIsSound()
+                0x000662e0                CSound::FIsScent()
+                0x000662f0                CSoundEnt::FreeSound(int, int)
+                0x00066340                CSoundEnt::IAllocSound()
+                0x000663b0                CSoundEnt::InsertSound(int, Vector const&, int, float)
+                0x00066480                CSoundEnt::Initialize()
+                0x000665d0                CSoundEnt::Spawn()
+                0x00066620                CSoundEnt::ISoundsInList(int)
+                0x00066690                CSoundEnt::ActiveList()
+                0x000666b0                CSoundEnt::FreeList()
+                0x000666d0                CSoundEnt::SoundPointerForIndex(int)
+                0x00066750                CSoundEnt::ClientSoundIndex(edict_s*)
+ *fill*         0x00066774        0xc 
  .text._ZN9CSoundEnt10ObjectCapsEv
-                0x00066770        0x6 release/obj/ricochetdll/soundent.o
-                0x00066770                CSoundEnt::ObjectCaps()
- *fill*         0x00066776        0xa 
- .text          0x00066780      0x1c1 release/obj/ricochetdll/spectator.o
-                0x00066780                CBaseSpectator::SpectatorConnect()
-                0x00066780                CBaseSpectator::Spawn()
-                0x000667c0                CBaseSpectator::SpectatorDisconnect()
-                0x000667d0                CBaseSpectator::SpectatorImpulseCommand()
-                0x000668f0                CBaseSpectator::SpectatorThink()
- *fill*         0x00066941        0xf 
- .text          0x00066950     0x1928 release/obj/ricochetdll/subs.o
-                0x00066950                CPointEntity::Spawn()
-                0x00066970                CNullEntity::Spawn()
-                0x000669a0                CBaseDMStart::Spawn()
-                0x000669c0                CBaseToggle::AngularMoveDone()
-                0x00066a50                CBaseDMStart::IsTriggered(CBaseEntity*)
-                0x00066a80                CBaseToggle::LinearMoveDone()
-                0x00066b00                CBaseDelay::Save(CSave&)
-                0x00066b50                CBaseDelay::Restore(CRestore&)
-                0x00066ba0                CBaseDMStart::KeyValue(KeyValueData_s*)
-                0x00066c50                CBaseDelay::KeyValue(KeyValueData_s*)
-                0x00066ce0                CBaseToggle::KeyValue(KeyValueData_s*)
-                0x00066e60                info_null
-                0x00066ee0                info_player_deathmatch
-                0x00066f60                info_player_start
-                0x00066fe0                info_player_spectator
-                0x00067060                info_landmark
-                0x000670e0                CBaseEntity::UpdateOnRemove()
-                0x00067180                CBaseEntity::SUB_Remove()
-                0x00067280                CBaseEntity::SUB_DoNothing()
-                0x00067290                CBaseEntity::SUB_UseTargets(CBaseEntity*, USE_TYPE, float)
-                0x000674c0                FireTargets(char const*, CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x000676c0                CBaseDelay::DelayThink()
-                0x000679d0                DelayedUse
-                0x00067a50                CBaseDelay::SUB_UseTargets(CBaseEntity*, USE_TYPE, float)
-                0x00067d00                SetMovedir(entvars_s*)
-                0x00067de0                CBaseToggle::LinearMove(Vector, float)
-                0x00067ee0                CBaseToggle::IsLockedByMaster()
-                0x00067f40                CBaseToggle::AngularMove(Vector, float)
-                0x00068040                CBaseToggle::AxisValue(int, Vector const&)
-                0x00068070                CBaseToggle::AxisDir(entvars_s*)
-                0x000680d0                CBaseToggle::AxisDelta(int, Vector const&, Vector const&)
-                0x00068110                FEntIsVisible(entvars_s*, entvars_s*)
-                0x000681e0                CBaseToggle::Save(CSave&)
-                0x00068230                CBaseToggle::Restore(CRestore&)
- *fill*         0x00068278        0x8 
- .text          0x00068280     0x1e3a release/obj/ricochetdll/teamplay_gamerules.o
-                0x00068280                CHalfLifeTeamplay::UpdateGameMode(CBasePlayer*)
-                0x000682d0                CHalfLifeTeamplay::IsTeamplay()
-                0x000682e0                CHalfLifeTeamplay::ShouldAutoAim(CBasePlayer*, edict_s*)
-                0x00068370                CHalfLifeTeamplay::GetIndexedTeamName(int)
-                0x000683a0                CHalfLifeTeamplay::ChangePlayerTeam(CBasePlayer*, char const*, int, int)
-                0x00068510                CHalfLifeTeamplay::ClientCommand(CBasePlayer*, char const*)
-                0x00068590                CHalfLifeTeamplay::GetTeamID(CBaseEntity*)
-                0x000685d0                CHalfLifeTeamplay::IsValidTeam(char const*)
-                0x000686a0                CHalfLifeTeamplay::GetTeamIndex(char const*)
-                0x00068720                CHalfLifeTeamplay::PlayerRelationship(CBaseEntity*, CBaseEntity*)
-                0x000688e0                CHalfLifeTeamplay::IPointsForKill(CBasePlayer*, CBasePlayer*)
-                0x00068ae0                CHalfLifeTeamplay::TeamWithFewestPlayers()
-                0x00068c90                CHalfLifeTeamplay::RecountTeams(bool)
-                0x00069190                CHalfLifeTeamplay::CHalfLifeTeamplay()
-                0x00069190                CHalfLifeTeamplay::CHalfLifeTeamplay()
-                0x00069290                CHalfLifeTeamplay::SetDefaultPlayerTeam(CBasePlayer*)
-                0x00069410                CHalfLifeTeamplay::ClientUserInfoChanged(CBasePlayer*, char*)
-                0x000697f0                CHalfLifeTeamplay::Think()
-                0x000699f0                CHalfLifeTeamplay::InitHUD(CBasePlayer*)
-                0x00069d10                CHalfLifeTeamplay::DeathNotice(CBasePlayer*, entvars_s*, entvars_s*)
-                0x00069e40                CHalfLifeTeamplay::PlayerKilled(CBasePlayer*, entvars_s*, entvars_s*)
-                0x00069e90                CHalfLifeTeamplay::FPlayerCanTakeDamage(CBasePlayer*, CBaseEntity*)
- *fill*         0x0006a0ba        0x6 
+                0x00066780        0x6 release/obj/ricochetdll/soundent.o
+                0x00066780                CSoundEnt::ObjectCaps()
+ *fill*         0x00066786        0xa 
+ .text          0x00066790      0x1c1 release/obj/ricochetdll/spectator.o
+                0x00066790                CBaseSpectator::SpectatorConnect()
+                0x00066790                CBaseSpectator::Spawn()
+                0x000667d0                CBaseSpectator::SpectatorDisconnect()
+                0x000667e0                CBaseSpectator::SpectatorImpulseCommand()
+                0x00066900                CBaseSpectator::SpectatorThink()
+ *fill*         0x00066951        0xf 
+ .text          0x00066960     0x1928 release/obj/ricochetdll/subs.o
+                0x00066960                CPointEntity::Spawn()
+                0x00066980                CNullEntity::Spawn()
+                0x000669b0                CBaseDMStart::Spawn()
+                0x000669d0                CBaseToggle::AngularMoveDone()
+                0x00066a60                CBaseDMStart::IsTriggered(CBaseEntity*)
+                0x00066a90                CBaseToggle::LinearMoveDone()
+                0x00066b10                CBaseDelay::Save(CSave&)
+                0x00066b60                CBaseDelay::Restore(CRestore&)
+                0x00066bb0                CBaseDMStart::KeyValue(KeyValueData_s*)
+                0x00066c60                CBaseDelay::KeyValue(KeyValueData_s*)
+                0x00066cf0                CBaseToggle::KeyValue(KeyValueData_s*)
+                0x00066e70                info_null
+                0x00066ef0                info_player_deathmatch
+                0x00066f70                info_player_start
+                0x00066ff0                info_player_spectator
+                0x00067070                info_landmark
+                0x000670f0                CBaseEntity::UpdateOnRemove()
+                0x00067190                CBaseEntity::SUB_Remove()
+                0x00067290                CBaseEntity::SUB_DoNothing()
+                0x000672a0                CBaseEntity::SUB_UseTargets(CBaseEntity*, USE_TYPE, float)
+                0x000674d0                FireTargets(char const*, CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x000676d0                CBaseDelay::DelayThink()
+                0x000679e0                DelayedUse
+                0x00067a60                CBaseDelay::SUB_UseTargets(CBaseEntity*, USE_TYPE, float)
+                0x00067d10                SetMovedir(entvars_s*)
+                0x00067df0                CBaseToggle::LinearMove(Vector, float)
+                0x00067ef0                CBaseToggle::IsLockedByMaster()
+                0x00067f50                CBaseToggle::AngularMove(Vector, float)
+                0x00068050                CBaseToggle::AxisValue(int, Vector const&)
+                0x00068080                CBaseToggle::AxisDir(entvars_s*)
+                0x000680e0                CBaseToggle::AxisDelta(int, Vector const&, Vector const&)
+                0x00068120                FEntIsVisible(entvars_s*, entvars_s*)
+                0x000681f0                CBaseToggle::Save(CSave&)
+                0x00068240                CBaseToggle::Restore(CRestore&)
+ *fill*         0x00068288        0x8 
+ .text          0x00068290     0x1e3a release/obj/ricochetdll/teamplay_gamerules.o
+                0x00068290                CHalfLifeTeamplay::UpdateGameMode(CBasePlayer*)
+                0x000682e0                CHalfLifeTeamplay::IsTeamplay()
+                0x000682f0                CHalfLifeTeamplay::ShouldAutoAim(CBasePlayer*, edict_s*)
+                0x00068380                CHalfLifeTeamplay::GetIndexedTeamName(int)
+                0x000683b0                CHalfLifeTeamplay::ChangePlayerTeam(CBasePlayer*, char const*, int, int)
+                0x00068520                CHalfLifeTeamplay::ClientCommand(CBasePlayer*, char const*)
+                0x000685a0                CHalfLifeTeamplay::GetTeamID(CBaseEntity*)
+                0x000685e0                CHalfLifeTeamplay::IsValidTeam(char const*)
+                0x000686b0                CHalfLifeTeamplay::GetTeamIndex(char const*)
+                0x00068730                CHalfLifeTeamplay::PlayerRelationship(CBaseEntity*, CBaseEntity*)
+                0x000688f0                CHalfLifeTeamplay::IPointsForKill(CBasePlayer*, CBasePlayer*)
+                0x00068af0                CHalfLifeTeamplay::TeamWithFewestPlayers()
+                0x00068ca0                CHalfLifeTeamplay::RecountTeams(bool)
+                0x000691a0                CHalfLifeTeamplay::CHalfLifeTeamplay()
+                0x000691a0                CHalfLifeTeamplay::CHalfLifeTeamplay()
+                0x000692a0                CHalfLifeTeamplay::SetDefaultPlayerTeam(CBasePlayer*)
+                0x00069420                CHalfLifeTeamplay::ClientUserInfoChanged(CBasePlayer*, char*)
+                0x00069800                CHalfLifeTeamplay::Think()
+                0x00069a00                CHalfLifeTeamplay::InitHUD(CBasePlayer*)
+                0x00069d20                CHalfLifeTeamplay::DeathNotice(CBasePlayer*, entvars_s*, entvars_s*)
+                0x00069e50                CHalfLifeTeamplay::PlayerKilled(CBasePlayer*, entvars_s*, entvars_s*)
+                0x00069ea0                CHalfLifeTeamplay::FPlayerCanTakeDamage(CBasePlayer*, CBaseEntity*)
+ *fill*         0x0006a0ca        0x6 
  .text._ZN17CHalfLifeTeamplay18GetGameDescriptionEv
-                0x0006a0c0       0x11 release/obj/ricochetdll/teamplay_gamerules.o
-                0x0006a0c0                CHalfLifeTeamplay::GetGameDescription()
- *fill*         0x0006a0d1        0xf 
- .text          0x0006a0e0     0x6f88 release/obj/ricochetdll/triggers.o
-                0x0006a0e0                CFrictionModifier::Spawn()
-                0x0006a150                CFrictionModifier::ChangeFriction(CBaseEntity*)
-                0x0006a180                CAutoTrigger::Precache()
-                0x0006a1c0                CTriggerChangeTarget::Spawn()
-                0x0006a1c0                CTriggerRelay::Spawn()
-                0x0006a1d0                CMultiManager::Spawn()
-                0x0006a270                CRenderFxManager::Spawn()
-                0x0006a290                CTriggerMonsterJump::Touch(CBaseEntity*)
-                0x0006a310                CTargetCDAudio::Spawn()
-                0x0006a360                CBaseTrigger::MultiWaitOver()
-                0x0006a380                CTriggerCounter::Spawn()
-                0x0006a3c0                CTriggerVolume::Spawn()
-                0x0006a440                CFireAndDie::Spawn()
-                0x0006a470                CFireAndDie::Precache()
-                0x0006a4a0                CChangeLevel::ExecuteChangeLevel()
-                0x0006a500                CLadder::Precache()
-                0x0006a580                CTriggerCamera::Spawn()
-                0x0006a5f0                CPlatToggleRemove::PlatRemoveThink()
-                0x0006a6a0                CTriggerJump::Precache()
-                0x0006a6f0                CTriggerDiscReturn::Precache()
-                0x0006a730                CMultiManager::HasTarget(unsigned int)
-                0x0006a7c0                CTriggerCamera::KeyValue(KeyValueData_s*)
-                0x0006a8f0                CTriggerRelay::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x0006a940                CFireAndDie::Think()
-                0x0006a970                CTriggerPush::Touch(CBaseEntity*)
-                0x0006aa60                CBaseTrigger::KeyValue(KeyValueData_s*)
-                0x0006ab80                CDiscTarget::KeyValue(KeyValueData_s*)
-                0x0006ac90                CTriggerMonsterJump::Think()
-                0x0006ace0                CBaseTrigger::ToggleUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x0006ad40                CChangeLevel::KeyValue(KeyValueData_s*)
-                0x0006aee0                CBaseTrigger::TeleportTouch(CBaseEntity*)
-                0x0006b2f0                CTriggerJump::JumpTouch(CBaseEntity*)
-                0x0006b530                CTriggerDiscReturn::DiscReturnTouch(CBaseEntity*)
-                0x0006b680                CTriggerJump::JumpUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x0006b6c0                CFrictionModifier::Save(CSave&)
-                0x0006b710                CFrictionModifier::Restore(CRestore&)
-                0x0006b760                CAutoTrigger::Save(CSave&)
-                0x0006b7b0                CTriggerRelay::Save(CSave&)
-                0x0006b800                CTriggerChangeTarget::Save(CSave&)
-                0x0006b850                CTriggerCamera::Save(CSave&)
-                0x0006b8a0                CAutoTrigger::Restore(CRestore&)
-                0x0006b8f0                CTriggerRelay::Restore(CRestore&)
-                0x0006b940                CTriggerChangeTarget::Restore(CRestore&)
-                0x0006b990                CTriggerCamera::Restore(CRestore&)
-                0x0006b9e0                CAutoTrigger::Think()
-                0x0006ba50                CTriggerEndSection::EndSectionUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x0006bae0                CTriggerEndSection::EndSectionTouch(CBaseEntity*)
-                0x0006bb70                CMultiManager::Save(CSave&)
-                0x0006bbc0                CChangeLevel::Save(CSave&)
-                0x0006bc10                CMultiManager::Restore(CRestore&)
-                0x0006bc60                CChangeLevel::Restore(CRestore&)
-                0x0006bcb0                CTriggerSave::SaveTouch(CBaseEntity*)
-                0x0006bd30                CRenderFxManager::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x0006be40                CTriggerJump::Activate()
-                0x0006bf20                CFrictionModifier::KeyValue(KeyValueData_s*)
-                0x0006bf90                CAutoTrigger::KeyValue(KeyValueData_s*)
-                0x0006c050                CTriggerRelay::KeyValue(KeyValueData_s*)
-                0x0006c0d0                CMultiManager::KeyValue(KeyValueData_s*)
-                0x0006c1e0                CTargetCDAudio::KeyValue(KeyValueData_s*)
-                0x0006c250                CTriggerEndSection::KeyValue(KeyValueData_s*)
-                0x0006c2c0                CTriggerChangeTarget::KeyValue(KeyValueData_s*)
-                0x0006c330                CPlatToggleRemove::KeyValue(KeyValueData_s*)
-                0x0006c3b0                CTriggerJump::KeyValue(KeyValueData_s*)
-                0x0006c410                CTriggerFall::FallTouch(CBaseEntity*)
-                0x0006c530                CBaseTrigger::HurtTouch(CBaseEntity*)
-                0x0006c7d0                CMultiManager::ManagerThink()
-                0x0006cab0                CDiscTarget::DiscToggleTouch(CBaseEntity*)
-                0x0006cbb0                CTriggerGravity::GravityTouch(CBaseEntity*)
-                0x0006cbf0                CTriggerChangeTarget::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x0006cc80                CDiscTarget::Spawn()
-                0x0006cd10                CPlatToggleRemove::Spawn()
-                0x0006cde0                CAutoTrigger::Spawn()
-                0x0006ce30                CTriggerHurt::RadiationThink()
-                0x0006d040                CLadder::Spawn()
-                0x0006d130                CBaseTrigger::MultiTouch(CBaseEntity*)
-                0x0006d1f0                CPlatToggleRemove::PlatToggleRemoveUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x0006d2f0                CBaseTrigger::CounterUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x0006d4a0                CTargetCDAudio::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x0006d5b0                CTriggerCDAudio::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x0006d6d0                CTriggerPush::KeyValue(KeyValueData_s*)
-                0x0006d7f0                CLadder::KeyValue(KeyValueData_s*)
-                0x0006d910                CTriggerCDAudio::Spawn()
-                0x0006d9e0                CTriggerTeleport::Spawn()
-                0x0006dac0                CTriggerGravity::Spawn()
-                0x0006dba0                CTriggerOnce::Spawn()
-                0x0006dc90                CTriggerMultiple::Spawn()
-                0x0006dd80                CTriggerFall::Spawn()
-                0x0006de80                func_friction
-                0x0006df00                trigger_auto
-                0x0006df80                trigger_relay
-                0x0006e000                multi_manager
-                0x0006e080                CMultiManager::Clone()
-                0x0006e2b0                CMultiManager::ManagerUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x0006e350                env_render
-                0x0006e3d0                trigger
-                0x0006e450                CBaseTrigger::InitTrigger()
-                0x0006e520                CTriggerMonsterJump::Spawn()
-                0x0006e5c0                CTriggerHurt::Spawn()
-                0x0006e6a0                CChangeLevel::Spawn()
-                0x0006e750                CTriggerPush::Spawn()
-                0x0006e810                CTriggerSave::Spawn()
-                0x0006e880                CTriggerEndSection::Spawn()
-                0x0006e910                CTriggerJump::Spawn()
-                0x0006e9c0                CTriggerDiscReturn::Spawn()
-                0x0006ea40                trigger_hurt
-                0x0006eac0                trigger_monsterjump
-                0x0006eb40                trigger_cdaudio
-                0x0006ebc0                PlayCDTrack(int)
-                0x0006ec80                CTriggerCDAudio::Touch(CBaseEntity*)
-                0x0006ed00                CTargetCDAudio::Think()
-                0x0006edd0                CTriggerCDAudio::PlayTrack()
-                0x0006eef0                target_cdaudio
-                0x0006ef70                CTargetCDAudio::Play()
-                0x0006f080                trigger_multiple
-                0x0006f100                trigger_once
-                0x0006f180                CBaseTrigger::ActivateMultiTrigger(CBaseEntity*)
-                0x0006f1e0                trigger_counter
-                0x0006f260                trigger_transition
-                0x0006f2e0                fireanddie
-                0x0006f360                trigger_changelevel
-                0x0006f3e0                CChangeLevel::FindLandmark(char const*)
-                0x0006f490                CChangeLevel::AddTransitionToList(LEVELLIST*, int, char const*, char const*, edict_s*)
-                0x0006f5a0                CChangeLevel::InTransitionVolume(CBaseEntity*, char*)
-                0x0006f6d0                CChangeLevel::ChangeLevelNow(CBaseEntity*)
-                0x0006f980                CChangeLevel::UseChangeLevel(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x0006f990                CChangeLevel::TouchChangeLevel(CBaseEntity*)
-                0x0006f9e0                CChangeLevel::ChangeList(LEVELLIST*, int)
-                0x0006fe10                BuildChangeList(LEVELLIST*, int)
-                0x0006fe20                NextLevel()
-                0x0006ffc0                func_ladder
-                0x00070040                trigger_push
-                0x000700c0                trigger_teleport
-                0x00070140                info_teleport_destination
-                0x000701c0                trigger_autosave
-                0x00070240                trigger_endsection
-                0x000702c0                trigger_gravity
-                0x00070340                trigger_changetarget
-                0x000703c0                trigger_camera
-                0x00070440                CTriggerCamera::Move()
-                0x00070680                CTriggerCamera::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x00070a30                CTriggerCamera::FollowTarget()
-                0x00070d30                func_disctoggle
-                0x00070db0                CDiscTarget::Reset()
-                0x00070de0                func_plat_toggleremove
-                0x00070e60                CPlatToggleRemove::Reset()
-                0x00070ef0                trigger_jump
-                0x00070f70                trigger_discreturn
-                0x00070ff0                trigger_fall
- *fill*         0x00071068        0x8 
+                0x0006a0d0       0x11 release/obj/ricochetdll/teamplay_gamerules.o
+                0x0006a0d0                CHalfLifeTeamplay::GetGameDescription()
+ *fill*         0x0006a0e1        0xf 
+ .text          0x0006a0f0     0x6f88 release/obj/ricochetdll/triggers.o
+                0x0006a0f0                CFrictionModifier::Spawn()
+                0x0006a160                CFrictionModifier::ChangeFriction(CBaseEntity*)
+                0x0006a190                CAutoTrigger::Precache()
+                0x0006a1d0                CTriggerChangeTarget::Spawn()
+                0x0006a1d0                CTriggerRelay::Spawn()
+                0x0006a1e0                CMultiManager::Spawn()
+                0x0006a280                CRenderFxManager::Spawn()
+                0x0006a2a0                CTriggerMonsterJump::Touch(CBaseEntity*)
+                0x0006a320                CTargetCDAudio::Spawn()
+                0x0006a370                CBaseTrigger::MultiWaitOver()
+                0x0006a390                CTriggerCounter::Spawn()
+                0x0006a3d0                CTriggerVolume::Spawn()
+                0x0006a450                CFireAndDie::Spawn()
+                0x0006a480                CFireAndDie::Precache()
+                0x0006a4b0                CChangeLevel::ExecuteChangeLevel()
+                0x0006a510                CLadder::Precache()
+                0x0006a590                CTriggerCamera::Spawn()
+                0x0006a600                CPlatToggleRemove::PlatRemoveThink()
+                0x0006a6b0                CTriggerJump::Precache()
+                0x0006a700                CTriggerDiscReturn::Precache()
+                0x0006a740                CMultiManager::HasTarget(unsigned int)
+                0x0006a7d0                CTriggerCamera::KeyValue(KeyValueData_s*)
+                0x0006a900                CTriggerRelay::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x0006a950                CFireAndDie::Think()
+                0x0006a980                CTriggerPush::Touch(CBaseEntity*)
+                0x0006aa70                CBaseTrigger::KeyValue(KeyValueData_s*)
+                0x0006ab90                CDiscTarget::KeyValue(KeyValueData_s*)
+                0x0006aca0                CTriggerMonsterJump::Think()
+                0x0006acf0                CBaseTrigger::ToggleUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x0006ad50                CChangeLevel::KeyValue(KeyValueData_s*)
+                0x0006aef0                CBaseTrigger::TeleportTouch(CBaseEntity*)
+                0x0006b300                CTriggerJump::JumpTouch(CBaseEntity*)
+                0x0006b540                CTriggerDiscReturn::DiscReturnTouch(CBaseEntity*)
+                0x0006b690                CTriggerJump::JumpUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x0006b6d0                CFrictionModifier::Save(CSave&)
+                0x0006b720                CFrictionModifier::Restore(CRestore&)
+                0x0006b770                CAutoTrigger::Save(CSave&)
+                0x0006b7c0                CTriggerRelay::Save(CSave&)
+                0x0006b810                CTriggerChangeTarget::Save(CSave&)
+                0x0006b860                CTriggerCamera::Save(CSave&)
+                0x0006b8b0                CAutoTrigger::Restore(CRestore&)
+                0x0006b900                CTriggerRelay::Restore(CRestore&)
+                0x0006b950                CTriggerChangeTarget::Restore(CRestore&)
+                0x0006b9a0                CTriggerCamera::Restore(CRestore&)
+                0x0006b9f0                CAutoTrigger::Think()
+                0x0006ba60                CTriggerEndSection::EndSectionUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x0006baf0                CTriggerEndSection::EndSectionTouch(CBaseEntity*)
+                0x0006bb80                CMultiManager::Save(CSave&)
+                0x0006bbd0                CChangeLevel::Save(CSave&)
+                0x0006bc20                CMultiManager::Restore(CRestore&)
+                0x0006bc70                CChangeLevel::Restore(CRestore&)
+                0x0006bcc0                CTriggerSave::SaveTouch(CBaseEntity*)
+                0x0006bd40                CRenderFxManager::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x0006be50                CTriggerJump::Activate()
+                0x0006bf30                CFrictionModifier::KeyValue(KeyValueData_s*)
+                0x0006bfa0                CAutoTrigger::KeyValue(KeyValueData_s*)
+                0x0006c060                CTriggerRelay::KeyValue(KeyValueData_s*)
+                0x0006c0e0                CMultiManager::KeyValue(KeyValueData_s*)
+                0x0006c1f0                CTargetCDAudio::KeyValue(KeyValueData_s*)
+                0x0006c260                CTriggerEndSection::KeyValue(KeyValueData_s*)
+                0x0006c2d0                CTriggerChangeTarget::KeyValue(KeyValueData_s*)
+                0x0006c340                CPlatToggleRemove::KeyValue(KeyValueData_s*)
+                0x0006c3c0                CTriggerJump::KeyValue(KeyValueData_s*)
+                0x0006c420                CTriggerFall::FallTouch(CBaseEntity*)
+                0x0006c540                CBaseTrigger::HurtTouch(CBaseEntity*)
+                0x0006c7e0                CMultiManager::ManagerThink()
+                0x0006cac0                CDiscTarget::DiscToggleTouch(CBaseEntity*)
+                0x0006cbc0                CTriggerGravity::GravityTouch(CBaseEntity*)
+                0x0006cc00                CTriggerChangeTarget::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x0006cc90                CDiscTarget::Spawn()
+                0x0006cd20                CPlatToggleRemove::Spawn()
+                0x0006cdf0                CAutoTrigger::Spawn()
+                0x0006ce40                CTriggerHurt::RadiationThink()
+                0x0006d050                CLadder::Spawn()
+                0x0006d140                CBaseTrigger::MultiTouch(CBaseEntity*)
+                0x0006d200                CPlatToggleRemove::PlatToggleRemoveUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x0006d300                CBaseTrigger::CounterUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x0006d4b0                CTargetCDAudio::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x0006d5c0                CTriggerCDAudio::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x0006d6e0                CTriggerPush::KeyValue(KeyValueData_s*)
+                0x0006d800                CLadder::KeyValue(KeyValueData_s*)
+                0x0006d920                CTriggerCDAudio::Spawn()
+                0x0006d9f0                CTriggerTeleport::Spawn()
+                0x0006dad0                CTriggerGravity::Spawn()
+                0x0006dbb0                CTriggerOnce::Spawn()
+                0x0006dca0                CTriggerMultiple::Spawn()
+                0x0006dd90                CTriggerFall::Spawn()
+                0x0006de90                func_friction
+                0x0006df10                trigger_auto
+                0x0006df90                trigger_relay
+                0x0006e010                multi_manager
+                0x0006e090                CMultiManager::Clone()
+                0x0006e2c0                CMultiManager::ManagerUse(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x0006e360                env_render
+                0x0006e3e0                trigger
+                0x0006e460                CBaseTrigger::InitTrigger()
+                0x0006e530                CTriggerMonsterJump::Spawn()
+                0x0006e5d0                CTriggerHurt::Spawn()
+                0x0006e6b0                CChangeLevel::Spawn()
+                0x0006e760                CTriggerPush::Spawn()
+                0x0006e820                CTriggerSave::Spawn()
+                0x0006e890                CTriggerEndSection::Spawn()
+                0x0006e920                CTriggerJump::Spawn()
+                0x0006e9d0                CTriggerDiscReturn::Spawn()
+                0x0006ea50                trigger_hurt
+                0x0006ead0                trigger_monsterjump
+                0x0006eb50                trigger_cdaudio
+                0x0006ebd0                PlayCDTrack(int)
+                0x0006ec90                CTriggerCDAudio::Touch(CBaseEntity*)
+                0x0006ed10                CTargetCDAudio::Think()
+                0x0006ede0                CTriggerCDAudio::PlayTrack()
+                0x0006ef00                target_cdaudio
+                0x0006ef80                CTargetCDAudio::Play()
+                0x0006f090                trigger_multiple
+                0x0006f110                trigger_once
+                0x0006f190                CBaseTrigger::ActivateMultiTrigger(CBaseEntity*)
+                0x0006f1f0                trigger_counter
+                0x0006f270                trigger_transition
+                0x0006f2f0                fireanddie
+                0x0006f370                trigger_changelevel
+                0x0006f3f0                CChangeLevel::FindLandmark(char const*)
+                0x0006f4a0                CChangeLevel::AddTransitionToList(LEVELLIST*, int, char const*, char const*, edict_s*)
+                0x0006f5b0                CChangeLevel::InTransitionVolume(CBaseEntity*, char*)
+                0x0006f6e0                CChangeLevel::ChangeLevelNow(CBaseEntity*)
+                0x0006f990                CChangeLevel::UseChangeLevel(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x0006f9a0                CChangeLevel::TouchChangeLevel(CBaseEntity*)
+                0x0006f9f0                CChangeLevel::ChangeList(LEVELLIST*, int)
+                0x0006fe20                BuildChangeList(LEVELLIST*, int)
+                0x0006fe30                NextLevel()
+                0x0006ffd0                func_ladder
+                0x00070050                trigger_push
+                0x000700d0                trigger_teleport
+                0x00070150                info_teleport_destination
+                0x000701d0                trigger_autosave
+                0x00070250                trigger_endsection
+                0x000702d0                trigger_gravity
+                0x00070350                trigger_changetarget
+                0x000703d0                trigger_camera
+                0x00070450                CTriggerCamera::Move()
+                0x00070690                CTriggerCamera::Use(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x00070a40                CTriggerCamera::FollowTarget()
+                0x00070d40                func_disctoggle
+                0x00070dc0                CDiscTarget::Reset()
+                0x00070df0                func_plat_toggleremove
+                0x00070e70                CPlatToggleRemove::Reset()
+                0x00070f00                trigger_jump
+                0x00070f80                trigger_discreturn
+                0x00071000                trigger_fall
+ *fill*         0x00071078        0x8 
  .text._ZN12CBaseTrigger10ObjectCapsEv
-                0x00071070        0x3 release/obj/ricochetdll/triggers.o
-                0x00071070                CBaseTrigger::ObjectCaps()
- *fill*         0x00071073        0xd 
- .text._ZN17CFrictionModifier10ObjectCapsEv
                 0x00071080        0x3 release/obj/ricochetdll/triggers.o
-                0x00071080                CFrictionModifier::ObjectCaps()
+                0x00071080                CBaseTrigger::ObjectCaps()
  *fill*         0x00071083        0xd 
- .text._ZN12CAutoTrigger10ObjectCapsEv
+ .text._ZN17CFrictionModifier10ObjectCapsEv
                 0x00071090        0x3 release/obj/ricochetdll/triggers.o
-                0x00071090                CAutoTrigger::ObjectCaps()
+                0x00071090                CFrictionModifier::ObjectCaps()
  *fill*         0x00071093        0xd 
- .text._ZN13CTriggerRelay10ObjectCapsEv
+ .text._ZN12CAutoTrigger10ObjectCapsEv
                 0x000710a0        0x3 release/obj/ricochetdll/triggers.o
-                0x000710a0                CTriggerRelay::ObjectCaps()
+                0x000710a0                CAutoTrigger::ObjectCaps()
  *fill*         0x000710a3        0xd 
- .text._ZN13CMultiManager10ObjectCapsEv
+ .text._ZN13CTriggerRelay10ObjectCapsEv
                 0x000710b0        0x3 release/obj/ricochetdll/triggers.o
-                0x000710b0                CMultiManager::ObjectCaps()
+                0x000710b0                CTriggerRelay::ObjectCaps()
  *fill*         0x000710b3        0xd 
+ .text._ZN13CMultiManager10ObjectCapsEv
+                0x000710c0        0x3 release/obj/ricochetdll/triggers.o
+                0x000710c0                CMultiManager::ObjectCaps()
+ *fill*         0x000710c3        0xd 
  .text._ZN11CFireAndDie10ObjectCapsEv
-                0x000710c0        0x6 release/obj/ricochetdll/triggers.o
-                0x000710c0                CFireAndDie::ObjectCaps()
- *fill*         0x000710c6        0xa 
+                0x000710d0        0x6 release/obj/ricochetdll/triggers.o
+                0x000710d0                CFireAndDie::ObjectCaps()
+ *fill*         0x000710d6        0xa 
  .text._ZN20CTriggerChangeTarget10ObjectCapsEv
-                0x000710d0        0x3 release/obj/ricochetdll/triggers.o
-                0x000710d0                CTriggerChangeTarget::ObjectCaps()
- *fill*         0x000710d3        0xd 
- .text._ZN14CTriggerCamera10ObjectCapsEv
                 0x000710e0        0x3 release/obj/ricochetdll/triggers.o
-                0x000710e0                CTriggerCamera::ObjectCaps()
+                0x000710e0                CTriggerChangeTarget::ObjectCaps()
  *fill*         0x000710e3        0xd 
- .text          0x000710f0     0x7650 release/obj/ricochetdll/util.o
-                0x00071490                UTIL_WeaponTimeBase()
-                0x000714a0                U_Random()
-                0x000714d0                U_Srand(unsigned int)
-                0x000714f0                UTIL_SharedRandomLong(unsigned int, int, int)
-                0x00071550                UTIL_SharedRandomFloat(unsigned int, float, float)
-                0x00071610                UTIL_ParametricRocket(entvars_s*, Vector, Vector, edict_s*)
-                0x000717a0                UTIL_SetGroupTrace(int, int)
-                0x000717d0                UTIL_UnsetGroupTrace()
-                0x00071810                UTIL_GroupTrace::UTIL_GroupTrace(int, int)
-                0x00071810                UTIL_GroupTrace::UTIL_GroupTrace(int, int)
-                0x00071860                UTIL_GroupTrace::~UTIL_GroupTrace()
-                0x00071860                UTIL_GroupTrace::~UTIL_GroupTrace()
-                0x000718a0                UTIL_GetNextBestWeapon(CBasePlayer*, CBasePlayerItem*)
-                0x000718d0                UTIL_AngleMod(float)
-                0x00071970                UTIL_AngleDiff(float, float)
-                0x000719c0                UTIL_VecToAngles(Vector const&)
-                0x00071a30                UTIL_MoveToOrigin(edict_s*, Vector const&, float, int)
-                0x00071aa0                UTIL_EntitiesInBox(CBaseEntity**, int, Vector const&, Vector const&, int)
-                0x00071cc0                UTIL_MonstersInSphere(CBaseEntity**, int, Vector const&, float)
-                0x00071de0                UTIL_FindEntityInSphere(CBaseEntity*, Vector const&, float)
-                0x00071e50                UTIL_FindEntityByString(CBaseEntity*, char const*, char const*)
-                0x00071ec0                UTIL_FindEntityByClassname(CBaseEntity*, char const*)
-                0x00071f30                UTIL_FindEntityByTargetname(CBaseEntity*, char const*)
-                0x00071fa0                UTIL_FindEntityGeneric(char const*, Vector&, float)
-                0x000720c0                UTIL_PlayerByIndex(int)
-                0x00072120                UTIL_MakeVectors(Vector const&)
-                0x00072140                UTIL_MakeAimVectors(Vector const&)
-                0x000721a0                UTIL_MakeInvVectors(Vector const&, globalvars_t*)
-                0x00072200                UTIL_EmitAmbientSound(edict_s*, Vector const&, char const*, float, float, int, int)
-                0x000722b0                UTIL_ScreenShake(Vector const&, float, float, float, float)
-                0x00072540                UTIL_ScreenShakeAll(Vector const&, float, float, float)
-                0x00072560                UTIL_ScreenFadeBuild(ScreenFade&, Vector const&, float, float, int, int)
-                0x00072630                UTIL_ScreenFadeWrite(ScreenFade const&, CBaseEntity*)
-                0x00072670                UTIL_ScreenFadeAll(Vector const&, float, float, int, int)
-                0x000727f0                UTIL_ScreenFade(CBaseEntity*, Vector const&, float, float, int, int)
-                0x00072910                UTIL_HudMessage(CBaseEntity*, hudtextparms_s const&, char const*)
-                0x00072950                UTIL_HudMessageAll(hudtextparms_s const&, char const*)
-                0x000729e0                UTIL_ClientPrintAll(int, char const*, char const*, char const*, char const*, char const*)
-                0x00072ab0                ClientPrint(entvars_s*, int, char const*, char const*, char const*, char const*, char const*)
-                0x00072b80                UTIL_SayText(char const*, CBaseEntity*)
-                0x00072c10                UTIL_SayTextAll(char const*, CBaseEntity*)
-                0x00072c80                UTIL_dtos1(int)
-                0x00072cc0                UTIL_dtos2(int)
-                0x00072d00                UTIL_dtos3(int)
-                0x00072d40                UTIL_dtos4(int)
-                0x00072d80                UTIL_ShowMessage(char const*, CBaseEntity*)
-                0x00072e00                UTIL_ShowMessageAll(char const*)
-                0x00072ec0                UTIL_TraceLine(Vector const&, Vector const&, IGNORE_MONSTERS, IGNORE_GLASS, edict_s*, TraceResult*)
-                0x00072f10                UTIL_TraceLine(Vector const&, Vector const&, IGNORE_MONSTERS, edict_s*, TraceResult*)
-                0x00072f40                UTIL_TraceHull(Vector const&, Vector const&, IGNORE_MONSTERS, int, edict_s*, TraceResult*)
-                0x00072f70                UTIL_TraceModel(Vector const&, Vector const&, int, edict_s*, TraceResult*)
-                0x00072f90                UTIL_GetGlobalTrace()
-                0x00073040                UTIL_SetSize(entvars_s*, Vector const&, Vector const&)
-                0x00073070                UTIL_VecToYaw(Vector const&)
-                0x00073090                UTIL_SetOrigin(entvars_s*, Vector const&)
-                0x000730c0                UTIL_ParticleEffect(Vector const&, Vector const&, unsigned int, unsigned int)
-                0x00073110                UTIL_Approach(float, float, float)
-                0x00073150                UTIL_ApproachAngle(float, float, float)
-                0x000732f0                UTIL_AngleDistance(float, float)
-                0x00073330                UTIL_SplineFraction(float, float)
-                0x00073360                UTIL_VarArgs(char*, ...)
-                0x000733a0                UTIL_GetAimVector(edict_s*, float)
-                0x000733d0                UTIL_IsMasterTriggered(unsigned int, CBaseEntity*)
-                0x00073490                UTIL_ShouldShowBlood(int)
-                0x000734f0                UTIL_PointContents(Vector const&)
-                0x00073510                UTIL_BloodStream(Vector const&, Vector const&, int, int)
-                0x00073630                UTIL_BloodDrips(Vector const&, Vector const&, int, int)
-                0x000737b0                UTIL_RandomBloodVector()
-                0x00073810                UTIL_DecalTrace(TraceResult*, int)
-                0x00073980                UTIL_BloodDecalTrace(TraceResult*, int)
-                0x00073a40                UTIL_PlayerDecalTrace(TraceResult*, int, int, int)
-                0x00073b10                UTIL_GunshotDecalTrace(TraceResult*, int)
-                0x00073bd0                UTIL_Sparks(Vector const&, edict_s*)
-                0x00073d40                UTIL_Ricochet(Vector const&, float)
-                0x00073de0                UTIL_TeamsMatch(char const*, char const*)
-                0x00073e50                UTIL_StringToVector(float*, char const*)
-                0x00073f80                UTIL_StringToIntArray(int*, int, char const*)
-                0x00074060                UTIL_ClampVectorToBox(Vector const&, Vector const&)
-                0x00074190                UTIL_WaterLevel(Vector const&, float, float)
-                0x000742d0                UTIL_Bubbles(Vector, Vector, int)
-                0x00074400                UTIL_BubbleTrail(Vector, Vector, int)
-                0x00074560                UTIL_Remove(CBaseEntity*)
-                0x000745b0                UTIL_IsValidEntity(edict_s*)
-                0x000745d0                UTIL_PrecacheOther(char const*)
-                0x00074680                UTIL_LogPrintf(char*, ...)
-                0x000746d0                UTIL_DotPoints(Vector const&, Vector const&, Vector const&)
-                0x00074740                UTIL_StripToken(char const*, char*)
-                0x00074780                CSaveRestoreBuffer::CSaveRestoreBuffer()
-                0x00074780                CSaveRestoreBuffer::CSaveRestoreBuffer()
-                0x00074790                CSaveRestoreBuffer::CSaveRestoreBuffer(saverestore_s*)
-                0x00074790                CSaveRestoreBuffer::CSaveRestoreBuffer(saverestore_s*)
-                0x000747a0                CSaveRestoreBuffer::~CSaveRestoreBuffer()
-                0x000747a0                CSaveRestoreBuffer::~CSaveRestoreBuffer()
-                0x000747b0                CSaveRestoreBuffer::EntityIndex(CBaseEntity*)
-                0x00074810                CSaveRestoreBuffer::EntityIndex(entvars_s*)
-                0x00074870                CSaveRestoreBuffer::EntityIndex(int)
-                0x000748e0                CSaveRestoreBuffer::EntityIndex(edict_s*)
-                0x00074930                CSaveRestoreBuffer::EntityFromIndex(int)
-                0x00074980                CSaveRestoreBuffer::EntityFlagsSet(int, int)
-                0x000749c0                CSaveRestoreBuffer::BufferRewind(int)
-                0x000749f0                _rotr
-                0x00074a10                CSaveRestoreBuffer::HashString(char const*)
-                0x00074a40                CSaveRestoreBuffer::TokenHash(char const*)
-                0x00074b20                CSave::WriteData(char const*, int, char const*)
-                0x00074c90                CSave::WriteShort(char const*, short const*, int)
-                0x00074e00                CSave::WriteInt(char const*, int const*, int)
-                0x00074f70                CSave::WriteFloat(char const*, float const*, int)
-                0x000750e0                CSave::WriteTime(char const*, float const*, int)
-                0x00075270                CSave::WriteString(char const*, char const*)
-                0x000753f0                CSave::WriteVector(char const*, Vector const&)
-                0x00075540                CSave::WriteVector(char const*, float const*, int)
-                0x000756b0                EntvarsKeyvalue(entvars_s*, KeyValueData_s*)
-                0x000757f0                CSave::BufferString(char*, int)
-                0x000758b0                CSave::DataEmpty(char const*, int)
-                0x000758e0                CSave::BufferField(char const*, int, char const*)
-                0x00075a50                CSave::BufferHeader(char const*, int)
-                0x00075b50                CSave::WriteString(char const*, int const*, int)
-                0x00075cb0                CSave::WritePositionVector(char const*, Vector const&)
-                0x00075ed0                CSave::WritePositionVector(char const*, float const*, int)
-                0x00076060                CSave::WriteFunction(char const*, void**, int)
-                0x00076150                CSave::WriteFields(char const*, void*, TYPEDESCRIPTION*, int)
-                0x00077020                CSave::WriteEntVars(char const*, entvars_s*)
-                0x00077040                CSave::BufferData(char const*, int)
-                0x000770c0                CRestore::ReadField(void*, TYPEDESCRIPTION*, int, int, int, char*, void*)
-                0x00077600                CRestore::BufferReadHeader(HEADER*)
-                0x00077790                CRestore::ReadShort()
-                0x00077810                CRestore::ReadInt()
-                0x00077890                CRestore::ReadNamedInt(char const*)
-                0x000779e0                CRestore::ReadNamedString(char const*)
-                0x00077b30                CRestore::BufferPointer()
-                0x00077b40                CRestore::BufferReadBytes(char*, int)
-                0x00077be0                CRestore::ReadEntVars(char const*, entvars_s*)
-                0x00078340                CRestore::ReadFields(char const*, void*, TYPEDESCRIPTION*, int)
-                0x00078590                CRestore::BufferSkipBytes(int)
-                0x00078600                CRestore::BufferSkipZString()
-                0x000786e0                CRestore::BufferCheckZString(char const*)
- .text          0x00078740     0x2422 release/obj/ricochetdll/weapons.o
-                0x00078740                CBasePlayerItem::SetObjectCollisionBox()
-                0x000787b0                CBasePlayerItem::AddToPlayer(CBasePlayer*)
-                0x000787d0                CBasePlayerItem::Drop()
-                0x000787d0                CBasePlayerItem::Kill()
-                0x00078820                CBasePlayerItem::Holster(int)
-                0x00078850                CBasePlayerItem::AttachToPlayer(CBasePlayer*)
-                0x00078900                CBasePlayerWeapon::UpdateClientData(CBasePlayer*)
-                0x00078a20                CBasePlayerWeapon::SendWeaponAnim(int, int)
-                0x00078ac0                CBasePlayerWeapon::CanDeploy()
-                0x00078b30                CBasePlayerWeapon::ResetEmptySound()
-                0x00078b40                CBasePlayerWeapon::PrimaryAmmoIndex()
-                0x00078b50                CBasePlayerWeapon::SecondaryAmmoIndex()
-                0x00078b60                CBasePlayerWeapon::Holster(int)
-                0x00078b90                CBasePlayerWeapon::ExtractClipAmmo(CBasePlayerWeapon*)
-                0x00078be0                CBasePlayerWeapon::RetireWeapon()
-                0x00078c30                CBasePlayerAmmo::Respawn()
-                0x00078ce0                CBasePlayerAmmo::Spawn()
-                0x00078d90                CBasePlayerAmmo::Materialize()
-                0x00078e20                CBasePlayerItem::Respawn()
-                0x00078f50                CBasePlayerWeapon::PlayEmptySound()
-                0x00078fc0                CBasePlayerWeapon::IsUseable()
-                0x00079040                CBasePlayerWeapon::AddToPlayer(CBasePlayer*)
-                0x000790e0                CBasePlayerWeapon::AddDuplicate(CBasePlayerItem*)
-                0x00079160                CBasePlayerItem::DefaultTouch(CBaseEntity*)
-                0x000792e0                CBasePlayerWeapon::ItemPostFrame()
-                0x00079770                CBasePlayerWeapon::ExtractAmmo(CBasePlayerWeapon*)
-                0x00079900                CBasePlayerAmmo::DefaultTouch(CBaseEntity*)
-                0x00079ad0                MaxAmmoCarry(int)
-                0x00079ba0                ClearMultiDamage()
-                0x00079bd0                ApplyMultiDamage(entvars_s*, entvars_s*)
-                0x00079c20                AddMultiDamage(entvars_s*, CBaseEntity*, float, int)
-                0x00079ca0                SpawnBlood(Vector, int, float)
-                0x00079cf0                DamageDecal(CBaseEntity*, int)
-                0x00079d30                DecalGunshot(TraceResult*, int)
-                0x00079e70                EjectBrass(Vector const&, Vector const&, float, int, int)
-                0x00079f40                AddAmmoNameToAmmoRegistry(char const*)
-                0x00079fd0                UTIL_PrecacheOtherWeapon(char const*)
-                0x0007a280                W_Precache()
-                0x0007a2e0                CBasePlayerItem::FallInit()
-                0x0007a3b0                CBasePlayerItem::Materialize()
-                0x0007a460                CBasePlayerItem::FallThink()
-                0x0007a520                CBasePlayerItem::AttemptToMaterialize()
-                0x0007a590                CBasePlayerItem::CheckRespawn()
-                0x0007a5e0                CanAttack(float, float, int)
-                0x0007a610                CBasePlayerItem::DestroyItem()
-                0x0007a6a0                CBasePlayerWeapon::AddPrimaryAmmo(int, char*, int, int)
-                0x0007a780                CBasePlayerWeapon::AddSecondaryAmmo(int, char*, int)
-                0x0007a7f0                CBasePlayerWeapon::DefaultDeploy(char*, char*, int, char*, int)
-                0x0007a920                CBasePlayerWeapon::DefaultReload(int, int, float)
-                0x0007a9c0                CBasePlayerWeapon::PrintState()
-                0x0007a9d0                CBasePlayerItem::Save(CSave&)
-                0x0007aa20                CBasePlayerWeapon::Save(CSave&)
-                0x0007aaa0                CBasePlayerItem::Restore(CRestore&)
-                0x0007aaf0                CBasePlayerWeapon::Restore(CRestore&)
- *fill*         0x0007ab62        0xe 
+ .text._ZN14CTriggerCamera10ObjectCapsEv
+                0x000710f0        0x3 release/obj/ricochetdll/triggers.o
+                0x000710f0                CTriggerCamera::ObjectCaps()
+ *fill*         0x000710f3        0xd 
+ .text          0x00071100     0x7650 release/obj/ricochetdll/util.o
+                0x000714a0                UTIL_WeaponTimeBase()
+                0x000714b0                U_Random()
+                0x000714e0                U_Srand(unsigned int)
+                0x00071500                UTIL_SharedRandomLong(unsigned int, int, int)
+                0x00071560                UTIL_SharedRandomFloat(unsigned int, float, float)
+                0x00071620                UTIL_ParametricRocket(entvars_s*, Vector, Vector, edict_s*)
+                0x000717b0                UTIL_SetGroupTrace(int, int)
+                0x000717e0                UTIL_UnsetGroupTrace()
+                0x00071820                UTIL_GroupTrace::UTIL_GroupTrace(int, int)
+                0x00071820                UTIL_GroupTrace::UTIL_GroupTrace(int, int)
+                0x00071870                UTIL_GroupTrace::~UTIL_GroupTrace()
+                0x00071870                UTIL_GroupTrace::~UTIL_GroupTrace()
+                0x000718b0                UTIL_GetNextBestWeapon(CBasePlayer*, CBasePlayerItem*)
+                0x000718e0                UTIL_AngleMod(float)
+                0x00071980                UTIL_AngleDiff(float, float)
+                0x000719d0                UTIL_VecToAngles(Vector const&)
+                0x00071a40                UTIL_MoveToOrigin(edict_s*, Vector const&, float, int)
+                0x00071ab0                UTIL_EntitiesInBox(CBaseEntity**, int, Vector const&, Vector const&, int)
+                0x00071cd0                UTIL_MonstersInSphere(CBaseEntity**, int, Vector const&, float)
+                0x00071df0                UTIL_FindEntityInSphere(CBaseEntity*, Vector const&, float)
+                0x00071e60                UTIL_FindEntityByString(CBaseEntity*, char const*, char const*)
+                0x00071ed0                UTIL_FindEntityByClassname(CBaseEntity*, char const*)
+                0x00071f40                UTIL_FindEntityByTargetname(CBaseEntity*, char const*)
+                0x00071fb0                UTIL_FindEntityGeneric(char const*, Vector&, float)
+                0x000720d0                UTIL_PlayerByIndex(int)
+                0x00072130                UTIL_MakeVectors(Vector const&)
+                0x00072150                UTIL_MakeAimVectors(Vector const&)
+                0x000721b0                UTIL_MakeInvVectors(Vector const&, globalvars_t*)
+                0x00072210                UTIL_EmitAmbientSound(edict_s*, Vector const&, char const*, float, float, int, int)
+                0x000722c0                UTIL_ScreenShake(Vector const&, float, float, float, float)
+                0x00072550                UTIL_ScreenShakeAll(Vector const&, float, float, float)
+                0x00072570                UTIL_ScreenFadeBuild(ScreenFade&, Vector const&, float, float, int, int)
+                0x00072640                UTIL_ScreenFadeWrite(ScreenFade const&, CBaseEntity*)
+                0x00072680                UTIL_ScreenFadeAll(Vector const&, float, float, int, int)
+                0x00072800                UTIL_ScreenFade(CBaseEntity*, Vector const&, float, float, int, int)
+                0x00072920                UTIL_HudMessage(CBaseEntity*, hudtextparms_s const&, char const*)
+                0x00072960                UTIL_HudMessageAll(hudtextparms_s const&, char const*)
+                0x000729f0                UTIL_ClientPrintAll(int, char const*, char const*, char const*, char const*, char const*)
+                0x00072ac0                ClientPrint(entvars_s*, int, char const*, char const*, char const*, char const*, char const*)
+                0x00072b90                UTIL_SayText(char const*, CBaseEntity*)
+                0x00072c20                UTIL_SayTextAll(char const*, CBaseEntity*)
+                0x00072c90                UTIL_dtos1(int)
+                0x00072cd0                UTIL_dtos2(int)
+                0x00072d10                UTIL_dtos3(int)
+                0x00072d50                UTIL_dtos4(int)
+                0x00072d90                UTIL_ShowMessage(char const*, CBaseEntity*)
+                0x00072e10                UTIL_ShowMessageAll(char const*)
+                0x00072ed0                UTIL_TraceLine(Vector const&, Vector const&, IGNORE_MONSTERS, IGNORE_GLASS, edict_s*, TraceResult*)
+                0x00072f20                UTIL_TraceLine(Vector const&, Vector const&, IGNORE_MONSTERS, edict_s*, TraceResult*)
+                0x00072f50                UTIL_TraceHull(Vector const&, Vector const&, IGNORE_MONSTERS, int, edict_s*, TraceResult*)
+                0x00072f80                UTIL_TraceModel(Vector const&, Vector const&, int, edict_s*, TraceResult*)
+                0x00072fa0                UTIL_GetGlobalTrace()
+                0x00073050                UTIL_SetSize(entvars_s*, Vector const&, Vector const&)
+                0x00073080                UTIL_VecToYaw(Vector const&)
+                0x000730a0                UTIL_SetOrigin(entvars_s*, Vector const&)
+                0x000730d0                UTIL_ParticleEffect(Vector const&, Vector const&, unsigned int, unsigned int)
+                0x00073120                UTIL_Approach(float, float, float)
+                0x00073160                UTIL_ApproachAngle(float, float, float)
+                0x00073300                UTIL_AngleDistance(float, float)
+                0x00073340                UTIL_SplineFraction(float, float)
+                0x00073370                UTIL_VarArgs(char*, ...)
+                0x000733b0                UTIL_GetAimVector(edict_s*, float)
+                0x000733e0                UTIL_IsMasterTriggered(unsigned int, CBaseEntity*)
+                0x000734a0                UTIL_ShouldShowBlood(int)
+                0x00073500                UTIL_PointContents(Vector const&)
+                0x00073520                UTIL_BloodStream(Vector const&, Vector const&, int, int)
+                0x00073640                UTIL_BloodDrips(Vector const&, Vector const&, int, int)
+                0x000737c0                UTIL_RandomBloodVector()
+                0x00073820                UTIL_DecalTrace(TraceResult*, int)
+                0x00073990                UTIL_BloodDecalTrace(TraceResult*, int)
+                0x00073a50                UTIL_PlayerDecalTrace(TraceResult*, int, int, int)
+                0x00073b20                UTIL_GunshotDecalTrace(TraceResult*, int)
+                0x00073be0                UTIL_Sparks(Vector const&, edict_s*)
+                0x00073d50                UTIL_Ricochet(Vector const&, float)
+                0x00073df0                UTIL_TeamsMatch(char const*, char const*)
+                0x00073e60                UTIL_StringToVector(float*, char const*)
+                0x00073f90                UTIL_StringToIntArray(int*, int, char const*)
+                0x00074070                UTIL_ClampVectorToBox(Vector const&, Vector const&)
+                0x000741a0                UTIL_WaterLevel(Vector const&, float, float)
+                0x000742e0                UTIL_Bubbles(Vector, Vector, int)
+                0x00074410                UTIL_BubbleTrail(Vector, Vector, int)
+                0x00074570                UTIL_Remove(CBaseEntity*)
+                0x000745c0                UTIL_IsValidEntity(edict_s*)
+                0x000745e0                UTIL_PrecacheOther(char const*)
+                0x00074690                UTIL_LogPrintf(char*, ...)
+                0x000746e0                UTIL_DotPoints(Vector const&, Vector const&, Vector const&)
+                0x00074750                UTIL_StripToken(char const*, char*)
+                0x00074790                CSaveRestoreBuffer::CSaveRestoreBuffer()
+                0x00074790                CSaveRestoreBuffer::CSaveRestoreBuffer()
+                0x000747a0                CSaveRestoreBuffer::CSaveRestoreBuffer(saverestore_s*)
+                0x000747a0                CSaveRestoreBuffer::CSaveRestoreBuffer(saverestore_s*)
+                0x000747b0                CSaveRestoreBuffer::~CSaveRestoreBuffer()
+                0x000747b0                CSaveRestoreBuffer::~CSaveRestoreBuffer()
+                0x000747c0                CSaveRestoreBuffer::EntityIndex(CBaseEntity*)
+                0x00074820                CSaveRestoreBuffer::EntityIndex(entvars_s*)
+                0x00074880                CSaveRestoreBuffer::EntityIndex(int)
+                0x000748f0                CSaveRestoreBuffer::EntityIndex(edict_s*)
+                0x00074940                CSaveRestoreBuffer::EntityFromIndex(int)
+                0x00074990                CSaveRestoreBuffer::EntityFlagsSet(int, int)
+                0x000749d0                CSaveRestoreBuffer::BufferRewind(int)
+                0x00074a00                _rotr
+                0x00074a20                CSaveRestoreBuffer::HashString(char const*)
+                0x00074a50                CSaveRestoreBuffer::TokenHash(char const*)
+                0x00074b30                CSave::WriteData(char const*, int, char const*)
+                0x00074ca0                CSave::WriteShort(char const*, short const*, int)
+                0x00074e10                CSave::WriteInt(char const*, int const*, int)
+                0x00074f80                CSave::WriteFloat(char const*, float const*, int)
+                0x000750f0                CSave::WriteTime(char const*, float const*, int)
+                0x00075280                CSave::WriteString(char const*, char const*)
+                0x00075400                CSave::WriteVector(char const*, Vector const&)
+                0x00075550                CSave::WriteVector(char const*, float const*, int)
+                0x000756c0                EntvarsKeyvalue(entvars_s*, KeyValueData_s*)
+                0x00075800                CSave::BufferString(char*, int)
+                0x000758c0                CSave::DataEmpty(char const*, int)
+                0x000758f0                CSave::BufferField(char const*, int, char const*)
+                0x00075a60                CSave::BufferHeader(char const*, int)
+                0x00075b60                CSave::WriteString(char const*, int const*, int)
+                0x00075cc0                CSave::WritePositionVector(char const*, Vector const&)
+                0x00075ee0                CSave::WritePositionVector(char const*, float const*, int)
+                0x00076070                CSave::WriteFunction(char const*, void**, int)
+                0x00076160                CSave::WriteFields(char const*, void*, TYPEDESCRIPTION*, int)
+                0x00077030                CSave::WriteEntVars(char const*, entvars_s*)
+                0x00077050                CSave::BufferData(char const*, int)
+                0x000770d0                CRestore::ReadField(void*, TYPEDESCRIPTION*, int, int, int, char*, void*)
+                0x00077610                CRestore::BufferReadHeader(HEADER*)
+                0x000777a0                CRestore::ReadShort()
+                0x00077820                CRestore::ReadInt()
+                0x000778a0                CRestore::ReadNamedInt(char const*)
+                0x000779f0                CRestore::ReadNamedString(char const*)
+                0x00077b40                CRestore::BufferPointer()
+                0x00077b50                CRestore::BufferReadBytes(char*, int)
+                0x00077bf0                CRestore::ReadEntVars(char const*, entvars_s*)
+                0x00078350                CRestore::ReadFields(char const*, void*, TYPEDESCRIPTION*, int)
+                0x000785a0                CRestore::BufferSkipBytes(int)
+                0x00078610                CRestore::BufferSkipZString()
+                0x000786f0                CRestore::BufferCheckZString(char const*)
+ .text          0x00078750     0x2422 release/obj/ricochetdll/weapons.o
+                0x00078750                CBasePlayerItem::SetObjectCollisionBox()
+                0x000787c0                CBasePlayerItem::AddToPlayer(CBasePlayer*)
+                0x000787e0                CBasePlayerItem::Drop()
+                0x000787e0                CBasePlayerItem::Kill()
+                0x00078830                CBasePlayerItem::Holster(int)
+                0x00078860                CBasePlayerItem::AttachToPlayer(CBasePlayer*)
+                0x00078910                CBasePlayerWeapon::UpdateClientData(CBasePlayer*)
+                0x00078a30                CBasePlayerWeapon::SendWeaponAnim(int, int)
+                0x00078ad0                CBasePlayerWeapon::CanDeploy()
+                0x00078b40                CBasePlayerWeapon::ResetEmptySound()
+                0x00078b50                CBasePlayerWeapon::PrimaryAmmoIndex()
+                0x00078b60                CBasePlayerWeapon::SecondaryAmmoIndex()
+                0x00078b70                CBasePlayerWeapon::Holster(int)
+                0x00078ba0                CBasePlayerWeapon::ExtractClipAmmo(CBasePlayerWeapon*)
+                0x00078bf0                CBasePlayerWeapon::RetireWeapon()
+                0x00078c40                CBasePlayerAmmo::Respawn()
+                0x00078cf0                CBasePlayerAmmo::Spawn()
+                0x00078da0                CBasePlayerAmmo::Materialize()
+                0x00078e30                CBasePlayerItem::Respawn()
+                0x00078f60                CBasePlayerWeapon::PlayEmptySound()
+                0x00078fd0                CBasePlayerWeapon::IsUseable()
+                0x00079050                CBasePlayerWeapon::AddToPlayer(CBasePlayer*)
+                0x000790f0                CBasePlayerWeapon::AddDuplicate(CBasePlayerItem*)
+                0x00079170                CBasePlayerItem::DefaultTouch(CBaseEntity*)
+                0x000792f0                CBasePlayerWeapon::ItemPostFrame()
+                0x00079780                CBasePlayerWeapon::ExtractAmmo(CBasePlayerWeapon*)
+                0x00079910                CBasePlayerAmmo::DefaultTouch(CBaseEntity*)
+                0x00079ae0                MaxAmmoCarry(int)
+                0x00079bb0                ClearMultiDamage()
+                0x00079be0                ApplyMultiDamage(entvars_s*, entvars_s*)
+                0x00079c30                AddMultiDamage(entvars_s*, CBaseEntity*, float, int)
+                0x00079cb0                SpawnBlood(Vector, int, float)
+                0x00079d00                DamageDecal(CBaseEntity*, int)
+                0x00079d40                DecalGunshot(TraceResult*, int)
+                0x00079e80                EjectBrass(Vector const&, Vector const&, float, int, int)
+                0x00079f50                AddAmmoNameToAmmoRegistry(char const*)
+                0x00079fe0                UTIL_PrecacheOtherWeapon(char const*)
+                0x0007a290                W_Precache()
+                0x0007a2f0                CBasePlayerItem::FallInit()
+                0x0007a3c0                CBasePlayerItem::Materialize()
+                0x0007a470                CBasePlayerItem::FallThink()
+                0x0007a530                CBasePlayerItem::AttemptToMaterialize()
+                0x0007a5a0                CBasePlayerItem::CheckRespawn()
+                0x0007a5f0                CanAttack(float, float, int)
+                0x0007a620                CBasePlayerItem::DestroyItem()
+                0x0007a6b0                CBasePlayerWeapon::AddPrimaryAmmo(int, char*, int, int)
+                0x0007a790                CBasePlayerWeapon::AddSecondaryAmmo(int, char*, int)
+                0x0007a800                CBasePlayerWeapon::DefaultDeploy(char*, char*, int, char*, int)
+                0x0007a930                CBasePlayerWeapon::DefaultReload(int, int, float)
+                0x0007a9d0                CBasePlayerWeapon::PrintState()
+                0x0007a9e0                CBasePlayerItem::Save(CSave&)
+                0x0007aa30                CBasePlayerWeapon::Save(CSave&)
+                0x0007aab0                CBasePlayerItem::Restore(CRestore&)
+                0x0007ab00                CBasePlayerWeapon::Restore(CRestore&)
+ *fill*         0x0007ab72        0xe 
  .text._ZN15CBasePlayerItem12AddDuplicateEPS_
-                0x0007ab70        0x3 release/obj/ricochetdll/weapons.o
-                0x0007ab70                CBasePlayerItem::AddDuplicate(CBasePlayerItem*)
- *fill*         0x0007ab73        0xd 
- .text._ZN15CBasePlayerItem11GetItemInfoEP8ItemInfo
                 0x0007ab80        0x3 release/obj/ricochetdll/weapons.o
-                0x0007ab80                CBasePlayerItem::GetItemInfo(ItemInfo*)
+                0x0007ab80                CBasePlayerItem::AddDuplicate(CBasePlayerItem*)
  *fill*         0x0007ab83        0xd 
+ .text._ZN15CBasePlayerItem11GetItemInfoEP8ItemInfo
+                0x0007ab90        0x3 release/obj/ricochetdll/weapons.o
+                0x0007ab90                CBasePlayerItem::GetItemInfo(ItemInfo*)
+ *fill*         0x0007ab93        0xd 
  .text._ZN15CBasePlayerItem14UpdateItemInfoEv
-                0x0007ab90        0x1 release/obj/ricochetdll/weapons.o
-                0x0007ab90                CBasePlayerItem::UpdateItemInfo()
- *fill*         0x0007ab91        0xf 
- .text._ZN15CBasePlayerItem13ItemPostFrameEv
                 0x0007aba0        0x1 release/obj/ricochetdll/weapons.o
-                0x0007aba0                CBasePlayerItem::ItemPostFrame()
+                0x0007aba0                CBasePlayerItem::UpdateItemInfo()
  *fill*         0x0007aba1        0xf 
+ .text._ZN15CBasePlayerItem13ItemPostFrameEv
+                0x0007abb0        0x1 release/obj/ricochetdll/weapons.o
+                0x0007abb0                CBasePlayerItem::ItemPostFrame()
+ *fill*         0x0007abb1        0xf 
  .text._ZN15CBasePlayerItem16PrimaryAmmoIndexEv
-                0x0007abb0        0x6 release/obj/ricochetdll/weapons.o
-                0x0007abb0                CBasePlayerItem::PrimaryAmmoIndex()
- *fill*         0x0007abb6        0xa 
- .text._ZN15CBasePlayerItem18SecondaryAmmoIndexEv
                 0x0007abc0        0x6 release/obj/ricochetdll/weapons.o
-                0x0007abc0                CBasePlayerItem::SecondaryAmmoIndex()
+                0x0007abc0                CBasePlayerItem::PrimaryAmmoIndex()
  *fill*         0x0007abc6        0xa 
+ .text._ZN15CBasePlayerItem18SecondaryAmmoIndexEv
+                0x0007abd0        0x6 release/obj/ricochetdll/weapons.o
+                0x0007abd0                CBasePlayerItem::SecondaryAmmoIndex()
+ *fill*         0x0007abd6        0xa 
  .text._ZN15CBasePlayerItem16UpdateClientDataEP11CBasePlayer
-                0x0007abd0        0x3 release/obj/ricochetdll/weapons.o
-                0x0007abd0                CBasePlayerItem::UpdateClientData(CBasePlayer*)
- *fill*         0x0007abd3        0xd 
- .text._ZN15CBasePlayerItem12GetWeaponPtrEv
                 0x0007abe0        0x3 release/obj/ricochetdll/weapons.o
-                0x0007abe0                CBasePlayerItem::GetWeaponPtr()
+                0x0007abe0                CBasePlayerItem::UpdateClientData(CBasePlayer*)
  *fill*         0x0007abe3        0xd 
- .text._ZN15CBasePlayerItem9iItemSlotEv
+ .text._ZN15CBasePlayerItem12GetWeaponPtrEv
                 0x0007abf0        0x3 release/obj/ricochetdll/weapons.o
-                0x0007abf0                CBasePlayerItem::iItemSlot()
+                0x0007abf0                CBasePlayerItem::GetWeaponPtr()
  *fill*         0x0007abf3        0xd 
+ .text._ZN15CBasePlayerItem9iItemSlotEv
+                0x0007ac00        0x3 release/obj/ricochetdll/weapons.o
+                0x0007ac00                CBasePlayerItem::iItemSlot()
+ *fill*         0x0007ac03        0xd 
  .text._ZN17CBasePlayerWeapon13PrimaryAttackEv
-                0x0007ac00        0x1 release/obj/ricochetdll/weapons.o
-                0x0007ac00                CBasePlayerWeapon::PrimaryAttack()
- *fill*         0x0007ac01        0xf 
- .text._ZN17CBasePlayerWeapon15SecondaryAttackEv
                 0x0007ac10        0x1 release/obj/ricochetdll/weapons.o
-                0x0007ac10                CBasePlayerWeapon::SecondaryAttack()
+                0x0007ac10                CBasePlayerWeapon::PrimaryAttack()
  *fill*         0x0007ac11        0xf 
+ .text._ZN17CBasePlayerWeapon15SecondaryAttackEv
+                0x0007ac20        0x1 release/obj/ricochetdll/weapons.o
+                0x0007ac20                CBasePlayerWeapon::SecondaryAttack()
+ *fill*         0x0007ac21        0xf 
  .text._ZN15CBasePlayerAmmo7AddAmmoEP11CBaseEntity
-                0x0007ac20        0x6 release/obj/ricochetdll/weapons.o
-                0x0007ac20                CBasePlayerAmmo::AddAmmo(CBaseEntity*)
- *fill*         0x0007ac26        0xa 
- .text          0x0007ac30     0x1a38 release/obj/ricochetdll/world.o
-                0x0007ac30                CWorld::Spawn()
-                0x0007ac90                CDecal::TriggerDecal(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
-                0x0007ae00                CDecal::StaticDecal()
-                0x0007aef0                CWorld::KeyValue(KeyValueData_s*)
-                0x0007b350                CWorld::Save(CSave&)
-                0x0007b3a0                CWorld::Restore(CRestore&)
-                0x0007b3f0                CDecal::Spawn()
-                0x0007b490                CWorld::Precache()
-                0x0007bc50                CDecal::KeyValue(KeyValueData_s*)
-                0x0007bce0                infodecal
-                0x0007bd60                bodyque
-                0x0007bde0                CopyToBodyQue(entvars_s*)
-                0x0007bdf0                CGlobalState::CGlobalState()
-                0x0007bdf0                CGlobalState::CGlobalState()
-                0x0007be10                CGlobalState::Reset()
-                0x0007be30                CGlobalState::Find(unsigned int)
-                0x0007be90                CGlobalState::DumpGlobals()
-                0x0007bf00                CGlobalState::EntityAdd(unsigned int, unsigned int, GLOBALESTATE)
-                0x0007bf80                CGlobalState::EntitySetState(unsigned int, GLOBALESTATE)
-                0x0007bfe0                CGlobalState::EntityFromTable(unsigned int)
-                0x0007c040                CGlobalState::EntityGetState(unsigned int)
-                0x0007c0a0                CGlobalState::Save(CSave&)
-                0x0007c160                CGlobalState::Restore(CRestore&)
-                0x0007c330                CGlobalState::EntityUpdate(unsigned int, unsigned int)
-                0x0007c3b0                CGlobalState::ClearStates()
-                0x0007c400                SaveGlobalState(saverestore_s*)
-                0x0007c500                RestoreGlobalState(saverestore_s*)
-                0x0007c580                ResetGlobalState()
-                0x0007c5f0                worldspawn
- *fill*         0x0007c668        0x8 
+                0x0007ac30        0x6 release/obj/ricochetdll/weapons.o
+                0x0007ac30                CBasePlayerAmmo::AddAmmo(CBaseEntity*)
+ *fill*         0x0007ac36        0xa 
+ .text          0x0007ac40     0x1a38 release/obj/ricochetdll/world.o
+                0x0007ac40                CWorld::Spawn()
+                0x0007aca0                CDecal::TriggerDecal(CBaseEntity*, CBaseEntity*, USE_TYPE, float)
+                0x0007ae10                CDecal::StaticDecal()
+                0x0007af00                CWorld::KeyValue(KeyValueData_s*)
+                0x0007b360                CWorld::Save(CSave&)
+                0x0007b3b0                CWorld::Restore(CRestore&)
+                0x0007b400                CDecal::Spawn()
+                0x0007b4a0                CWorld::Precache()
+                0x0007bc60                CDecal::KeyValue(KeyValueData_s*)
+                0x0007bcf0                infodecal
+                0x0007bd70                bodyque
+                0x0007bdf0                CopyToBodyQue(entvars_s*)
+                0x0007be00                CGlobalState::CGlobalState()
+                0x0007be00                CGlobalState::CGlobalState()
+                0x0007be20                CGlobalState::Reset()
+                0x0007be40                CGlobalState::Find(unsigned int)
+                0x0007bea0                CGlobalState::DumpGlobals()
+                0x0007bf10                CGlobalState::EntityAdd(unsigned int, unsigned int, GLOBALESTATE)
+                0x0007bf90                CGlobalState::EntitySetState(unsigned int, GLOBALESTATE)
+                0x0007bff0                CGlobalState::EntityFromTable(unsigned int)
+                0x0007c050                CGlobalState::EntityGetState(unsigned int)
+                0x0007c0b0                CGlobalState::Save(CSave&)
+                0x0007c170                CGlobalState::Restore(CRestore&)
+                0x0007c340                CGlobalState::EntityUpdate(unsigned int, unsigned int)
+                0x0007c3c0                CGlobalState::ClearStates()
+                0x0007c410                SaveGlobalState(saverestore_s*)
+                0x0007c510                RestoreGlobalState(saverestore_s*)
+                0x0007c590                ResetGlobalState()
+                0x0007c600                worldspawn
+ *fill*         0x0007c678        0x8 
  .text._ZN7CCorpse10ObjectCapsEv
-                0x0007c670        0x6 release/obj/ricochetdll/world.o
-                0x0007c670                CCorpse::ObjectCaps()
- *fill*         0x0007c676        0xa 
- .text          0x0007c680     0x18f8 release/obj/ricochetdll/xen.o
-                0x0007c680                CXenPLight::Precache()
-                0x0007c6c0                CXenHair::Precache()
-                0x0007c6e0                CXenTreeTrigger::Touch(CBaseEntity*)
-                0x0007c710                CXenTree::Precache()
-                0x0007c780                CXenSpore::Precache()
-                0x0007c7b0                CXenSpore::Touch(CBaseEntity*)
-                0x0007c7c0                CXenPLight::Think()
-                0x0007c810                CXenHair::Think()
-                0x0007c850                CXenSpore::Think()
-                0x0007c8a0                CXenTree::Think()
-                0x0007c8f0                CActAnimating::Save(CSave&)
-                0x0007c940                CActAnimating::Restore(CRestore&)
-                0x0007c990                CXenTree::HandleAnimEvent(MonsterEvent_t*)
-                0x0007cb30                CXenTree::Touch(CBaseEntity*)
-                0x0007cb60                CXenPLight::Touch(CBaseEntity*)
-                0x0007cbc0                CXenHair::Spawn()
-                0x0007cd40                CXenTree::Restore(CRestore&)
-                0x0007cdc0                CXenPLight::Restore(CRestore&)
-                0x0007ce40                CXenPLight::Save(CSave&)
-                0x0007cec0                CXenTree::Save(CSave&)
-                0x0007cf40                CXenSpore::Spawn()
-                0x0007d070                CXenSporeSmall::Spawn()
-                0x0007d100                CXenSporeMed::Spawn()
-                0x0007d190                CXenPLight::Spawn()
-                0x0007d450                CActAnimating::SetActivity(Activity)
-                0x0007d4b0                xen_plantlight
-                0x0007d530                CXenPLight::LightOn()
-                0x0007d570                CXenPLight::LightOff()
-                0x0007d5b0                xen_hair
-                0x0007d630                xen_ttrigger
-                0x0007d6b0                CXenTreeTrigger::TriggerCreate(edict_s*, Vector const&)
-                0x0007d770                CXenTree::Spawn()
-                0x0007da00                xen_tree
-                0x0007da80                CXenTree::Attack()
-                0x0007da90                CXenHull::CreateHull(CBaseEntity*, Vector const&, Vector const&, Vector const&)
-                0x0007dc20                CXenSporeLarge::Spawn()
-                0x0007dd80                xen_spore_small
-                0x0007de00                xen_spore_medium
-                0x0007de80                xen_spore_large
-                0x0007df00                xen_hull
- *fill*         0x0007df78        0x8 
+                0x0007c680        0x6 release/obj/ricochetdll/world.o
+                0x0007c680                CCorpse::ObjectCaps()
+ *fill*         0x0007c686        0xa 
+ .text          0x0007c690     0x18f8 release/obj/ricochetdll/xen.o
+                0x0007c690                CXenPLight::Precache()
+                0x0007c6d0                CXenHair::Precache()
+                0x0007c6f0                CXenTreeTrigger::Touch(CBaseEntity*)
+                0x0007c720                CXenTree::Precache()
+                0x0007c790                CXenSpore::Precache()
+                0x0007c7c0                CXenSpore::Touch(CBaseEntity*)
+                0x0007c7d0                CXenPLight::Think()
+                0x0007c820                CXenHair::Think()
+                0x0007c860                CXenSpore::Think()
+                0x0007c8b0                CXenTree::Think()
+                0x0007c900                CActAnimating::Save(CSave&)
+                0x0007c950                CActAnimating::Restore(CRestore&)
+                0x0007c9a0                CXenTree::HandleAnimEvent(MonsterEvent_t*)
+                0x0007cb40                CXenTree::Touch(CBaseEntity*)
+                0x0007cb70                CXenPLight::Touch(CBaseEntity*)
+                0x0007cbd0                CXenHair::Spawn()
+                0x0007cd50                CXenTree::Restore(CRestore&)
+                0x0007cdd0                CXenPLight::Restore(CRestore&)
+                0x0007ce50                CXenPLight::Save(CSave&)
+                0x0007ced0                CXenTree::Save(CSave&)
+                0x0007cf50                CXenSpore::Spawn()
+                0x0007d080                CXenSporeSmall::Spawn()
+                0x0007d110                CXenSporeMed::Spawn()
+                0x0007d1a0                CXenPLight::Spawn()
+                0x0007d460                CActAnimating::SetActivity(Activity)
+                0x0007d4c0                xen_plantlight
+                0x0007d540                CXenPLight::LightOn()
+                0x0007d580                CXenPLight::LightOff()
+                0x0007d5c0                xen_hair
+                0x0007d640                xen_ttrigger
+                0x0007d6c0                CXenTreeTrigger::TriggerCreate(edict_s*, Vector const&)
+                0x0007d780                CXenTree::Spawn()
+                0x0007da10                xen_tree
+                0x0007da90                CXenTree::Attack()
+                0x0007daa0                CXenHull::CreateHull(CBaseEntity*, Vector const&, Vector const&, Vector const&)
+                0x0007dc30                CXenSporeLarge::Spawn()
+                0x0007dd90                xen_spore_small
+                0x0007de10                xen_spore_medium
+                0x0007de90                xen_spore_large
+                0x0007df10                xen_hull
+ *fill*         0x0007df88        0x8 
  .text._ZN13CActAnimating10ObjectCapsEv
-                0x0007df80        0x3 release/obj/ricochetdll/xen.o
-                0x0007df80                CActAnimating::ObjectCaps()
- *fill*         0x0007df83        0xd 
- .text._ZN8CXenTree10TakeDamageEP9entvars_sS1_fi
                 0x0007df90        0x3 release/obj/ricochetdll/xen.o
-                0x0007df90                CXenTree::TakeDamage(entvars_s*, entvars_s*, float, int)
+                0x0007df90                CActAnimating::ObjectCaps()
  *fill*         0x0007df93        0xd 
+ .text._ZN8CXenTree10TakeDamageEP9entvars_sS1_fi
+                0x0007dfa0        0x3 release/obj/ricochetdll/xen.o
+                0x0007dfa0                CXenTree::TakeDamage(entvars_s*, entvars_s*, float, int)
+ *fill*         0x0007dfa3        0xd 
  .text._ZN8CXenTree8ClassifyEv
-                0x0007dfa0        0x6 release/obj/ricochetdll/xen.o
-                0x0007dfa0                CXenTree::Classify()
- *fill*         0x0007dfa6        0xa 
+                0x0007dfb0        0x6 release/obj/ricochetdll/xen.o
+                0x0007dfb0                CXenTree::Classify()
+ *fill*         0x0007dfb6        0xa 
  .text._ZN9CXenSpore10TakeDamageEP9entvars_sS1_fi
-                0x0007dfb0        0x3 release/obj/ricochetdll/xen.o
-                0x0007dfb0                CXenSpore::TakeDamage(entvars_s*, entvars_s*, float, int)
- *fill*         0x0007dfb3        0xd 
+                0x0007dfc0        0x3 release/obj/ricochetdll/xen.o
+                0x0007dfc0                CXenSpore::TakeDamage(entvars_s*, entvars_s*, float, int)
+ *fill*         0x0007dfc3        0xd 
  .text._ZN8CXenHull8ClassifyEv
-                0x0007dfc0        0x6 release/obj/ricochetdll/xen.o
-                0x0007dfc0                CXenHull::Classify()
- *fill*         0x0007dfc6        0xa 
- .text          0x0007dfd0     0x2204 release/obj/ricochetdll/wpn_shared/disc_weapon_disc.o
-                0x0007dfd0                CDisc::Precache()
-                0x0007e0a0                CDiscWeapon::Precache()
-                0x0007e130                CDiscWeapon::GetItemInfo(ItemInfo*)
-                0x0007e1b0                CDiscWeapon::CanHolster()
-                0x0007e1c0                CDiscWeapon::AddDuplicate(CBasePlayerItem*)
-                0x0007e1e0                CDisc::Spawn()
-                0x0007e610                CDiscWeapon::Spawn()
-                0x0007e690                CDiscWeapon::Deploy()
-                0x0007e6d0                CDiscWeapon::Holster(int)
-                0x0007e790                CDiscWeapon::WeaponIdle()
-                0x0007ec90                weapon_disc
-                0x0007ed10                disc
-                0x0007ed90                CDisc::ReturnToThrower()
-                0x0007ee70                CDisc::DiscTouch(CBaseEntity*)
-                0x0007f3e0                CDisc::DiscThink()
-                0x0007fa30                CDisc::CreateDisc(Vector, Vector, CBaseEntity*, CDiscWeapon*, bool, int)
-                0x0007fb70                CDiscWeapon::FireDisc(bool)
-                0x0007fe90                CDiscWeapon::PrimaryAttack()
-                0x0007ffa0                CDiscWeapon::SecondaryAttack()
- *fill*         0x000801d4        0xc 
+                0x0007dfd0        0x6 release/obj/ricochetdll/xen.o
+                0x0007dfd0                CXenHull::Classify()
+ *fill*         0x0007dfd6        0xa 
+ .text          0x0007dfe0     0x2204 release/obj/ricochetdll/wpn_shared/disc_weapon_disc.o
+                0x0007dfe0                CDisc::Precache()
+                0x0007e0b0                CDiscWeapon::Precache()
+                0x0007e140                CDiscWeapon::GetItemInfo(ItemInfo*)
+                0x0007e1c0                CDiscWeapon::CanHolster()
+                0x0007e1d0                CDiscWeapon::AddDuplicate(CBasePlayerItem*)
+                0x0007e1f0                CDisc::Spawn()
+                0x0007e620                CDiscWeapon::Spawn()
+                0x0007e6a0                CDiscWeapon::Deploy()
+                0x0007e6e0                CDiscWeapon::Holster(int)
+                0x0007e7a0                CDiscWeapon::WeaponIdle()
+                0x0007eca0                weapon_disc
+                0x0007ed20                disc
+                0x0007eda0                CDisc::ReturnToThrower()
+                0x0007ee80                CDisc::DiscTouch(CBaseEntity*)
+                0x0007f3f0                CDisc::DiscThink()
+                0x0007fa40                CDisc::CreateDisc(Vector, Vector, CBaseEntity*, CDiscWeapon*, bool, int)
+                0x0007fb80                CDiscWeapon::FireDisc(bool)
+                0x0007fea0                CDiscWeapon::PrimaryAttack()
+                0x0007ffb0                CDiscWeapon::SecondaryAttack()
+ *fill*         0x000801e4        0xc 
  .text._ZN5CDisc6IsDiscEv
-                0x000801e0        0x6 release/obj/ricochetdll/wpn_shared/disc_weapon_disc.o
-                0x000801e0                CDisc::IsDisc()
- *fill*         0x000801e6        0xa 
- .text._ZN11CDiscWeapon9iItemSlotEv
                 0x000801f0        0x6 release/obj/ricochetdll/wpn_shared/disc_weapon_disc.o
-                0x000801f0                CDiscWeapon::iItemSlot()
+                0x000801f0                CDisc::IsDisc()
  *fill*         0x000801f6        0xa 
- .text._ZN11CDiscWeapon12UseDecrementEv
+ .text._ZN11CDiscWeapon9iItemSlotEv
                 0x00080200        0x6 release/obj/ricochetdll/wpn_shared/disc_weapon_disc.o
-                0x00080200                CDiscWeapon::UseDecrement()
+                0x00080200                CDiscWeapon::iItemSlot()
  *fill*         0x00080206        0xa 
- .text          0x00080210     0x6c14 release/obj/ricochetdll/pm_shared/pm_shared.o
-                0x00080210                PM_Ignore
-                0x00080220                PM_SwapTextures
-                0x00080320                PM_SortTextures
-                0x000804a0                PM_InitTextureTypes
-                0x00080700                PM_FindTextureType
-                0x000807a0                PM_PlayStepSound
-                0x00081170                PM_MapTextureTypeStepType
-                0x000811a0                PM_CatagorizeTextureType
-                0x000816d0                PM_UpdateStepSound
-                0x00081700                PM_AddToTouched
-                0x00081810                PM_CheckVelocity
-                0x00081d70                PM_ClipVelocity
-                0x00081ea0                PM_AddCorrectGravity
-                0x00081f20                PM_FixupGravityVelocity
-                0x00081f90                PM_FlyMove
-                0x00082bd0                PM_Accelerate
-                0x00082c80                PM_WalkMove
-                0x00083120                PM_Friction
-                0x000832b0                PM_AirAccelerate
-                0x00083370                PM_WaterMove
-                0x000836d0                PM_AirMove
-                0x00083820                PM_InWater
-                0x00083840                PM_CheckWater
-                0x00083a20                PM_CatagorizePosition
-                0x00083d90                PM_GetRandomStuckOffsets
-                0x00083e00                PM_ResetStuckOffsets
-                0x00083e30                PM_CheckStuck
-                0x00084250                GetChaseOrigin
-                0x00084350                PM_SpectatorMove
-                0x000846c0                PM_SplineFraction
-                0x000846f0                PM_FixPlayerCrouchStuck
-                0x000847b0                PM_Duck
-                0x00084bc0                PM_LadderMove
-                0x00084f60                PM_Ladder
-                0x00085090                PM_WaterJump
-                0x00085110                PM_AddGravity
-                0x00085160                PM_PushEntity
-                0x00085430                PM_Physics_Toss
-                0x00085880                PM_NoClip
-                0x00085960                PM_Jump
-                0x000859c0                PM_CheckWaterJump
-                0x00085ca0                PM_CheckFalling
-                0x00085e60                PM_PlayWaterSounds
-                0x00085f80                PM_CalcRoll
-                0x00086030                PM_DropPunchAngle
-                0x00086090                PM_CheckParamters
-                0x00086320                PM_ReduceTimers
-                0x000863d0                PM_PlayerMove
-                0x00086a70                PM_CreateStuckTable
-                0x00086d40                PM_Move
-                0x00086dc0                PM_GetInfo
-                0x00086e00                PM_Init
- *fill*         0x00086e24        0xc 
- .text          0x00086e30      0x773 release/obj/ricochetdll/pm_shared/pm_math.o
-                0x00086e30                anglemod
-                0x00086e80                AngleVectors
-                0x00086f50                AngleVectorsTranspose
-                0x00087010                AngleMatrix
-                0x000870b0                AngleIMatrix
-                0x00087150                VectorTransform
-                0x000871b0                VectorCompare
-                0x000871f0                VectorMA
-                0x00087220                _DotProduct
-                0x00087240                _VectorSubtract
-                0x00087270                _VectorAdd
-                0x000872a0                _VectorCopy
-                0x000872c0                CrossProduct
-                0x00087300                Length
-                0x00087320                VectorNormalize
-                0x00087370                VectorInverse
-                0x00087390                VectorScale
-                0x000873c0                Q_log2
-                0x000873e0                VectorMatrix
-                0x000874e0                VectorAngles
- *fill*         0x000875a3        0xd 
- .text          0x000875b0      0xdf4 release/obj/ricochetdll/pm_shared/pm_debug.o
-                0x000876a0                PM_ShowClipBox
-                0x000876b0                PM_ParticleLine
-                0x000877c0                PM_DrawRectangle
-                0x00087840                PM_DrawPhysEntBBox
-                0x00088100                PM_DrawBBox
-                0x000882c0                PM_ViewEntity
- *fill*         0x000883a4        0xc 
- .text          0x000883b0      0x938 release/obj/ricochetdll/game_shared/voice_gamemgr.o
-                0x000883b0                CVoiceGameMgr::~CVoiceGameMgr()
-                0x000883b0                CVoiceGameMgr::~CVoiceGameMgr()
+ .text._ZN11CDiscWeapon12UseDecrementEv
+                0x00080210        0x6 release/obj/ricochetdll/wpn_shared/disc_weapon_disc.o
+                0x00080210                CDiscWeapon::UseDecrement()
+ *fill*         0x00080216        0xa 
+ .text          0x00080220     0x6c14 release/obj/ricochetdll/pm_shared/pm_shared.o
+                0x00080220                PM_Ignore
+                0x00080230                PM_SwapTextures
+                0x00080330                PM_SortTextures
+                0x000804b0                PM_InitTextureTypes
+                0x00080710                PM_FindTextureType
+                0x000807b0                PM_PlayStepSound
+                0x00081180                PM_MapTextureTypeStepType
+                0x000811b0                PM_CatagorizeTextureType
+                0x000816e0                PM_UpdateStepSound
+                0x00081710                PM_AddToTouched
+                0x00081820                PM_CheckVelocity
+                0x00081d80                PM_ClipVelocity
+                0x00081eb0                PM_AddCorrectGravity
+                0x00081f30                PM_FixupGravityVelocity
+                0x00081fa0                PM_FlyMove
+                0x00082be0                PM_Accelerate
+                0x00082c90                PM_WalkMove
+                0x00083130                PM_Friction
+                0x000832c0                PM_AirAccelerate
+                0x00083380                PM_WaterMove
+                0x000836e0                PM_AirMove
+                0x00083830                PM_InWater
+                0x00083850                PM_CheckWater
+                0x00083a30                PM_CatagorizePosition
+                0x00083da0                PM_GetRandomStuckOffsets
+                0x00083e10                PM_ResetStuckOffsets
+                0x00083e40                PM_CheckStuck
+                0x00084260                GetChaseOrigin
+                0x00084360                PM_SpectatorMove
+                0x000846d0                PM_SplineFraction
+                0x00084700                PM_FixPlayerCrouchStuck
+                0x000847c0                PM_Duck
+                0x00084bd0                PM_LadderMove
+                0x00084f70                PM_Ladder
+                0x000850a0                PM_WaterJump
+                0x00085120                PM_AddGravity
+                0x00085170                PM_PushEntity
+                0x00085440                PM_Physics_Toss
+                0x00085890                PM_NoClip
+                0x00085970                PM_Jump
+                0x000859d0                PM_CheckWaterJump
+                0x00085cb0                PM_CheckFalling
+                0x00085e70                PM_PlayWaterSounds
+                0x00085f90                PM_CalcRoll
+                0x00086040                PM_DropPunchAngle
+                0x000860a0                PM_CheckParamters
+                0x00086330                PM_ReduceTimers
+                0x000863e0                PM_PlayerMove
+                0x00086a80                PM_CreateStuckTable
+                0x00086d50                PM_Move
+                0x00086dd0                PM_GetInfo
+                0x00086e10                PM_Init
+ *fill*         0x00086e34        0xc 
+ .text          0x00086e40      0x773 release/obj/ricochetdll/pm_shared/pm_math.o
+                0x00086e40                anglemod
+                0x00086e90                AngleVectors
+                0x00086f60                AngleVectorsTranspose
+                0x00087020                AngleMatrix
+                0x000870c0                AngleIMatrix
+                0x00087160                VectorTransform
+                0x000871c0                VectorCompare
+                0x00087200                VectorMA
+                0x00087230                _DotProduct
+                0x00087250                _VectorSubtract
+                0x00087280                _VectorAdd
+                0x000872b0                _VectorCopy
+                0x000872d0                CrossProduct
+                0x00087310                Length
+                0x00087330                VectorNormalize
+                0x00087380                VectorInverse
+                0x000873a0                VectorScale
+                0x000873d0                Q_log2
+                0x000873f0                VectorMatrix
+                0x000874f0                VectorAngles
+ *fill*         0x000875b3        0xd 
+ .text          0x000875c0      0xdf4 release/obj/ricochetdll/pm_shared/pm_debug.o
+                0x000876b0                PM_ShowClipBox
+                0x000876c0                PM_ParticleLine
+                0x000877d0                PM_DrawRectangle
+                0x00087850                PM_DrawPhysEntBBox
+                0x00088110                PM_DrawBBox
+                0x000882d0                PM_ViewEntity
+ *fill*         0x000883b4        0xc 
+ .text          0x000883c0      0x938 release/obj/ricochetdll/game_shared/voice_gamemgr.o
                 0x000883c0                CVoiceGameMgr::~CVoiceGameMgr()
-                0x00088480                CVoiceGameMgr::CVoiceGameMgr()
-                0x00088480                CVoiceGameMgr::CVoiceGameMgr()
-                0x000884b0                CVoiceGameMgr::Init(IVoiceGameMgrHelper*, int)
-                0x00088590                CVoiceGameMgr::SetHelper(IVoiceGameMgrHelper*)
-                0x000885a0                CVoiceGameMgr::ClientConnected(edict_s*)
-                0x00088600                CVoiceGameMgr::PlayerHasBlockedPlayer(CBasePlayer*, CBasePlayer*)
-                0x000886a0                CVoiceGameMgr::ClientCommand(CBasePlayer*, char const*)
-                0x00088920                CVoiceGameMgr::UpdateMasks()
-                0x00088cb0                CVoiceGameMgr::Update(double)
- *fill*         0x00088ce8        0x8 
- .text          0x00088cf0       0x18 /usr/lib/i386-linux-gnu/libc_nonshared.a(stack_chk_fail_local.oS)
-                0x00088cf0                __stack_chk_fail_local
- .text          0x00088d08        0x0 /usr/lib/gcc/x86_64-linux-gnu/13/32/crtendS.o
- .text          0x00088d08        0x0 /usr/lib/gcc/x86_64-linux-gnu/13/../../../i386-linux-gnu/crtn.o
+                0x000883c0                CVoiceGameMgr::~CVoiceGameMgr()
+                0x000883d0                CVoiceGameMgr::~CVoiceGameMgr()
+                0x00088490                CVoiceGameMgr::CVoiceGameMgr()
+                0x00088490                CVoiceGameMgr::CVoiceGameMgr()
+                0x000884c0                CVoiceGameMgr::Init(IVoiceGameMgrHelper*, int)
+                0x000885a0                CVoiceGameMgr::SetHelper(IVoiceGameMgrHelper*)
+                0x000885b0                CVoiceGameMgr::ClientConnected(edict_s*)
+                0x00088610                CVoiceGameMgr::PlayerHasBlockedPlayer(CBasePlayer*, CBasePlayer*)
+                0x000886b0                CVoiceGameMgr::ClientCommand(CBasePlayer*, char const*)
+                0x00088930                CVoiceGameMgr::UpdateMasks()
+                0x00088cc0                CVoiceGameMgr::Update(double)
+ *fill*         0x00088cf8        0x8 
+ .text          0x00088d00       0x18 /usr/lib/i386-linux-gnu/libc_nonshared.a(stack_chk_fail_local.oS)
+                0x00088d00                __stack_chk_fail_local
+ .text          0x00088d18        0x0 /usr/lib/gcc/x86_64-linux-gnu/13/32/crtendS.o
+ .text          0x00088d18        0x0 /usr/lib/gcc/x86_64-linux-gnu/13/../../../i386-linux-gnu/crtn.o
  *(.gnu.warning)
 
-.fini           0x00088d08       0x14
+.fini           0x00088d18       0x14
  *(SORT_NONE(.fini))
- .fini          0x00088d08        0xf /usr/lib/gcc/x86_64-linux-gnu/13/../../../i386-linux-gnu/crti.o
-                0x00088d08                _fini
- .fini          0x00088d17        0x5 /usr/lib/gcc/x86_64-linux-gnu/13/../../../i386-linux-gnu/crtn.o
+ .fini          0x00088d18        0xf /usr/lib/gcc/x86_64-linux-gnu/13/../../../i386-linux-gnu/crti.o
+                0x00088d18                _fini
+ .fini          0x00088d27        0x5 /usr/lib/gcc/x86_64-linux-gnu/13/../../../i386-linux-gnu/crtn.o
                 [!provide]                        PROVIDE (__etext = .)
                 [!provide]                        PROVIDE (_etext = .)
                 [!provide]                        PROVIDE (etext = .)
@@ -10812,7 +10812,7 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/13/../../../i386-linux-gnu/crtn.o
                 0x00091970                __GNU_EH_FRAME_HDR
  *(.eh_frame_entry .eh_frame_entry.*)
 
-.eh_frame       0x0009546c    0x2844c
+.eh_frame       0x0009546c    0x28454
  *(.eh_frame)
  .eh_frame      0x0009546c       0x3c /usr/lib/gcc/x86_64-linux-gnu/13/../../../i386-linux-gnu/crti.o
                                  0x40 (size before relaxing)
@@ -10876,55 +10876,55 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/13/../../../i386-linux-gnu/crtn.o
                                 0x9e0 (size before relaxing)
  .eh_frame      0x000a7404      0x3a0 release/obj/ricochetdll/mpstubb.o
                                 0x864 (size before relaxing)
- .eh_frame      0x000a77a4     0x1400 release/obj/ricochetdll/multiplay_gamerules.o
-                               0x1554 (size before relaxing)
- .eh_frame      0x000a8ba4      0x3f4 release/obj/ricochetdll/observer.o
+ .eh_frame      0x000a77a4     0x1408 release/obj/ricochetdll/multiplay_gamerules.o
+                               0x155c (size before relaxing)
+ .eh_frame      0x000a8bac      0x3f4 release/obj/ricochetdll/observer.o
                                 0x484 (size before relaxing)
- .eh_frame      0x000a8f98      0x578 release/obj/ricochetdll/pathcorner.o
+ .eh_frame      0x000a8fa0      0x578 release/obj/ricochetdll/pathcorner.o
                                 0xa00 (size before relaxing)
- .eh_frame      0x000a9510       0x4c release/obj/ricochetdll/plane.o
+ .eh_frame      0x000a9518       0x4c release/obj/ricochetdll/plane.o
                                  0x64 (size before relaxing)
- .eh_frame      0x000a955c     0x26dc release/obj/ricochetdll/plats.o
+ .eh_frame      0x000a9564     0x26dc release/obj/ricochetdll/plats.o
                                0x2bdc (size before relaxing)
- .eh_frame      0x000abc38     0x3578 release/obj/ricochetdll/player.o
+ .eh_frame      0x000abc40     0x3578 release/obj/ricochetdll/player.o
                                0x3b7c (size before relaxing)
- .eh_frame      0x000af1b0      0x2b0 release/obj/ricochetdll/singleplay_gamerules.o
+ .eh_frame      0x000af1b8      0x2b0 release/obj/ricochetdll/singleplay_gamerules.o
                                 0x46c (size before relaxing)
- .eh_frame      0x000af460       0x68 release/obj/ricochetdll/skill.o
+ .eh_frame      0x000af468       0x68 release/obj/ricochetdll/skill.o
                                  0x94 (size before relaxing)
- .eh_frame      0x000af4c8     0x15dc release/obj/ricochetdll/sound.o
+ .eh_frame      0x000af4d0     0x15dc release/obj/ricochetdll/sound.o
                                0x1a8c (size before relaxing)
- .eh_frame      0x000b0aa4      0x324 release/obj/ricochetdll/soundent.o
+ .eh_frame      0x000b0aac      0x324 release/obj/ricochetdll/soundent.o
                                 0x784 (size before relaxing)
- .eh_frame      0x000b0dc8       0xb8 release/obj/ricochetdll/spectator.o
+ .eh_frame      0x000b0dd0       0xb8 release/obj/ricochetdll/spectator.o
                                 0x554 (size before relaxing)
- .eh_frame      0x000b0e80      0xaa0 release/obj/ricochetdll/subs.o
+ .eh_frame      0x000b0e88      0xaa0 release/obj/ricochetdll/subs.o
                                 0xfb4 (size before relaxing)
- .eh_frame      0x000b1920      0xc98 release/obj/ricochetdll/teamplay_gamerules.o
+ .eh_frame      0x000b1928      0xc98 release/obj/ricochetdll/teamplay_gamerules.o
                                 0xd28 (size before relaxing)
- .eh_frame      0x000b25b8     0x32d4 release/obj/ricochetdll/triggers.o
+ .eh_frame      0x000b25c0     0x32d4 release/obj/ricochetdll/triggers.o
                                0x37fc (size before relaxing)
- .eh_frame      0x000b588c     0x2bac release/obj/ricochetdll/util.o
+ .eh_frame      0x000b5894     0x2bac release/obj/ricochetdll/util.o
                                0x2c98 (size before relaxing)
- .eh_frame      0x000b8438     0x1158 release/obj/ricochetdll/weapons.o
+ .eh_frame      0x000b8440     0x1158 release/obj/ricochetdll/weapons.o
                                0x1798 (size before relaxing)
- .eh_frame      0x000b9590      0xc64 release/obj/ricochetdll/world.o
+ .eh_frame      0x000b9598      0xc64 release/obj/ricochetdll/world.o
                                0x11a0 (size before relaxing)
- .eh_frame      0x000ba1f4      0xcb8 release/obj/ricochetdll/xen.o
+ .eh_frame      0x000ba1fc      0xcb8 release/obj/ricochetdll/xen.o
                                0x1198 (size before relaxing)
- .eh_frame      0x000baeac      0xa34 release/obj/ricochetdll/wpn_shared/disc_weapon_disc.o
+ .eh_frame      0x000baeb4      0xa34 release/obj/ricochetdll/wpn_shared/disc_weapon_disc.o
                                 0xf84 (size before relaxing)
- .eh_frame      0x000bb8e0     0x176c release/obj/ricochetdll/pm_shared/pm_shared.o
+ .eh_frame      0x000bb8e8     0x176c release/obj/ricochetdll/pm_shared/pm_shared.o
                                0x1810 (size before relaxing)
- .eh_frame      0x000bd04c      0x1dc release/obj/ricochetdll/pm_shared/pm_math.o
+ .eh_frame      0x000bd054      0x1dc release/obj/ricochetdll/pm_shared/pm_math.o
                                 0x258 (size before relaxing)
- .eh_frame      0x000bd228      0x29c release/obj/ricochetdll/pm_shared/pm_debug.o
+ .eh_frame      0x000bd230      0x29c release/obj/ricochetdll/pm_shared/pm_debug.o
                                 0x2dc (size before relaxing)
- .eh_frame      0x000bd4c4      0x3d4 release/obj/ricochetdll/game_shared/voice_gamemgr.o
+ .eh_frame      0x000bd4cc      0x3d4 release/obj/ricochetdll/game_shared/voice_gamemgr.o
                                 0x428 (size before relaxing)
- .eh_frame      0x000bd898       0x1c /usr/lib/i386-linux-gnu/libc_nonshared.a(stack_chk_fail_local.oS)
+ .eh_frame      0x000bd8a0       0x1c /usr/lib/i386-linux-gnu/libc_nonshared.a(stack_chk_fail_local.oS)
                                  0x48 (size before relaxing)
- .eh_frame      0x000bd8b4        0x4 /usr/lib/gcc/x86_64-linux-gnu/13/32/crtendS.o
+ .eh_frame      0x000bd8bc        0x4 /usr/lib/gcc/x86_64-linux-gnu/13/32/crtendS.o
  *(.eh_frame.*)
 
 .sframe
@@ -10932,18 +10932,18 @@ LOAD /usr/lib/gcc/x86_64-linux-gnu/13/../../../i386-linux-gnu/crtn.o
  *(.sframe.*)
 
 .gcc_except_table
-                0x000bd8b8       0xd3
+                0x000bd8c0       0xd3
  *(.gcc_except_table .gcc_except_table.*)
  .gcc_except_table
-                0x000bd8b8       0x64 release/obj/ricochetdll/cbase.o
+                0x000bd8c0       0x64 release/obj/ricochetdll/cbase.o
  .gcc_except_table
-                0x000bd91c       0x1f release/obj/ricochetdll/gamerules.o
+                0x000bd924       0x1f release/obj/ricochetdll/gamerules.o
  .gcc_except_table
-                0x000bd93b       0x23 release/obj/ricochetdll/triggers.o
+                0x000bd943       0x23 release/obj/ricochetdll/triggers.o
  .gcc_except_table
-                0x000bd95e        0x4 release/obj/ricochetdll/util.o
+                0x000bd966        0x4 release/obj/ricochetdll/util.o
  .gcc_except_table
-                0x000bd962       0x29 release/obj/ricochetdll/world.o
+                0x000bd96a       0x29 release/obj/ricochetdll/world.o
 
 .gnu_extab
  *(.gnu_extab*)
